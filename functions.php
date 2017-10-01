@@ -102,23 +102,6 @@ function twentysixteen_setup() {
 	) );
 
 	/*
-	 * Enable support for Post Formats.
-	 *
-	 * See: https://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-		'gallery',
-		'status',
-		'audio',
-		'chat',
-	) );
-
-	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
@@ -319,6 +302,11 @@ function twentysixteen_hex2rgb( $color ) {
  */
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Custom Comment Walker
+ */
+require get_template_directory() . '/inc/class-comment-walker.php';
 
 /**
  * Customizer additions.
