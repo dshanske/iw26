@@ -29,6 +29,11 @@
 				get_the_title()
 			) );
 
+		?>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<?php 
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
 				'after'       => '</div>',
@@ -37,11 +42,7 @@
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
+			twentysixteen_entry_meta(); ?>
 		<?php
 			edit_post_link(
 				sprintf(
