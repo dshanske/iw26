@@ -32,18 +32,24 @@ function twentysixteen_entry_meta() {
 		twentysixteen_entry_date();
 	}
 
-	$format = get_post_format();
-	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'twentysixteen' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			get_post_format_string( $format )
+	if ( class_exists( 'Kind_Taxonomy' ) ) {
+		$kind = get_post_kind();
+		printf( '<span class="entry-kind">%1$s<a href="%2$s">%3$s</a></span>',
+			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'twentysixteen' ) ),
+			esc_url( get_post_kind_link( $kind ) ),
+			get_post_kind_string( $kind )
 		);
 	}
 
 	if ( 'post' === get_post_type() ) {
 		twentysixteen_entry_taxonomies();
 	}
+
+	//	if ( function_exists( 'get_simple_location' ) ) {
+		echo '<div class="entry-location">';
+		echo Loc_View::get_location();
+		echo '</div>';
+//	}
 
 	if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
@@ -70,7 +76,7 @@ function twentysixteen_entry_date() {
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( DATE_W3C ) ),
-		get_the_date(),
+		get_the_time() . '<BR />' . get_the_date(),
 		esc_attr( get_the_modified_date( DATE_W3C ) ),
 		get_the_modified_date()
 	);
@@ -92,13 +98,13 @@ if ( ! function_exists( 'twentysixteen_entry_taxonomies' ) ) :
  * @since Twenty Sixteen 1.0
  */
 function twentysixteen_entry_taxonomies() {
-	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
-	if ( $categories_list && twentysixteen_categorized_blog() ) {
-		printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-			_x( 'Categories', 'Used before category names.', 'twentysixteen' ),
-			$categories_list
-		);
-	}
+//	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+//	if ( $categories_list && twentysixteen_categorized_blog() ) {
+//		printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+//			_x( 'Categories', 'Used before category names.', 'twentysixteen' ),
+//			$categories_list
+//		);
+//	}
 
 	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
 	if ( $tags_list ) {
