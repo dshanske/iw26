@@ -14,14 +14,14 @@
 			<span class="sticky-post"><?php _e( 'Featured', 'twentysixteen' ); ?></span>
 		<?php endif; ?>
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title p-name"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_excerpt(); ?>
 
 	<?php twentysixteen_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="content">
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
@@ -30,7 +30,7 @@
 			) );
 
 		?>
-	</div><!-- .entry-content -->
+	</div><!-- .content -->
 
 	<footer class="entry-footer">
 		<?php 

@@ -15,7 +15,7 @@
 
 	<?php twentysixteen_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="content">
 		<?php
 		the_content();
 
@@ -28,7 +28,7 @@
 			'separator'   => '<span class="screen-reader-text">, </span>',
 		) );
 		?>
-	</div><!-- .entry-content -->
+	</div><!-- .content -->
 
 	<?php
 		edit_post_link(

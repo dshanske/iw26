@@ -98,3 +98,30 @@ function twentysixteen_comment_class( $classes ) {
 }
 
 add_filter( 'comment_class', 'twentysixteen_comment_class', 11 );
+
+/**  
+ * Wraps the_content in e-content
+ *
+ */
+function twentysixteen_the_content( $content ) {
+	$wrap = '<div class="entry-content e-content">';
+	if ( empty( $content ) ) {
+		return $content;
+	}
+	return $wrap . $content . '</div>';
+}
+add_filter( 'the_content', 'twentysixteen_the_content', 1 );
+
+/**
+ * Wraps the_excerpt in p-summary
+ *
+ */
+function twentysixteen_the_excerpt( $content ) {
+	$wrap = '<div class="entry-summary p-summary">';
+	if ($content!="") {
+		return $wrap . $content . '</div>';
+	}
+	return $content;
+}
+add_filter( 'the_excerpt', 'twentysixteen_the_excerpt', 1 );
+
