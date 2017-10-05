@@ -304,6 +304,11 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Plugin Support
+ */
+require get_template_directory() . '/inc/plugin-support.php';
+
+/**
  * Custom Comment Walker
  */
 require get_template_directory() . '/inc/class-comment-walker.php';

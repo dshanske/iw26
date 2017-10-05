@@ -1,8 +1,8 @@
 === IndieWeb Twenty Sixteen ===
 Contributors: IndieWeb WordPress Outreach, the WordPress team
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.7.2
-Version: 1.3-1
+Tested up to: WordPress 4.8.2
+Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -14,7 +14,7 @@ This is an IndieWeb fork of Twenty Sixteen, which itself is a modernized take on
 * Custom Colors
 * Custom Header
 * Social Links
-* Post Formats
+* Post Kinds Plugin Support
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
 For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
@@ -27,7 +27,7 @@ For more information about Twenty Sixteen please go to https://codex.wordpress.o
 4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-== Copyright ==
+== Original Copyright ==
 
 Twenty Sixteen WordPress Theme, Copyright 2014-2015 WordPress.org
 Twenty Sixteen is distributed under the terms of the GNU GPL
@@ -56,7 +56,15 @@ Image used in screenshot.png: A photo by Austin Schmid (https://unsplash.com/sch
 
 == Changelog ==
 
-= Forked = 
+
+= 1.0 =
+* Released: ???
+* Backported updates from `_s` theme
+* Pingback endpoint no longer statically added
+* Add template-functions.php for functions which enhance the theme by hooking into WordPress
+* Replaced Post Formats with Post Kinds
+
+= Forked and rebased to 1.0 = 
 * Initial Release of Fork against 1.3 Branch
 
 = 1.3 =

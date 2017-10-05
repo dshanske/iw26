@@ -45,19 +45,33 @@ function twentysixteen_entry_meta() {
 		twentysixteen_entry_taxonomies();
 	}
 
-	//	if ( function_exists( 'get_simple_location' ) ) {
-		echo '<div class="entry-location">';
+	if ( function_exists( 'get_simple_location' ) && is_singular() ) {
 		echo Loc_View::get_location();
-		echo '</div>';
-//	}
+	}
 
 	if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'twentysixteen' ), get_the_title() ) );
 		echo '</span>';
 	}
+
+	if ( function_exists( 'get_syndication_links' ) ) {
+		twentysixteen_syndication_links();
+	}
 }
 endif;
+
+/*
+ * Wrapper function for a possible custom display of Syndication Links output
+  */
+function twentysixteen_syndication_links() {
+	$args = array(
+		'text' => false,
+		'icons' => true,
+		'show_text_before' => false
+	);
+	echo get_syndication_links( get_the_ID(), $args );
+}
 
 if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
 /**
