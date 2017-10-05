@@ -18,7 +18,7 @@ if ( ! function_exists( 'twentysixteen_single_author_site' ) ) :
  * @since Twenty Sixteen 1.0
  */
 function twentysixteen_single_author_site() {
-	if ( ! is_multi_author() && is_front_page() ) {
+	if ( ! is_multi_author() && is_front_page() && class_exists( 'IndieWeb_Plugin' ) ) {
 		$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
 		printf( '<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
 		get_avatar( get_option( 'iw_default_author' ), $author_avatar_size ),
