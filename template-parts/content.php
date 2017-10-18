@@ -14,7 +14,11 @@
 			<span class="sticky-post"><?php _e( 'Featured', 'twentysixteen' ); ?></span>
 		<?php endif; ?>
 
-		<?php the_title( sprintf( '<h2 class="entry-title p-name"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php 
+			if ( class_exists( 'Kind_Taxonomy' ) && 'article' === get_post_kind_slug() ) {
+				the_title( sprintf( '<h2 class="entry-title p-name"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); 
+			}
+?>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_excerpt(); ?>
