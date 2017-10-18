@@ -3583,6 +3583,7 @@ p > video {
 	body:not(.search-results).group-blog .byline,
 	body:not(.search-results) .entry-kind,
 	body:not(.search-results) .cat-links,
+	body:not(.search-results) .series-links,
 	body:not(.search-results) .tags-links,
 	body:not(.search-results) article:not(.sticky) .posted-on,
 	body:not(.search-results) article:not(.type-page) .comments-link,
