@@ -56,6 +56,9 @@ function twentysixteen_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	add_theme_support( 'microformats2' );
+	add_filter( 'semantic_linkbacks_default_comment_render', '__return_true' );
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
