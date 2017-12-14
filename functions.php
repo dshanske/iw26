@@ -312,11 +312,6 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/plugin-support.php';
 
 /**
- * Custom Comment Walker
- */
-require get_template_directory() . '/inc/class-comment-walker.php';
-
-/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
