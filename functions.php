@@ -57,7 +57,7 @@ function twentysixteen_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	add_theme_support( 'microformats2' );
-	add_filter( 'semantic_linkbacks_default_comment_render', '__return_true' );
+	add_filter( 'semantic_linkbacks_render_comments', '__return_true' );
 
 	/*
 	 * Let WordPress manage the document title.
