@@ -88,17 +88,6 @@ function twentysixteen_get_avatar_data($args, $id_or_email) {
 
 add_filter( 'get_avatar_data', 'twentysixteen_get_avatar_data', 11, 2 );
 
-/**
- * Adds custom classes to the array of comment classes.
- */
-function twentysixteen_comment_class( $classes ) {
-	$classes[] = 'u-comment';
-	$classes[] = 'h-cite';
-	return array_unique( $classes );
-}
-
-add_filter( 'comment_class', 'twentysixteen_comment_class', 11 );
-
 /**  
  * Wraps the_content in e-content
  *

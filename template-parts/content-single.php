@@ -13,8 +13,6 @@
 		<?php the_title( '<h1 class="entry-title p-name">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php twentysixteen_excerpt(); ?>
-
 	<?php twentysixteen_post_thumbnail(); ?>
 
 	<div class="content">

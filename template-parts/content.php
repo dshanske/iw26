@@ -21,8 +21,6 @@
 ?>
 	</header><!-- .entry-header -->
 
-	<?php twentysixteen_excerpt(); ?>
-
 	<?php twentysixteen_post_thumbnail(); ?>
 
 	<div class="content">
