@@ -79,8 +79,9 @@ add_filter( 'post_class', 'twentysixteen_post_classes' );
  */
 function twentysixteen_get_avatar_data($args, $id_or_email) {
 	if ( ! isset( $args['class'] ) ) {
-		$args['class'] = array( 'u-photo' );
-	} else {
+		$args['class'] = array();
+	} 
+	if ( ! in_array( 'u-featured', $args['class'] ) ) {
 		$args['class'][] = 'u-photo';
 	}
 	return $args;
