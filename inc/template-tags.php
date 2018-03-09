@@ -118,7 +118,7 @@ function twentysixteen_entry_date() {
 		get_the_modified_date()
 	);
 
-	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
 		_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
 		esc_url( get_permalink() ),
 		$time_string
