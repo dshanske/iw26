@@ -94,6 +94,9 @@ add_filter( 'get_avatar_data', 'twentysixteen_get_avatar_data', 11, 2 );
  *
  */
 function twentysixteen_the_content( $content ) {
+	if ( is_feed() ) {
+		return $content;
+	}
 	$wrap = '<div class="entry-content e-content">';
 	if ( empty( $content ) ) {
 		return $content;
@@ -107,6 +110,9 @@ add_filter( 'the_content', 'twentysixteen_the_content', 1 );
  *
  */
 function twentysixteen_the_excerpt( $content ) {
+	if ( is_feed() ) {
+		return $content;
+	}
 	$wrap = '<div class="entry-summary p-summary">';
 	if ($content!="") {
 		return $wrap . $content . '</div>';
