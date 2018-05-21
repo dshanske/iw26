@@ -112,10 +112,18 @@ function twentysixteen_the_excerpt( $content ) {
 		return $content;
 	}
 	$wrap = '<div class="entry-summary p-summary">';
-	if ( $content != '' ) {
+	if ( ! empty( $content ) ) {
 		return $wrap . $content . '</div>';
 	}
 	return $content;
 }
+
 add_filter( 'the_excerpt', 'twentysixteen_the_excerpt', 1 );
 
+
+if ( ! function_exists( 'has_content' ) ) {
+	function has_content( $post = 0 ) {
+		$post = get_post( $post );
+		return ( !empty( $post->post_content ) );
+	}
+}

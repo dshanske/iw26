@@ -194,7 +194,13 @@ if ( ! function_exists( 'twentysixteen_post_thumbnail' ) ) :
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+		<?php 
+			the_post_thumbnail( 'post-thumbnail', array( 
+				'alt' => the_title_attribute( array( 
+					'echo' => false,
+				 ) ) 
+			) ); 
+		?>
 	</a>
 
 	<?php
