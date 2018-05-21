@@ -2441,7 +2441,7 @@ body.search-no-results .page-header {
 }
 
 .site-footer span[role=separator]::before {
-        content: '\002f';
+		content: '\002f';
 }
 
 /**

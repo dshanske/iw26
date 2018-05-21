@@ -12,8 +12,8 @@
  * @return array
  */
 function twentysixteen_body_classes( $classes ) {
-        // Adds a class of custom-background-image to sites with a custom background image.	      
-       	if ( get_background_image() ) {
+		// Adds a class of custom-background-image to sites with a custom background image.
+	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
 	}
 
@@ -23,7 +23,7 @@ function twentysixteen_body_classes( $classes ) {
 	}
 	// Adds a class of no-sidebar to sites without active sidebar.
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';		
+		$classes[] = 'no-sidebar';
 	}
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -77,10 +77,10 @@ add_filter( 'post_class', 'twentysixteen_post_classes' );
  * @param int|string|object $id_or_email A user ID, email address, or comment object
  * @return array $args
  */
-function twentysixteen_get_avatar_data($args, $id_or_email) {
+function twentysixteen_get_avatar_data( $args, $id_or_email ) {
 	if ( ! isset( $args['class'] ) ) {
 		$args['class'] = array();
-	} 
+	}
 	if ( ! in_array( 'u-featured', $args['class'] ) ) {
 		$args['class'][] = 'u-photo';
 	}
@@ -89,9 +89,8 @@ function twentysixteen_get_avatar_data($args, $id_or_email) {
 
 add_filter( 'get_avatar_data', 'twentysixteen_get_avatar_data', 11, 2 );
 
-/**  
+/**
  * Wraps the_content in e-content
- *
  */
 function twentysixteen_the_content( $content ) {
 	if ( is_feed() ) {
@@ -107,14 +106,13 @@ add_filter( 'the_content', 'twentysixteen_the_content', 1 );
 
 /**
  * Wraps the_excerpt in p-summary
- *
  */
 function twentysixteen_the_excerpt( $content ) {
 	if ( is_feed() ) {
 		return $content;
 	}
 	$wrap = '<div class="entry-summary p-summary">';
-	if ($content!="") {
+	if ( $content != '' ) {
 		return $wrap . $content . '</div>';
 	}
 	return $content;

@@ -1,7 +1,6 @@
 <?php
 /**
  * Code that improves theme support for various plugins
- *
  */
 
 function twenty_sixteen_indieweb_plugin_support() {

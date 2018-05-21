@@ -19,19 +19,21 @@
 		<?php
 			the_content();
 
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			) );
+			wp_link_pages(
+				array(
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
+					'after'       => '</div>',
+					'link_before' => '<span>',
+					'link_after'  => '</span>',
+					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
+					'separator'   => '<span class="screen-reader-text">, </span>',
+				)
+			);
 
-// 			Hide biography in favor of h-card widget			
-//			if ( '' !== get_the_author_meta( 'description' ) ) {
-//				get_template_part( 'template-parts/biography' );
-//			}
+			// Hide biography in favor of h-card widget
+			// if ( '' !== get_the_author_meta( 'description' ) ) {
+			// get_template_part( 'template-parts/biography' );
+			// }
 		?>
 	</div><!-- .content -->
 

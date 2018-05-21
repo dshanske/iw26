@@ -10,78 +10,81 @@
  */
 
 if ( ! function_exists( 'twentysixteen_single_author_site' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags.
- *
- * Create your own twentysixteen_entry_meta() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function twentysixteen_single_author_site() {
-	if ( ! is_multi_author() && is_front_page() && class_exists( 'IndieWeb_Plugin' ) ) {
-		$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
-		printf( '<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
-		get_avatar( get_option( 'iw_default_author' ), $author_avatar_size ),
-		_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
-		esc_url( get_author_posts_url( get_option( 'iw_default_author' ) ) ),
-		get_the_author()
-		);
-	}
-}
-endif;
-
-if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags.
- *
- * Create your own twentysixteen_entry_meta() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function twentysixteen_entry_meta() {
-	if ( 'post' === get_post_type() ) {
-		if ( is_multi_author() && ! is_singular() ) {
+	/**
+	 * Prints HTML with meta information for the categories, tags.
+	 *
+	 * Create your own twentysixteen_entry_meta() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function twentysixteen_single_author_site() {
+		if ( ! is_multi_author() && is_front_page() && class_exists( 'IndieWeb_Plugin' ) ) {
 			$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
-			printf( '<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
-				get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+			printf(
+				'<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
+				get_avatar( get_option( 'iw_default_author' ), $author_avatar_size ),
 				_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_url( get_author_posts_url( get_option( 'iw_default_author' ) ) ),
 				get_the_author()
 			);
 		}
 	}
+endif;
 
-	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-		twentysixteen_entry_date();
-	}
+if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories, tags.
+	 *
+	 * Create your own twentysixteen_entry_meta() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function twentysixteen_entry_meta() {
+		if ( 'post' === get_post_type() ) {
+			if ( is_multi_author() && ! is_singular() ) {
+				$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
+				printf(
+					'<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
+					get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+					_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
+					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+					get_the_author()
+				);
+			}
+		}
 
-	if ( class_exists( 'Kind_Taxonomy' ) ) {
-		$kind = get_post_kind();
-		printf( '<span class="entry-kind">%1$s<a href="%2$s">%3$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'twentysixteen' ) ),
-			esc_url( get_post_kind_link( $kind ) ),
-			get_post_kind_string( $kind )
-		);
-	}
+		if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+			twentysixteen_entry_date();
+		}
 
-	if ( 'post' === get_post_type() ) {
-		twentysixteen_entry_taxonomies();
-	}
+		if ( class_exists( 'Kind_Taxonomy' ) ) {
+			$kind = get_post_kind();
+			printf(
+				'<span class="entry-kind">%1$s<a href="%2$s">%3$s</a></span>',
+				sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'twentysixteen' ) ),
+				esc_url( get_post_kind_link( $kind ) ),
+				get_post_kind_string( $kind )
+			);
+		}
 
-	if ( function_exists( 'get_simple_location' ) && is_singular() ) {
-		echo Loc_View::get_location();
-	}
+		if ( 'post' === get_post_type() ) {
+			twentysixteen_entry_taxonomies();
+		}
 
-	if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( sprintf( __( 'Leave a response<span class="screen-reader-text"> on %s</span>', 'twentysixteen' ), get_the_title() ) );
-		echo '</span>';
-	}
+		if ( function_exists( 'get_simple_location' ) && is_singular() ) {
+			echo Loc_View::get_location();
+		}
 
-	if ( function_exists( 'get_syndication_links' ) ) {
-		twentysixteen_syndication_links();
+		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link">';
+			comments_popup_link( sprintf( __( 'Leave a response<span class="screen-reader-text"> on %s</span>', 'twentysixteen' ), get_the_title() ) );
+			echo '</span>';
+		}
+
+		if ( function_exists( 'get_syndication_links' ) ) {
+			twentysixteen_syndication_links();
+		}
 	}
-}
 endif;
 
 /*
@@ -89,98 +92,102 @@ endif;
   */
 function twentysixteen_syndication_links() {
 	$args = array(
-		'text' => false,
-		'icons' => true,
-		'show_text_before' => false
+		'text'             => false,
+		'icons'            => true,
+		'show_text_before' => false,
 	);
 	echo get_syndication_links( get_the_ID(), $args );
 }
 
 if ( ! function_exists( 'twentysixteen_entry_date' ) ) :
-/**
- * Prints HTML with date information for current post.
- *
- * Create your own twentysixteen_entry_date() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function twentysixteen_entry_date() {
-	$time_string = '<time class="entry-date published updated dt-published dt-updated" datetime="%1$s">%2$s</time>';
+	/**
+	 * Prints HTML with date information for current post.
+	 *
+	 * Create your own twentysixteen_entry_date() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function twentysixteen_entry_date() {
+		$time_string = '<time class="entry-date published updated dt-published dt-updated" datetime="%1$s">%2$s</time>';
 
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time><time class="updated dt-updated" datetime="%3$s">%4$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time><time class="updated dt-updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( DATE_W3C ) ),
+			get_the_time() . '<BR />' . get_the_date(),
+			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			get_the_modified_date()
+		);
+
+		printf(
+			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
+			_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
+			esc_url( get_permalink() ),
+			$time_string
+		);
 	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( DATE_W3C ) ),
-		get_the_time() . '<BR />' . get_the_date(),
-		esc_attr( get_the_modified_date( DATE_W3C ) ),
-		get_the_modified_date()
-	);
-
-	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
-		_x( 'Posted on', 'Used before publish date.', 'twentysixteen' ),
-		esc_url( get_permalink() ),
-		$time_string
-	);
-}
 endif;
 
 if ( ! function_exists( 'twentysixteen_entry_taxonomies' ) ) :
-/**
- * Prints HTML with category and tags for current post.
- *
- * Create your own twentysixteen_entry_taxonomies() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function twentysixteen_entry_taxonomies() {
-//	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
-//	if ( $categories_list && twentysixteen_categorized_blog() ) {
-//		printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-//			_x( 'Categories', 'Used before category names.', 'twentysixteen' ),
-//			$categories_list
-//		);
-	//	}
-	if ( taxonomy_exists( 'series' ) ) {
-		$series_list = get_the_term_list( get_the_ID(), 'series', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
-		if ( $series_list ) {
-			printf( '<span class="series-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-				_x( 'Series', 'Used before series names.', 'twentysixteen' ),
-				$series_list
+	/**
+	 * Prints HTML with category and tags for current post.
+	 *
+	 * Create your own twentysixteen_entry_taxonomies() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function twentysixteen_entry_taxonomies() {
+		// $categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+		// if ( $categories_list && twentysixteen_categorized_blog() ) {
+		// printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+		// _x( 'Categories', 'Used before category names.', 'twentysixteen' ),
+		// $categories_list
+		// );
+		// }
+		if ( taxonomy_exists( 'series' ) ) {
+			$series_list = get_the_term_list( get_the_ID(), 'series', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+			if ( $series_list ) {
+				printf(
+					'<span class="series-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+					_x( 'Series', 'Used before series names.', 'twentysixteen' ),
+					$series_list
+				);
+			}
+		}
+		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+		if ( $tags_list ) {
+			printf(
+				'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Tags', 'Used before tag names.', 'twentysixteen' ),
+				$tags_list
 			);
 		}
 	}
-	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
-	if ( $tags_list ) {
-		printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
-			_x( 'Tags', 'Used before tag names.', 'twentysixteen' ),
-			$tags_list
-		);
-	}
-}
 endif;
 
 if ( ! function_exists( 'twentysixteen_post_thumbnail' ) ) :
-/**
- * Displays an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
- *
- * Create your own twentysixteen_post_thumbnail() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
-function twentysixteen_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
-	}
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 *
+	 * Create your own twentysixteen_post_thumbnail() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 */
+	function twentysixteen_post_thumbnail() {
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
 
-	if ( is_singular() ) :
-	?>
+		if ( is_singular() ) :
+		?>
 
-	<div class="post-thumbnail">
+		<div class="post-thumbnail">
 		<?php the_post_thumbnail(); ?>
 	</div><!-- .post-thumbnail -->
 
@@ -190,8 +197,9 @@ function twentysixteen_post_thumbnail() {
 		<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 	</a>
 
-	<?php endif; // End is_singular()
-}
+	<?php
+	endif; // End is_singular()
+	}
 endif;
 
 if ( ! function_exists( 'twentysixteen_excerpt' ) ) :
@@ -209,69 +217,74 @@ if ( ! function_exists( 'twentysixteen_excerpt' ) ) :
 	function twentysixteen_excerpt( $class = 'entry-summary' ) {
 		$class = esc_attr( $class );
 
-		if ( has_excerpt() || is_search() ) : ?>
+		if ( has_excerpt() || is_search() ) :
+		?>
 			<div class="<?php echo $class; ?>">
 				<?php the_excerpt(); ?>
 			</div><!-- .<?php echo $class; ?> -->
-		<?php endif;
+		<?php
+		endif;
 	}
 endif;
 
 if ( ! function_exists( 'twentysixteen_excerpt_more' ) && ! is_admin() ) :
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and
- * a 'Continue reading' link.
- *
- * Create your own twentysixteen_excerpt_more() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- *
- * @return string 'Continue reading' link prepended with an ellipsis.
- */
-function twentysixteen_excerpt_more() {
-	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
-}
-add_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
+	/**
+	 * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+	 * a 'Continue reading' link.
+	 *
+	 * Create your own twentysixteen_excerpt_more() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 *
+	 * @return string 'Continue reading' link prepended with an ellipsis.
+	 */
+	function twentysixteen_excerpt_more() {
+		$link = sprintf(
+			'<a href="%1$s" class="more-link">%2$s</a>',
+			esc_url( get_permalink( get_the_ID() ) ),
+			/* translators: %s: Name of current post */
+			sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ), get_the_title( get_the_ID() ) )
+		);
+		return ' &hellip; ' . $link;
+	}
+	add_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 endif;
 
 if ( ! function_exists( 'twentysixteen_categorized_blog' ) ) :
-/**
- * Determines whether blog/site has more than one category.
- *
- * Create your own twentysixteen_categorized_blog() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- *
- * @return bool True if there is more than one category, false otherwise.
- */
-function twentysixteen_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'twentysixteen_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+	/**
+	 * Determines whether blog/site has more than one category.
+	 *
+	 * Create your own twentysixteen_categorized_blog() function to override in a child theme.
+	 *
+	 * @since Twenty Sixteen 1.0
+	 *
+	 * @return bool True if there is more than one category, false otherwise.
+	 */
+	function twentysixteen_categorized_blog() {
+		if ( false === ( $all_the_cool_cats = get_transient( 'twentysixteen_categories' ) ) ) {
+			// Create an array of all the categories that are attached to posts.
+			$all_the_cool_cats = get_categories(
+				array(
+					'fields'     => 'ids',
+					// We only need to know if there is more than one category.
+					'number'     => 2,
+				)
+			);
 
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
+			// Count the number of categories that are attached to the posts.
+			$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'twentysixteen_categories', $all_the_cool_cats );
+			set_transient( 'twentysixteen_categories', $all_the_cool_cats );
+		}
+
+		if ( $all_the_cool_cats > 1 ) {
+			// This blog has more than 1 category so twentysixteen_categorized_blog should return true.
+			return true;
+		} else {
+			// This blog has only 1 category so twentysixteen_categorized_blog should return false.
+			return false;
+		}
 	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so twentysixteen_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so twentysixteen_categorized_blog should return false.
-		return false;
-	}
-}
 endif;
 
 /**
@@ -287,19 +300,19 @@ function twentysixteen_category_transient_flusher() {
 	delete_transient( 'twentysixteen_categories' );
 }
 add_action( 'edit_category', 'twentysixteen_category_transient_flusher' );
-add_action( 'save_post',     'twentysixteen_category_transient_flusher' );
+add_action( 'save_post', 'twentysixteen_category_transient_flusher' );
 
 if ( ! function_exists( 'twentysixteen_the_custom_logo' ) ) :
-/**
- * Displays the optional custom logo.
- *
- * Does nothing if the custom logo is not available.
- *
- * @since Twenty Sixteen 1.2
- */
-function twentysixteen_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
+	/**
+	 * Displays the optional custom logo.
+	 *
+	 * Does nothing if the custom logo is not available.
+	 *
+	 * @since Twenty Sixteen 1.2
+	 */
+	function twentysixteen_the_custom_logo() {
+		if ( function_exists( 'the_custom_logo' ) ) {
+			the_custom_logo();
+		}
 	}
-}
 endif;
