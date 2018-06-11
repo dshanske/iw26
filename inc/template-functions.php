@@ -121,6 +121,50 @@ function twentysixteen_the_excerpt( $content ) {
 add_filter( 'the_excerpt', 'twentysixteen_the_excerpt', 1 );
 
 
+function get_the_archive_thumbnail_url() {
+	if ( is_tax() || is_cat() || is_tag() ) {
+		$term = get_queried_object();
+		$image_id = get_term_meta( $term->term_id, 'image', true );
+	}
+	if ( $image_id ) {
+		return wp_get_attachment_imagE_url( $image_id, 'thumbnail', true );
+	}
+}
+
+function get_the_archive_thumbnail() {
+	if ( is_tax() || is_cat() || is_tag() ) {
+		$term = get_queried_object();
+		$image_id = get_term_meta( $term->term_id, 'image', true );
+	}
+
+	if ( $image_id ) {
+		return wp_get_attachment_image( $image_id, 'thumbnail', true );
+	}
+}
+
+function the_archive_thumbnail() {
+	echo get_the_archive_thumbnail();
+}
+
+function twentysixteen_image_rss() {
+	$url = get_the_archive_thumbnail_url();
+	if ( ! $url ) {
+		return;
+	}
+	echo '<image>' . PHP_EOL;
+	echo '<url>' . $url . '</url>' . PHP_EOL;
+	echo '<title>' . get_the_archive_title() . '</title>' . PHP_EOL;
+	echo '<link>';
+	self_link();
+	echo '</link>' . PHP_EOL;
+	echo '</image>' . PHP_EOL;
+}
+
+add_action('rss2_head','twentysixteen_image_rss');
+add_action('rss_head','twentysixteen_image_rss)');
+add_action('commentsrss2_head','twentysixteen_image_rss');
+
+
 if ( ! function_exists( 'has_content' ) ) {
 	function has_content( $post = 0 ) {
 		$post = get_post( $post );
