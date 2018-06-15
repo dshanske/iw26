@@ -122,7 +122,8 @@ add_filter( 'the_excerpt', 'twentysixteen_the_excerpt', 1 );
 
 
 function get_the_archive_thumbnail_url() {
-	if ( is_tax() || is_cat() || is_tag() ) {
+	$image_id = null;
+	if ( is_tax() || is_category() || is_tag() ) {
 		$term = get_queried_object();
 		$image_id = get_term_meta( $term->term_id, 'image', true );
 	}
@@ -132,7 +133,8 @@ function get_the_archive_thumbnail_url() {
 }
 
 function get_the_archive_thumbnail() {
-	if ( is_tax() || is_cat() || is_tag() ) {
+	$image_id = null;
+	if ( is_tax() || is_category() || is_tag() ) {
 		$term = get_queried_object();
 		$image_id = get_term_meta( $term->term_id, 'image', true );
 	}
