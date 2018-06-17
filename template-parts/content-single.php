@@ -18,13 +18,22 @@
 	<div class="content">
 	<?php
 
-		if ( has_content() ) {
-			the_content();
-		}
-		else if ( has_excerpt() ) {
+		if ( ! has_content() && has_excerpt() ) {
 			the_excerpt();
 		}
+		else {
+			the_content();
+		}
+			// Hide biography in favor of h-card widget
+			// if ( '' !== get_the_author_meta( 'description' ) ) {
+			// get_template_part( 'template-parts/biography' );
+			// }
+		?>
+	</div><!-- .content -->
 
+	<footer class="entry-footer">
+		<?php twentysixteen_entry_meta(); ?>
+		<?php
 			wp_link_pages(
 				array(
 					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
@@ -36,16 +45,6 @@
 				)
 			);
 
-			// Hide biography in favor of h-card widget
-			// if ( '' !== get_the_author_meta( 'description' ) ) {
-			// get_template_part( 'template-parts/biography' );
-			// }
-		?>
-	</div><!-- .content -->
-
-	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
-		<?php
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */

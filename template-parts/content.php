@@ -24,8 +24,10 @@
 	<?php twentysixteen_post_thumbnail(); ?>
 
 	<div class="content">
-	<?php
-		if ( has_content() ) {
+<?php
+		if ( ! has_content() && has_excerpt() ) {
+			the_excerpt();
+		} else {
 			/* translators: %s: Name of current post */
 			the_content(
 				sprintf(
@@ -34,10 +36,6 @@
 				)
 			);
 		}
-		else if ( has_excerpt() ) {
-			the_excerpt();
-		}
-
 		?>
 	</div><!-- .content -->
 

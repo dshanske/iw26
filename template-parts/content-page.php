@@ -19,6 +19,10 @@
 		<?php
 		the_content();
 
+		?>
+	</div><!-- .content -->
+
+	<?php
 		wp_link_pages(
 			array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
@@ -29,10 +33,6 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			)
 		);
-		?>
-	</div><!-- .content -->
-
-	<?php
 		edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
