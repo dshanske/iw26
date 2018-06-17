@@ -148,7 +148,7 @@ if ( ! function_exists( 'twentysixteen_entry_taxonomies' ) ) :
 		// );
 		// }
 		if ( taxonomy_exists( 'series' ) ) {
-			$series_list = get_the_term_list( get_the_ID(), 'series', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
+			$series_list = get_the_term_list( get_the_ID(), 'series', '', _x( ', ', 'Used between list items, there is a space after the comma.', 'twentysixteen' ) );
 			if ( $series_list ) {
 				printf(
 					'<span class="series-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
