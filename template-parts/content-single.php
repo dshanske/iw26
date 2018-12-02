@@ -24,10 +24,10 @@
 		else {
 			the_content();
 		}
-			// Hide biography in favor of h-card widget
-			// if ( '' !== get_the_author_meta( 'description' ) ) {
-			// get_template_part( 'template-parts/biography' );
-			// }
+			 // Hide biography in favor of h-card widget
+			 if ( ! is_string ( is_active_widget( false, false, 'hcard_widget', true ) ) ) {
+			 	get_template_part( 'template-parts/biography' );
+			 }
 		?>
 	</div><!-- .content -->
 

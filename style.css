@@ -1973,6 +1973,8 @@ body:not(.search-results) .entry-summary > :last-child,
 
 .author-link {
 	white-space: nowrap;
+	color: black;
+	text-decoration: none;
 }
 
 .entry-footer {
