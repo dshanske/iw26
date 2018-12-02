@@ -44,10 +44,21 @@ add_filter( 'body_class', 'twentysixteen_body_classes' );
  */
 function twentysixteen_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+		printf( '<link rel="pingback" href="%1$s" />', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'twentysixteen_pingback_header' );
+
+/**
+ * Adds a rel-feed if the main page is not a list of posts
+ */
+function twentysixteen_feed_header() {
+	if ( is_front_page() && 0 !== (int) get_option( 'page_for_posts', 0 ) ) {
+		printf( '<link rel="feed" type="text/html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'All Posts Feed', 'twentysixteen' ) );
+	}
+}
+add_action( 'wp_head', 'twentysixteen_feed_header' );
+
 
 /**
  * Adds custom classes to the array of post classes.
