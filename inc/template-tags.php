@@ -71,8 +71,10 @@ if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
 			twentysixteen_entry_taxonomies();
 		}
 
-		if ( function_exists( 'get_simple_location' ) && is_singular() ) {
+		if ( class_exists( 'WP_Geo_Data' ) ) {
 			echo Loc_View::get_location();
+			// If you want to just show the icon 
+			// echo '<span class="sloc-display">' . Loc_View::get_icon() . '</span>';
 		}
 
 		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
