@@ -21,8 +21,8 @@ if ( ! function_exists( 'twentysixteen_single_author_site' ) ) :
 		if ( ! is_multi_author() && is_front_page() && class_exists( 'IndieWeb_Plugin' ) ) {
 			$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
 			printf(
-				'<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
-				get_avatar( get_option( 'iw_default_author' ), $author_avatar_size ),
+				'<span class="byline"><span class="p-author author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
+				get_avatar( get_option( 'iw_default_author', get_the_author_meta( 'ID' ) ), $author_avatar_size ),
 				_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
 				esc_url( get_author_posts_url( get_option( 'iw_default_author' ) ) ),
 				get_the_author()
@@ -44,8 +44,8 @@ if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
 			if ( is_multi_author() && ! is_singular() ) {
 				$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
 				printf(
-					'<span class="byline"><span class="author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
-					get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+					'<span class="byline"><span class="author p-author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
+					get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ),
 					_x( 'Author', 'Used before post author name.', 'twentysixteen' ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
