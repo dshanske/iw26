@@ -21,6 +21,16 @@ get_header(); ?>
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentysixteen' ); ?></p>
 
 					<?php get_search_form(); ?>
+
+					<br />
+
+	
+					<p><?php _e( 'Or search for posts by their syndicated copies', 'twentysixteen' ); ?></p>					
+
+					<?php if ( function_exists( 'get_original_of_form' ) ) {
+						get_original_of_form();
+					}
+					?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
