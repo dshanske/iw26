@@ -21,12 +21,12 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<div class="site-inner">
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'iw26' ); ?></a>
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
 				<div class="site-branding">
-					<?php twentysixteen_the_custom_logo(); ?>
+					<?php iw26_the_custom_logo(); ?>
 
 					<?php if ( is_front_page() && is_home() ) : ?>
 						<h1 class="site-title p-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -43,11 +43,11 @@ if ( $description || is_customize_preview() ) :
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
+					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'iw26' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
+							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'iw26' ); ?>">
 								<?php
 									wp_nav_menu(
 										array(
@@ -60,7 +60,7 @@ if ( $description || is_customize_preview() ) :
 						<?php endif; ?>
 
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
+							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'iw26' ); ?>">
 								<?php
 									wp_nav_menu(
 										array(
@@ -81,7 +81,7 @@ if ( $description || is_customize_preview() ) :
 			<?php if ( get_header_image() ) : ?>
 				<?php
 					/**
-					 * Filter the default twentysixteen custom header sizes attribute.
+					 * Filter the default iw26 custom header sizes attribute.
 					 *
 					 * @since Twenty Sixteen 1.0
 					 *
@@ -89,7 +89,7 @@ if ( $description || is_customize_preview() ) :
 					 * for Custom Header. Default '(max-width: 709px) 85vw,
 					 * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
 					 */
-					$custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
+					$custom_header_sizes = apply_filters( 'iw26_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
 				?>
 				<div class="header-image">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

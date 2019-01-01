@@ -18,7 +18,7 @@
 		 *
 		 * @param int $size The avatar height and width size in pixels.
 		 */
-		$author_bio_avatar_size = apply_filters( 'twentysixteen_author_bio_avatar_size', 42 );
+		$author_bio_avatar_size = apply_filters( 'iw26_author_bio_avatar_size', 42 );
 
 		echo get_avatar( get_the_author_meta( 'ID' ), $author_bio_avatar_size );
 		?>

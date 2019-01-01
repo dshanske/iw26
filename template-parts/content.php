@@ -11,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-			<span class="sticky-post"><?php _e( 'Featured', 'twentysixteen' ); ?></span>
+			<span class="sticky-post"><?php _e( 'Featured', 'iw26' ); ?></span>
 		<?php endif; ?>
 
 		<?php
@@ -21,7 +21,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php twentysixteen_post_thumbnail(); ?>
+	<?php iw26_post_thumbnail(); ?>
 
 	<div class="content">
 <?php
@@ -31,7 +31,7 @@ if ( ! has_content() && has_excerpt() ) {
 	/* translators: %s: Name of current post */
 	the_content(
 		sprintf(
-			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'iw26' ),
 			get_the_title()
 		)
 	);
@@ -43,21 +43,21 @@ if ( ! has_content() && has_excerpt() ) {
 		<?php
 			wp_link_pages(
 				array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'iw26' ) . '</span>',
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
+					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'iw26' ) . ' </span>%',
 					'separator'   => '<span class="screen-reader-text">, </span>',
 				)
 			);
-			twentysixteen_entry_meta();
+			iw26_entry_meta();
 			?>
 		<?php
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'iw26' ),
 					get_the_title()
 				),
 				'<span class="edit-link">',

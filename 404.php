@@ -14,18 +14,18 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'twentysixteen' ); ?></h1>
+					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'iw26' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentysixteen' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'iw26' ); ?></p>
 
 					<?php get_search_form(); ?>
 
 					<br />
 
 	
-					<p><?php _e( 'Or search for posts by their syndicated copies', 'twentysixteen' ); ?></p>					
+					<p><?php _e( 'Or search for posts by their syndicated copies', 'iw26' ); ?></p>					
 
 					<?php
 					if ( function_exists( 'get_original_of_form' ) ) {

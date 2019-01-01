@@ -2,7 +2,6 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package twentysixteen_indieweb
  */
 
 /**
@@ -11,7 +10,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function twentysixteen_body_classes( $classes ) {
+function iw26_body_classes( $classes ) {
 		// Adds a class of custom-background-image to sites with a custom background image.
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
@@ -37,27 +36,27 @@ function twentysixteen_body_classes( $classes ) {
 	}
 	return $classes;
 }
-add_filter( 'body_class', 'twentysixteen_body_classes' );
+add_filter( 'body_class', 'iw26_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function twentysixteen_pingback_header() {
+function iw26_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%1$s" />', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'twentysixteen_pingback_header' );
+add_action( 'wp_head', 'iw26_pingback_header' );
 
 /**
  * Adds a rel-feed if the main page is not a list of posts
  */
-function twentysixteen_feed_header() {
+function iw26_feed_header() {
 	if ( is_front_page() && 0 !== (int) get_option( 'page_for_posts', 0 ) ) {
-		printf( '<link rel="feed" type="text/html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'All Posts Feed', 'twentysixteen' ) );
+		printf( '<link rel="feed" type="text/html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'All Posts Feed', 'iw26' ) );
 	}
 }
-add_action( 'wp_head', 'twentysixteen_feed_header' );
+add_action( 'wp_head', 'iw26_feed_header' );
 
 
 /**
@@ -66,7 +65,7 @@ add_action( 'wp_head', 'twentysixteen_feed_header' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function twentysixteen_post_classes( $classes ) {
+function iw26_post_classes( $classes ) {
 	$classes = array_diff( $classes, array( 'hentry' ) );
 	if ( ! is_singular() ) {
 		if ( 'page' !== get_post_type() ) {
@@ -79,7 +78,7 @@ function twentysixteen_post_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'post_class', 'twentysixteen_post_classes' );
+add_filter( 'post_class', 'iw26_post_classes' );
 
 /**
  * Adds mf2 to avatar
@@ -88,7 +87,7 @@ add_filter( 'post_class', 'twentysixteen_post_classes' );
  * @param int|string|object $id_or_email A user ID, email address, or comment object
  * @return array $args
  */
-function twentysixteen_get_avatar_data( $args, $id_or_email ) {
+function iw26_get_avatar_data( $args, $id_or_email ) {
 	if ( ! isset( $args['class'] ) ) {
 		$args['class'] = array();
 	}
@@ -98,12 +97,12 @@ function twentysixteen_get_avatar_data( $args, $id_or_email ) {
 	return $args;
 }
 
-add_filter( 'get_avatar_data', 'twentysixteen_get_avatar_data', 11, 2 );
+add_filter( 'get_avatar_data', 'iw26_get_avatar_data', 11, 2 );
 
 /**
  * Wraps the_content in e-content
  */
-function twentysixteen_the_content( $content ) {
+function iw26_the_content( $content ) {
 	if ( is_feed() ) {
 		return $content;
 	}
@@ -113,12 +112,12 @@ function twentysixteen_the_content( $content ) {
 	}
 	return $wrap . $content . '</div>';
 }
-add_filter( 'the_content', 'twentysixteen_the_content', 1 );
+add_filter( 'the_content', 'iw26_the_content', 1 );
 
 /**
  * Wraps the_excerpt in p-summary
  */
-function twentysixteen_the_excerpt( $content ) {
+function iw26_the_excerpt( $content ) {
 	if ( is_feed() ) {
 		return $content;
 	}
@@ -129,7 +128,7 @@ function twentysixteen_the_excerpt( $content ) {
 	return $content;
 }
 
-add_filter( 'the_excerpt', 'twentysixteen_the_excerpt', 1 );
+add_filter( 'the_excerpt', 'iw26_the_excerpt', 1 );
 
 
 function get_the_archive_thumbnail_url() {
@@ -163,7 +162,7 @@ function the_archive_thumbnail() {
 	echo get_the_archive_thumbnail();
 }
 
-function twentysixteen_image_rss() {
+function iw26_image_rss() {
 	$url = get_the_archive_thumbnail_url();
 	if ( ! $url ) {
 		return;
@@ -177,9 +176,9 @@ function twentysixteen_image_rss() {
 	echo '</image>' . PHP_EOL;
 }
 
-add_action( 'rss2_head', 'twentysixteen_image_rss' );
-add_action( 'rss_head', 'twentysixteen_image_rss)' );
-add_action( 'commentsrss2_head', 'twentysixteen_image_rss' );
+add_action( 'rss2_head', 'iw26_image_rss' );
+add_action( 'rss_head', 'iw26_image_rss)' );
+add_action( 'commentsrss2_head', 'iw26_image_rss' );
 
 
 if ( ! function_exists( 'has_content' ) ) {
