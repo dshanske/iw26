@@ -222,11 +222,6 @@ input[type="search"].search-field {
 	right: 1px;
 }
 
-.social-navigation li {
-	float: right;
-	margin: 0 0 0.4375em 0.4375em;
-}
-
 .pagination:before {
 	left: 0;
 	right: auto;

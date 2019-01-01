@@ -93,7 +93,6 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Menu', 'iw26' ),
-				'social'  => __( 'Social Links Menu', 'iw26' ),
 			)
 		);
 

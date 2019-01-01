@@ -271,7 +271,6 @@ optgroup {
  */
 
 .menu-item-has-children a:after,
-.social-navigation a:before,
 .dropdown-toggle:after,
 .bypostauthor > article .fn:after,
 .comment-reply-title small a:before,
@@ -905,47 +904,6 @@ a:active {
 	content: "\f432";
 }
 
-.site-header .main-navigation + .social-navigation {
-	margin-top: 1.75em;
-}
-
-.site-footer .social-navigation {
-	margin-bottom: 1.75em;
-}
-
-.social-navigation ul {
-	list-style: none;
-	margin: 0 0 -0.4375em;
-}
-
-.social-navigation li {
-	float: left;
-	margin: 0 0.4375em 0.4375em 0;
-}
-
-.social-navigation a {
-	border: 1px solid #d1d1d1;
-	border-radius: 50%;
-	color: #1a1a1a;
-	display: block;
-	height: 35px;
-	position: relative;
-	width: 35px;
-}
-
-.social-navigation a:before {
-	content: "\f415";
-	height: 33px;
-	line-height: 33px;
-	text-align: center;
-	width: 33px;
-}
-
-.social-navigation a:hover:before,
-.social-navigation a:focus:before {
-	color: #007acc;
-}
-
 .svg-icon {
 	fill: currentColor;
 	padding-left: 2px;
@@ -1281,8 +1239,6 @@ blockquote:after,
 .site-main > article:after,
 .primary-menu:before,
 .primary-menu:after,
-.social-links-menu:before,
-.social-links-menu:after,
 .textwidget:before,
 .textwidget:after,
 .content-bottom-widgets:before,
@@ -1299,7 +1255,6 @@ blockquote:after,
 .site-content:after,
 .site-main > article:after,
 .primary-menu:after,
-.social-links-menu:after,
 .textwidget:after,
 .content-bottom-widgets:after {
 	clear: both;
@@ -2714,10 +2669,6 @@ p > video {
 		margin: 1.3125em 0;
 	}
 
-	.site-header .main-navigation + .social-navigation {
-		margin-top: 2.625em;
-	}
-
 	.header-image {
 		margin: 1.3125em 0;
 	}
@@ -3015,7 +2966,6 @@ p > video {
 	.dropdown-toggle,
 	.main-navigation ul .dropdown-toggle.toggled-on,
 	.menu-toggle,
-	.site-header .social-navigation,
 	.site-footer .main-navigation {
 		display: none;
 	}
@@ -3265,13 +3215,6 @@ p > video {
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		padding: 0 4.5455% 3.5em;
-	}
-
-	.site-footer .social-navigation {
-		margin: 0;
-		-webkit-order: 2;
-		-ms-flex-order: 2;
-		order: 2;
 	}
 
 	.site-info {
@@ -3670,7 +3613,6 @@ p > video {
 	textarea,
 	.navigation,
 	.main-navigation,
-	.social-navigation,
 	.sidebar,
 	.content-bottom-widgets,
 	.header-image,

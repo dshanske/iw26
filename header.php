@@ -42,7 +42,7 @@ if ( $description || is_customize_preview() ) :
 					<?php endif; ?>
 				</div><!-- .site-branding -->
 
-				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'iw26' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
@@ -57,22 +57,6 @@ if ( $description || is_customize_preview() ) :
 									);
 								?>
 							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-
-						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'iw26' ); ?>">
-								<?php
-									wp_nav_menu(
-										array(
-											'theme_location' => 'social',
-											'menu_class'  => 'social-links-menu',
-											'depth'       => 1,
-											'link_before' => '<span class="screen-reader-text">',
-											'link_after'  => '</span>',
-										)
-									);
-								?>
-							</nav><!-- .social-navigation -->
 						<?php endif; ?>
 					</div><!-- .site-header-menu -->
 				<?php endif; ?>
