@@ -1,30 +1,33 @@
 === IndieWeb Twenty Sixteen ===
-Contributors: IndieWeb WordPress Outreach, the WordPress team
+Contributors: dshanske
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.8.2
+Tested up to: WordPress 5.0.2
 Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 == Description ==
-This is an IndieWeb fork of Twenty Sixteen, which itself is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Twenty Sixteen will make your WordPress look beautiful everywhere.
+This is an IndieWeb fork of Twenty Sixteen, which itself is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites.
 
 * Mobile-first, Responsive Layout
 * Custom Colors
 * Custom Header
-* Social Links
 * Post Kinds Plugin Support
-* The GPL v2.0 or later license. :) Use it to make something cool.
+* Simple Location Plugin Support
+* Indieweb Plugin Support
+* Syndication Links Plugin Support
+* Removal of older compatibility options and backport of improvements
 
-For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
+
+For more information about the Indieweb go to https://indieweb.org. And for more about the original Twenty Sixteen please 
+go to https://codex.wordpress.org/Twenty_Sixteen.
 
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Twenty Sixteen in the search form and press the 'Enter' key on your keyboard.
+2. Type in IW26 in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Original Copyright ==
@@ -44,11 +47,7 @@ GNU General Public License for more details.
 
 Twenty Sixteen Theme bundles the following third-party resources:
 
-HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
-Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
-
-Genericons icon font, Copyright 2013-2015 Automattic.com
+Genericons Neue icon font, Copyright 2013-2015 Automattic.com
 License: GNU GPL, Version 2 (or later)
 Source: http://www.genericons.com
 
@@ -63,30 +62,13 @@ Image used in screenshot.png: A photo by Austin Schmid (https://unsplash.com/sch
 * Pingback endpoint no longer statically added
 * Add template-functions.php for functions which enhance the theme by hooking into WordPress
 * Replaced Post Formats with Post Kinds
+* Add support for Simple Location plugin
+* Add support for Syndication Links plugin
+* Remove HTML5 shiv and IE compat support
+* Replace Genericons with Genericons Neue
+* Add developer tool support
+* Update codesniffing and add composer dev dependencies for codesniffing
 
-= Forked and rebased to 1.0 = 
-* Initial Release of Fork against 1.3 Branch
-
-= 1.3 =
-* Released: August 16, 2016
-
-https://codex.wordpress.org/Twenty_Sixteen_Theme_Changelog#Version_1.3
-
-= 1.2 =
-* Released: April 12, 2016
-
-https://codex.wordpress.org/Twenty_Sixteen_Theme_Changelog#Version_1.2
-
-= 1.1 =
-* Released: January 6, 2016
-
-https://codex.wordpress.org/Twenty_Sixteen_Theme_Changelog#Version_1.1
-
-= 1.0 =
-* Released: December 8, 2015
-
-Initial release
-
-== Notes ==
-
-Only the default and dark color schemes are accessibility ready.
+= Pre-Form =
+* Original release of TwentySixteen was December 2015.
+* https://codex.wordpress.org/Twenty_Sixteen_Theme_Changelog
