@@ -20,7 +20,7 @@
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 	<exclude-pattern>*/vendor</exclude-pattern>
-
+	<exclude-pattern>*/node_modules</exclude-pattern>
 	<!--
 	#############################################################################
 	USE THE WordPress RULESET

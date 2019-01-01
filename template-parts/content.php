@@ -18,25 +18,25 @@
 		if ( class_exists( 'Kind_Taxonomy' ) && 'article' === get_post_kind_slug() ) {
 			the_title( sprintf( '<h2 class="entry-title p-name"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 		}
-?>
+		?>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_post_thumbnail(); ?>
 
 	<div class="content">
 <?php
-		if ( ! has_content() && has_excerpt() ) {
-			the_excerpt();
-		} else {
-			/* translators: %s: Name of current post */
-			the_content(
-				sprintf(
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				)
-			);
-		}
-		?>
+if ( ! has_content() && has_excerpt() ) {
+	the_excerpt();
+} else {
+	/* translators: %s: Name of current post */
+	the_content(
+		sprintf(
+			__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+			get_the_title()
+		)
+	);
+}
+?>
 	</div><!-- .content -->
 
 	<footer class="entry-footer">
@@ -63,6 +63,6 @@
 				'<span class="edit-link">',
 				'</span>'
 			);
-		?>
+			?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

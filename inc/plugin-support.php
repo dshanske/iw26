@@ -5,8 +5,8 @@
 
 function twenty_sixteen_indieweb_plugin_support() {
 	/*
- 	* Adds support for Syndication Links
- 	*/
+	 * Adds support for Syndication Links
+	 */
 	if ( class_exists( 'Syn_Meta' ) && has_filter( 'the_content', array( 'Syn_Config', 'the_content' ) ) ) {
 		remove_filter( 'the_content', array( 'Syn_Config', 'the_content' ), 30 );
 	}

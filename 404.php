@@ -27,7 +27,8 @@ get_header(); ?>
 	
 					<p><?php _e( 'Or search for posts by their syndicated copies', 'twentysixteen' ); ?></p>					
 
-					<?php if ( function_exists( 'get_original_of_form' ) ) {
+					<?php
+					if ( function_exists( 'get_original_of_form' ) ) {
 						get_original_of_form();
 					}
 					?>

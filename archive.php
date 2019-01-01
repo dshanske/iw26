@@ -24,12 +24,12 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-<?php
+			<?php
 					the_archive_thumbnail();
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 
-				?>
+			?>
 			</header><!-- .page-header -->
 
 			<?php
@@ -44,8 +44,7 @@ get_header(); ?>
 				 */
 				if ( class_exists( 'Kind_Taxonomy' ) ) {
 					get_template_part( 'template-parts/content', get_post_kind() );
-				}
-				else {
+				} else {
 					get_template_part( 'template-parts/content', get_post_format() );
 				}
 				// End the loop.

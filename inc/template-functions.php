@@ -135,7 +135,7 @@ add_filter( 'the_excerpt', 'twentysixteen_the_excerpt', 1 );
 function get_the_archive_thumbnail_url() {
 	$image_id = null;
 	if ( is_tax() || is_category() || is_tag() ) {
-		$term = get_queried_object();
+		$term     = get_queried_object();
 		$image_id = get_term_meta( $term->term_id, 'image', true );
 	}
 	if ( $image_id ) {
@@ -146,7 +146,7 @@ function get_the_archive_thumbnail_url() {
 function get_the_archive_thumbnail() {
 	$image_id = null;
 	if ( is_tax() || is_category() || is_tag() ) {
-		$term = get_queried_object();
+		$term     = get_queried_object();
 		$image_id = get_term_meta( $term->term_id, 'image', true );
 	}
 
@@ -177,14 +177,14 @@ function twentysixteen_image_rss() {
 	echo '</image>' . PHP_EOL;
 }
 
-add_action('rss2_head','twentysixteen_image_rss');
-add_action('rss_head','twentysixteen_image_rss)');
-add_action('commentsrss2_head','twentysixteen_image_rss');
+add_action( 'rss2_head', 'twentysixteen_image_rss' );
+add_action( 'rss_head', 'twentysixteen_image_rss)' );
+add_action( 'commentsrss2_head', 'twentysixteen_image_rss' );
 
 
 if ( ! function_exists( 'has_content' ) ) {
 	function has_content( $post = 0 ) {
 		$post = get_post( $post );
-		return ( !empty( $post->post_content ) );
+		return ( ! empty( $post->post_content ) );
 	}
 }

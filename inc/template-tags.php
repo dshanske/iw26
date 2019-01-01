@@ -73,7 +73,7 @@ if ( ! function_exists( 'twentysixteen_entry_meta' ) ) :
 
 		if ( class_exists( 'WP_Geo_Data' ) ) {
 			echo Loc_View::get_location();
-			// If you want to just show the icon 
+			// If you want to just show the icon
 			// echo '<span class="sloc-display">' . Loc_View::get_icon() . '</span>';
 		}
 
@@ -187,21 +187,26 @@ if ( ! function_exists( 'twentysixteen_post_thumbnail' ) ) :
 		}
 
 		if ( is_singular() ) :
-		?>
+			?>
 
 		<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail(); ?>
 	</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-		<?php 
-			the_post_thumbnail( 'post-thumbnail', array( 
-				'alt' => the_title_attribute( array( 
-					'echo' => false,
-				 ) ) 
-			) ); 
+		<?php
+			the_post_thumbnail(
+				'post-thumbnail',
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+				)
+			);
 		?>
 	</a>
 
@@ -226,11 +231,11 @@ if ( ! function_exists( 'twentysixteen_excerpt' ) ) :
 		$class = esc_attr( $class );
 
 		if ( has_excerpt() || is_search() ) :
-		?>
+			?>
 			<div class="<?php echo $class; ?>">
 				<?php the_excerpt(); ?>
 			</div><!-- .<?php echo $class; ?> -->
-		<?php
+			<?php
 		endif;
 	}
 endif;

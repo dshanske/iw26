@@ -18,17 +18,16 @@
 	<div class="content">
 	<?php
 
-		if ( ! has_content() && has_excerpt() ) {
-			the_excerpt();
-		}
-		else {
-			the_content();
-		}
+	if ( ! has_content() && has_excerpt() ) {
+		the_excerpt();
+	} else {
+		the_content();
+	}
 			 // Hide biography in favor of h-card widget
-			 if ( ! is_string ( is_active_widget( false, false, 'hcard_widget', true ) ) ) {
-			 	get_template_part( 'template-parts/biography' );
-			 }
-		?>
+	if ( ! is_string( is_active_widget( false, false, 'hcard_widget', true ) ) ) {
+		get_template_part( 'template-parts/biography' );
+	}
+	?>
 	</div><!-- .content -->
 
 	<footer class="entry-footer">
@@ -54,6 +53,6 @@
 				'<span class="edit-link">',
 				'</span>'
 			);
-		?>
+			?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
