@@ -393,15 +393,15 @@ template {
 /*--------------------------------------------------------------
 # Genericons
 --------------------------------------------------------------*/
-.menu-item-has-children a:after,
-.dropdown-toggle:after,
-.bypostauthor > article .fn:after,
-.comment-reply-title small a:before,
-.pagination .prev:before,
-.pagination .next:before,
-.pagination .nav-links:before,
-.pagination .nav-links:after,
-.search-submit:before {
+.menu-item-has-children a::after,
+.dropdown-toggle::after,
+.bypostauthor > article .fn::after,
+.comment-reply-title small a::before,
+.pagination .prev::before,
+.pagination .next::before,
+.pagination .nav-links::before,
+.pagination .nav-links::after,
+.search-submit::before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -474,10 +474,10 @@ q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
   content: "";
 }
 
@@ -494,8 +494,8 @@ blockquote small {
   line-height: 1.75;
 }
 
-blockquote cite:before,
-blockquote small:before {
+blockquote cite::before,
+blockquote small::before {
   content: "\2014\00a0";
 }
 
@@ -575,8 +575,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
@@ -679,24 +679,24 @@ td {
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
 }
 
 :-moz-placeholder {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
 }
 
 ::-moz-placeholder {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   opacity: 1;
   /* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -722,7 +722,7 @@ input[type="submit"][disabled]:focus {
   border: 0;
   border-radius: 2px;
   color: #fff;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-weight: 700;
   letter-spacing: 0.046875em;
   line-height: 1;
@@ -797,7 +797,7 @@ textarea:focus {
 .post-password-form label {
   color: #686868;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   letter-spacing: 0.076923077em;
@@ -824,7 +824,7 @@ input[type="search"].search-field {
   width: calc(100% - 42px);
 }
 
-.search-submit:before {
+.search-submit::before {
   content: "\f400";
   font-size: 24px;
   left: 2px;
@@ -981,7 +981,7 @@ a:active {
   width: 48px;
 }
 
-.dropdown-toggle:after {
+.dropdown-toggle::after {
   border: 0 solid #d1d1d1;
   border-left-width: 1px;
   content: "\f431";
@@ -1002,11 +1002,11 @@ a:active {
   outline-offset: -1px;
 }
 
-.dropdown-toggle:focus:after {
+.dropdown-toggle:focus::after {
   border-color: transparent;
 }
 
-.dropdown-toggle.toggled-on:after {
+.dropdown-toggle.toggled-on::after {
   content: "\f432";
 }
 
@@ -1078,8 +1078,8 @@ a:active {
   position: relative;
 }
 
-.pagination:before,
-.pagination:after {
+.pagination::before,
+.pagination::after {
   background-color: #1a1a1a;
   content: "";
   height: 52px;
@@ -1089,11 +1089,11 @@ a:active {
   z-index: 0;
 }
 
-.pagination:before {
+.pagination::before {
   right: 0;
 }
 
-.pagination:after {
+.pagination::after {
   right: 54px;
 }
 
@@ -1107,8 +1107,8 @@ a:active {
   position: relative;
 }
 
-.pagination .nav-links:before,
-.pagination .nav-links:after {
+.pagination .nav-links::before,
+.pagination .nav-links::after {
   color: #fff;
   font-size: 32px;
   line-height: 51px;
@@ -1118,12 +1118,12 @@ a:active {
   z-index: 1;
 }
 
-.pagination .nav-links:before {
+.pagination .nav-links::before {
   content: "\f429";
   right: -1px;
 }
 
-.pagination .nav-links:after {
+.pagination .nav-links::after {
   content: "\f430";
   right: 55px;
 }
@@ -1162,8 +1162,8 @@ a:active {
   z-index: 2;
 }
 
-.pagination .prev:before,
-.pagination .next:before {
+.pagination .prev::before,
+.pagination .next::before {
   font-size: 32px;
   height: 53px;
   line-height: 52px;
@@ -1188,7 +1188,7 @@ a:active {
   right: 54px;
 }
 
-.pagination .prev:before {
+.pagination .prev::before {
   content: "\f430";
   left: -1px;
   top: -1px;
@@ -1198,7 +1198,7 @@ a:active {
   right: 0;
 }
 
-.pagination .next:before {
+.pagination .next::before {
   content: "\f429";
   right: -1px;
   top: -1px;
@@ -1209,7 +1209,7 @@ a:active {
   border-top: 1px solid #d1d1d1;
   border-bottom: 1px solid #d1d1d1;
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -1234,8 +1234,8 @@ a:active {
   display: inline-block;
 }
 
-.image-navigation .nav-previous:not(:empty) + .nav-next:not(:empty):before,
-.comment-navigation .nav-previous:not(:empty) + .nav-next:not(:empty):before {
+.image-navigation .nav-previous:not(:empty) + .nav-next:not(:empty)::before,
+.comment-navigation .nav-previous:not(:empty) + .nav-next:not(:empty)::before {
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
@@ -1263,7 +1263,7 @@ a:active {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: #21759b;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-weight: 700;
   left: -9999em;
@@ -1321,40 +1321,40 @@ blockquote.aligncenter {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-blockquote:before,
-blockquote:after,
-.content:before,
-.content:after,
-.summary:before,
-.summary:after,
-.comment-content:before,
-.comment-content:after,
-.site-content:before,
-.site-content:after,
-.site-main > article:before,
-.site-main > article:after,
-.primary-menu:before,
-.primary-menu:after,
-.textwidget:before,
-.textwidget:after,
-.content-bottom-widgets:before,
-.content-bottom-widgets:after {
+.clear::before,
+.clear::after,
+blockquote::before,
+blockquote::after,
+.content::before,
+.content::after,
+.summary::before,
+.summary::after,
+.comment-content::before,
+.comment-content::after,
+.site-content::before,
+.site-content::after,
+.site-main > article::before,
+.site-main > article::after,
+.primary-menu::before,
+.primary-menu::after,
+.textwidget::before,
+.textwidget::after,
+.content-bottom-widgets::before,
+.content-bottom-widgets::after {
   content: "";
   display: table;
 }
 
-.clear:after,
-blockquote:after,
-.content:after,
-.summary:after,
-.comment-content:after,
-.site-content:after,
-.site-main > article:after,
-.primary-menu:after,
-.textwidget:after,
-.content-bottom-widgets:after {
+.clear::after,
+blockquote::after,
+.content::after,
+.summary::after,
+.comment-content::after,
+.site-content::after,
+.site-main > article::after,
+.primary-menu::after,
+.textwidget::after,
+.content-bottom-widgets::after {
   clear: both;
 }
 
@@ -1373,7 +1373,7 @@ blockquote:after,
 }
 
 .widget .widget-title {
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   letter-spacing: 0.046875em;
@@ -1424,7 +1424,7 @@ blockquote:after,
 .widget_recent_entries .post-date {
   color: #686868;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.615384615;
@@ -1444,7 +1444,7 @@ blockquote:after,
 .widget_rss cite {
   color: #686868;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   font-style: normal;
@@ -1465,7 +1465,7 @@ blockquote:after,
   border: 1px solid #d1d1d1;
   border-radius: 2px;
   display: inline-block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   line-height: 1;
   margin: 0 0.1875em 0.4375em 0;
   padding: 0.5625em 0.4375em 0.5em;
@@ -1644,7 +1644,7 @@ blockquote:after,
 }
 
 .entry-title {
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 28px;
   font-size: 1.75rem;
   font-weight: 700;
@@ -1931,7 +1931,7 @@ body:not(.search-results) .entry-summary > :last-child,
 
 .entry-footer {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -1951,7 +1951,7 @@ body:not(.search-results) .entry-summary > :last-child,
   color: #007acc;
 }
 
-.entry-footer > span:not(:last-child):after {
+.entry-footer > span:not(:last-child)::after {
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
@@ -1967,7 +1967,7 @@ body:not(.search-results) .entry-summary > :last-child,
 .sticky-post {
   color: #686868;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   letter-spacing: 0.076923077em;
@@ -2007,7 +2007,7 @@ body.search-no-results .page-header {
 }
 
 .page-title {
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 23px;
   font-size: 1.4375rem;
   line-height: 1.2173913043;
@@ -2030,7 +2030,7 @@ body.search-no-results .page-header {
 
 .page-links {
   clear: both;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   margin: 0 0 1.75em;
 }
 
@@ -2133,7 +2133,7 @@ body.search-no-results .page-header {
 .comments-title,
 .comment-reply-title {
   border-top: 4px solid #1a1a1a;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 23px;
   font-size: 1.4375rem;
   font-weight: 700;
@@ -2179,7 +2179,7 @@ body.search-no-results .page-header {
   width: 28px;
 }
 
-.bypostauthor > article .fn:after {
+.bypostauthor > article .fn::after {
   content: "\f304";
   left: 3px;
   position: relative;
@@ -2189,7 +2189,7 @@ body.search-no-results .page-header {
 .comment-metadata,
 .pingback .edit-link {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -2216,8 +2216,8 @@ body.search-no-results .page-header {
   display: inline-block;
 }
 
-.comment-metadata .edit-link:before,
-.pingback .edit-link:before {
+.comment-metadata .edit-link::before,
+.pingback .edit-link::before {
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
@@ -2239,7 +2239,7 @@ body.search-no-results .page-header {
   border-radius: 2px;
   color: #007acc;
   display: inline-block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1;
@@ -2261,7 +2261,7 @@ body.search-no-results .page-header {
 .comment-form label {
   color: #686868;
   display: block;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   letter-spacing: 0.076923077em;
@@ -2287,7 +2287,7 @@ body.search-no-results .page-header {
 
 .no-comments {
   border-top: 1px solid #d1d1d1;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-weight: 700;
   margin: 0;
   padding-top: 1.75em;
@@ -2299,7 +2299,7 @@ body.search-no-results .page-header {
 }
 
 .form-allowed-tags code {
-  font-family: Inconsolata, monospace;
+  font-family: inconsolata, monospace;
 }
 
 .form-submit {
@@ -2308,7 +2308,7 @@ body.search-no-results .page-header {
 
 .required {
   color: #007acc;
-  font-family: Merriweather, Georgia, serif;
+  font-family: merriweather, georgia, serif;
 }
 
 .comment-reply-title small {
@@ -2328,7 +2328,7 @@ body.search-no-results .page-header {
   color: #1a1a1a;
 }
 
-.comment-reply-title small a:before {
+.comment-reply-title small a::before {
   content: "\f405";
   font-size: 32px;
   position: relative;
@@ -2372,10 +2372,10 @@ body.search-no-results .page-header {
   font-weight: 400;
 }
 
-.site-footer .site-title:after {
+.site-footer .site-title::after {
   content: "\002f";
   display: inline-block;
-  font-family: Montserrat, sans-serif;
+  font-family: montserrat, sans-serif;
   opacity: 0.7;
   padding: 0 0.307692308em 0 0.538461538em;
 }
@@ -2387,7 +2387,7 @@ body.search-no-results .page-header {
 }
 
 .site-footer span[role=separator]::before {
-  content: '\002f';
+  content: "\002f";
 }
 
 /*--------------------------------------------------------------
@@ -2595,7 +2595,7 @@ p > video {
 .widecolumn label,
 .widecolumn .mu_register label {
   color: #686868;
-  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -2672,8 +2672,8 @@ p > video {
 # >= 710px
 --------------------------------------------------------------*/
 @media screen and (min-width: 44.375em) {
-  body:not(.custom-background-image):before,
-  body:not(.custom-background-image):after {
+  body:not(.custom-background-image)::before,
+  body:not(.custom-background-image)::after {
     background: inherit;
     content: "";
     display: block;
@@ -2684,15 +2684,15 @@ p > video {
     z-index: 99;
   }
 
-  body:not(.custom-background-image):before {
+  body:not(.custom-background-image)::before {
     top: 0;
   }
 
-  body:not(.custom-background-image).admin-bar:before {
+  body:not(.custom-background-image).admin-bar::before {
     top: 46px;
   }
 
-  body:not(.custom-background-image):after {
+  body:not(.custom-background-image)::after {
     bottom: 0;
   }
 
@@ -2733,7 +2733,7 @@ p > video {
 
   .menu-toggle {
     font-size: 16px;
-    font-size: 1.0rem;
+    font-size: 1rem;
     margin: 1.3125em 0;
     padding: 0.8125em 0.875em 0.6875em;
   }
@@ -2747,7 +2747,7 @@ p > video {
   }
 
   .pagination {
-    margin: 0 23.0769% 4.42105em 7.6923%;
+    margin: 0 23.0769% 4.421052632em 7.6923%;
   }
 
   .post-navigation {
@@ -2887,7 +2887,7 @@ p > video {
 # >= 783px
 --------------------------------------------------------------*/
 @media screen and (min-width: 48.9375em) {
-  body:not(.custom-background-image).admin-bar:before {
+  body:not(.custom-background-image).admin-bar::before {
     top: 32px;
   }
 }
@@ -2956,8 +2956,8 @@ p > video {
     top: -1px;
   }
 
-  .main-navigation ul ul ul:before,
-  .main-navigation ul ul ul:after {
+  .main-navigation ul ul ul::before,
+  .main-navigation ul ul ul::after {
     border: 0;
   }
 
@@ -2972,21 +2972,21 @@ p > video {
     width: 12.6875em;
   }
 
-  .main-navigation ul ul:before,
-  .main-navigation ul ul:after {
+  .main-navigation ul ul::before,
+  .main-navigation ul ul::after {
     border-style: solid;
     content: "";
     position: absolute;
   }
 
-  .main-navigation ul ul:before {
+  .main-navigation ul ul::before {
     border-color: #d1d1d1 transparent;
     border-width: 0 10px 10px;
     right: 9px;
     top: -9px;
   }
 
-  .main-navigation ul ul:after {
+  .main-navigation ul ul::after {
     border-color: #fff transparent;
     border-width: 0 8px 8px;
     right: 11px;
@@ -3010,7 +3010,7 @@ p > video {
     padding-right: 2.25em;
   }
 
-  .main-navigation .menu-item-has-children > a:after {
+  .main-navigation .menu-item-has-children > a::after {
     content: "\f431";
     position: absolute;
     right: 0.625em;
@@ -3021,7 +3021,7 @@ p > video {
     padding-right: 2.0625em;
   }
 
-  .main-navigation ul ul .menu-item-has-children > a:after {
+  .main-navigation ul ul .menu-item-has-children > a::after {
     right: 0.5625em;
     top: 0.875em;
     -webkit-transform: rotate(90deg);
@@ -3221,7 +3221,7 @@ p > video {
     width: calc(100% - 35px);
   }
 
-  .widget .search-submit:before {
+  .widget .search-submit::before {
     font-size: 16px;
     left: 1px;
     line-height: 35px;
@@ -3322,7 +3322,7 @@ p > video {
 --------------------------------------------------------------*/
 @media screen and (min-width: 61.5625em) {
   .site-main {
-    margin-bottom: 7.0em;
+    margin-bottom: 7em;
   }
 
   .site-header {
@@ -3345,7 +3345,7 @@ p > video {
   }
 
   .post-navigation {
-    margin-bottom: 7.0em;
+    margin-bottom: 7em;
   }
 
   .pagination {
@@ -3357,7 +3357,7 @@ p > video {
   }
 
   .site-main > article {
-    margin-bottom: 7.0em;
+    margin-bottom: 7em;
   }
 
   .entry-title {
@@ -3453,7 +3453,7 @@ p > video {
   .sidebar,
   .content-bottom-widgets .widget-area,
   .widecolumn {
-    margin-bottom: 7.0em;
+    margin-bottom: 7em;
   }
 
   body:not(.search-results) .entry-summary {
@@ -3498,7 +3498,7 @@ p > video {
     width: 21.42857143%;
   }
 
-  body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child):after {
+  body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child)::after {
     display: none;
   }
 
