@@ -11,32 +11,36 @@
 }
 
 /* must have higher specificity than alternative color schemes inline styles */
-.site .skip-link {
-	background-color: #f1f1f1;
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-	color: #21759b;
-	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-size: 14px;
-	font-weight: 700;
-	left: -9999em;
-	outline: none;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	text-transform: none;
-	top: -9999em;
+.site {
+	.skip-link {
+		background-color: #f1f1f1;
+		box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+		color: #21759b;
+		display: block;
+		font-family: $font-family-input;
+		font-size: 14px;
+		font-weight: 700;
+		left: -9999em;
+		outline: none;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		text-transform: none;
+		top: -9999em;
+	}
+	.skip-link:focus {
+		clip: auto;
+		height: auto;
+		left: 6px;
+		top: 7px;
+		width: auto;
+		z-index: 100000;
+	}
 }
+
+
 
 .logged-in .site .skip-link {
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 	font-family: "Open Sans", sans-serif;
 }
 
-.site .skip-link:focus {
-	clip: auto;
-	height: auto;
-	left: 6px;
-	top: 7px;
-	width: auto;
-	z-index: 100000;
-}

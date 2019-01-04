@@ -7,6 +7,8 @@
   "devDependencies": {
     "genericons-neue": "^4.0.5",
     "grunt": "^1.0.3",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-wp-i18n": "^1.0.3",
     "grunt-wp-readme-to-markdown": "^2.0.1"
   },
   "scripts": {
