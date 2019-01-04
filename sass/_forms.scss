@@ -120,7 +120,7 @@ input[type="search"].search-field {
 	width: calc(100% - 42px);
 }
 
-.search-submit:before {
+.search-submit::before {
 	content: "\f400";
 	font-size: 24px;
 	left: 2px;

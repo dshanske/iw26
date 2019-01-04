@@ -24,7 +24,7 @@
 	font-weight: 400;
 }
 
-.site-footer .site-title:after {
+.site-footer .site-title::after {
 	content: "\002f";
 	display: inline-block;
 	font-family: $font-family-title;
@@ -39,5 +39,5 @@
 }
 
 .site-footer span[role=separator]::before {
-		content: '\002f';
+	content: "\002f";
 }

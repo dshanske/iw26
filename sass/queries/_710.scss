@@ -1,6 +1,7 @@
 @media screen and (min-width: 44.375em) {
-	body:not(.custom-background-image):before,
-	body:not(.custom-background-image):after {
+
+	body:not(.custom-background-image)::before,
+	body:not(.custom-background-image)::after {
 		background: inherit;
 		content: "";
 		display: block;
@@ -11,15 +12,15 @@
 		z-index: 99;
 	}
 
-	body:not(.custom-background-image):before {
+	body:not(.custom-background-image)::before {
 		top: 0;
 	}
 
-	body:not(.custom-background-image).admin-bar:before {
+	body:not(.custom-background-image).admin-bar::before {
 		top: 46px;
 	}
 
-	body:not(.custom-background-image):after {
+	body:not(.custom-background-image)::after {
 		bottom: 0;
 	}
 
@@ -60,7 +61,7 @@
 
 	.menu-toggle {
 		font-size: 16px;
-		font-size: 1.0rem;
+		font-size: 1rem;
 		margin: 1.3125em 0;
 		padding: 0.8125em 0.875em 0.6875em;
 	}
@@ -74,7 +75,7 @@
 	}
 
 	.pagination {
-		margin: 0 23.0769% 4.421052632em 7.6923%
+		margin: 0 23.0769% 4.421052632em 7.6923%;
 	}
 
 	.post-navigation {

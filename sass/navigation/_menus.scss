@@ -83,7 +83,7 @@
 	width: 48px;
 }
 
-.dropdown-toggle:after {
+.dropdown-toggle::after {
 	border: 0 solid #d1d1d1;
 	border-left-width: 1px;
 	content: "\f431";
@@ -104,11 +104,11 @@
 	outline-offset: -1px;
 }
 
-.dropdown-toggle:focus:after {
+.dropdown-toggle:focus::after {
 	border-color: transparent;
 }
 
-.dropdown-toggle.toggled-on:after {
+.dropdown-toggle.toggled-on::after {
 	content: "\f432";
 }
 
@@ -181,22 +181,22 @@
 	position: relative;
 }
 
-.pagination:before,
-.pagination:after {
+.pagination::before,
+.pagination::after {
 	background-color: #1a1a1a;
 	content: "";
 	height: 52px;
 	position: absolute;
-	top:0;
+	top: 0;
 	width: 52px;
 	z-index: 0;
 }
 
-.pagination:before {
+.pagination::before {
 	right: 0;
 }
 
-.pagination:after {
+.pagination::after {
 	right: 54px;
 }
 
@@ -210,8 +210,8 @@
 	position: relative;
 }
 
-.pagination .nav-links:before,
-.pagination .nav-links:after {
+.pagination .nav-links::before,
+.pagination .nav-links::after {
 	color: #fff;
 	font-size: 32px;
 	line-height: 51px;
@@ -221,12 +221,12 @@
 	z-index: 1;
 }
 
-.pagination .nav-links:before {
+.pagination .nav-links::before {
 	content: "\f429";
 	right: -1px;
 }
 
-.pagination .nav-links:after {
+.pagination .nav-links::after {
 	content: "\f430";
 	right: 55px;
 }
@@ -265,8 +265,8 @@
 	z-index: 2;
 }
 
-.pagination .prev:before,
-.pagination .next:before {
+.pagination .prev::before,
+.pagination .next::before {
 	font-size: 32px;
 	height: 53px;
 	line-height: 52px;
@@ -291,7 +291,7 @@
 	right: 54px;
 }
 
-.pagination .prev:before {
+.pagination .prev::before {
 	content: "\f430";
 	left: -1px;
 	top: -1px;
@@ -301,7 +301,7 @@
 	right: 0;
 }
 
-.pagination .next:before {
+.pagination .next::before {
 	content: "\f429";
 	right: -1px;
 	top: -1px;
@@ -337,8 +337,8 @@
 	display: inline-block;
 }
 
-.image-navigation .nav-previous:not(:empty) + .nav-next:not(:empty):before,
-.comment-navigation .nav-previous:not(:empty) + .nav-next:not(:empty):before {
+.image-navigation .nav-previous:not(:empty) + .nav-next:not(:empty)::before,
+.comment-navigation .nav-previous:not(:empty) + .nav-next:not(:empty)::before {
 	content: "\002f";
 	display: inline-block;
 	opacity: 0.7;

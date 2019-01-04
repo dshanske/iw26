@@ -1,4 +1,5 @@
 @media screen and (min-width: 56.875em) {
+
 	.site-header {
 		padding-right: 4.5455%;
 		padding-left: 4.5455%;
@@ -60,8 +61,8 @@
 		top: -1px;
 	}
 
-	.main-navigation ul ul ul:before,
-	.main-navigation ul ul ul:after {
+	.main-navigation ul ul ul::before,
+	.main-navigation ul ul ul::after {
 		border: 0;
 	}
 
@@ -76,21 +77,21 @@
 		width: 12.6875em;
 	}
 
-	.main-navigation ul ul:before,
-	.main-navigation ul ul:after {
+	.main-navigation ul ul::before,
+	.main-navigation ul ul::after {
 		border-style: solid;
 		content: "";
 		position: absolute;
 	}
 
-	.main-navigation ul ul:before {
+	.main-navigation ul ul::before {
 		border-color: #d1d1d1 transparent;
 		border-width: 0 10px 10px;
 		right: 9px;
 		top: -9px;
 	}
 
-	.main-navigation ul ul:after {
+	.main-navigation ul ul::after {
 		border-color: #fff transparent;
 		border-width: 0 8px 8px;
 		right: 11px;
@@ -114,7 +115,7 @@
 		padding-right: 2.25em;
 	}
 
-	.main-navigation .menu-item-has-children > a:after {
+	.main-navigation .menu-item-has-children > a::after {
 		content: "\f431";
 		position: absolute;
 		right: 0.625em;
@@ -125,7 +126,7 @@
 		padding-right: 2.0625em;
 	}
 
-	.main-navigation ul ul .menu-item-has-children > a:after {
+	.main-navigation ul ul .menu-item-has-children > a::after {
 		right: 0.5625em;
 		top: 0.875em;
 		-webkit-transform: rotate(90deg);
@@ -325,7 +326,7 @@
 		width: calc(100% - 35px);
 	}
 
-	.widget .search-submit:before {
+	.widget .search-submit::before {
 		font-size: 16px;
 		left: 1px;
 		line-height: 35px;

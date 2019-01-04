@@ -28,6 +28,9 @@ module.exports = function(grunt) {
         }
       }
     },
+    stylelint: {
+	        all: ['sass/**/*.scss']
+    },
     makepot: {
       target: {
         options: {
@@ -47,6 +50,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-wp-i18n');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-stylelint' );
 
   // Default task(s).
   grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'sass']);

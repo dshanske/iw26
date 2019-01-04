@@ -1,6 +1,7 @@
 @media screen and (min-width: 61.5625em) {
+
 	.site-main {
-		margin-bottom: 7.0em;
+		margin-bottom: 7em;
 	}
 
 	.site-header {
@@ -23,7 +24,7 @@
 	}
 
 	.post-navigation {
-		margin-bottom: 7.0em;
+		margin-bottom: 7em;
 	}
 
 	.pagination {
@@ -35,7 +36,7 @@
 	}
 
 	.site-main > article {
-		margin-bottom: 7.0em;
+		margin-bottom: 7em;
 	}
 
 	.entry-title {
@@ -131,7 +132,7 @@
 	.sidebar,
 	.content-bottom-widgets .widget-area,
 	.widecolumn {
-		margin-bottom: 7.0em;
+		margin-bottom: 7em;
 	}
 
 	body:not(.search-results) .entry-summary {
@@ -176,7 +177,7 @@
 		width: 21.42857143%;
 	}
 
-	body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child):after {
+	body:not(.search-results) article:not(.type-page) .entry-footer > span:not(:last-child)::after {
 		display: none;
 	}
 

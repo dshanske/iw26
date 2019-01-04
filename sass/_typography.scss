@@ -51,10 +51,10 @@ q {
 	quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
 	content: "";
 }
 
@@ -71,8 +71,8 @@ blockquote small {
 	line-height: 1.75;
 }
 
-blockquote cite:before,
-blockquote small:before {
+blockquote cite::before,
+blockquote small::before {
 	content: "\2014\00a0";
 }
 

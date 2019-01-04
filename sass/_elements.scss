@@ -5,8 +5,9 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
+
 	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
@@ -15,6 +16,7 @@ html {
 
 body {
 	background: #1a1a1a;
+
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -59,8 +61,10 @@ dd {
 
 img {
 	height: auto;
+
 	/* Make sure images are scaled correctly. */
 	max-width: 100%;
+
 	/* Adhere to container width. */
 	vertical-align: middle;
 }
@@ -81,6 +85,7 @@ table {
 	border-width: 1px 0 0 1px;
 	margin: 0 0 1.75em;
 	table-layout: fixed;
+
 	/* Prevents HTML tables from becoming too wide */
 	width: 100%;
 }
@@ -121,6 +126,7 @@ td {
 	color: #686868;
 	font-family: $font-family-input;
 	opacity: 1;
+
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
 
