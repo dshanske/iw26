@@ -1,0 +1,362 @@
+# <!=Copyright (C) 2019
+# This file is distributed under the same license as the  package.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/iw26\n"
+"POT-Creation-Date: 2019-01-03 22:21:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: 404.php:28
+msgid "Or search for posts by their syndicated copies"
+msgstr ""
+
+#: archive.php:56 index.php:51 search.php:39
+msgid "Previous page"
+msgstr ""
+
+#: archive.php:57 index.php:52 search.php:40
+msgid "Next page"
+msgstr ""
+
+#: archive.php:58 image.php:62 index.php:53 search.php:41
+#: template-parts/content-page.php:32 template-parts/content-single.php:42
+#: template-parts/content.php:50
+msgid "Page"
+msgstr ""
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:17
+msgid "Footer Primary Menu"
+msgstr ""
+
+#: footer.php:44
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:45
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:95 header.php:50
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:132
+msgid "Dark Gray"
+msgstr ""
+
+#: functions.php:137
+msgid "Medium Gray"
+msgstr ""
+
+#: functions.php:142
+msgid "Light Gray"
+msgstr ""
+
+#: functions.php:147
+msgid "White"
+msgstr ""
+
+#: functions.php:152
+msgid "Blue Gray"
+msgstr ""
+
+#: functions.php:157
+msgid "Bright Blue"
+msgstr ""
+
+#: functions.php:162
+msgid "Light Blue"
+msgstr ""
+
+#: functions.php:167
+msgid "Dark Brown"
+msgstr ""
+
+#: functions.php:172
+msgid "Medium Brown"
+msgstr ""
+
+#: functions.php:177
+msgid "Dark Red"
+msgstr ""
+
+#: functions.php:182
+msgid "Bright Red"
+msgstr ""
+
+#: functions.php:187 inc/customizer.php:355
+msgid "Yellow"
+msgstr ""
+
+#: functions.php:225
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:227
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: functions.php:237
+msgid "Content Bottom 1"
+msgstr ""
+
+#: functions.php:239 functions.php:251
+msgid "Appears at the bottom of the content on posts and pages."
+msgstr ""
+
+#: functions.php:249
+msgid "Content Bottom 2"
+msgstr ""
+
+#: functions.php:351
+msgid "expand child menu"
+msgstr ""
+
+#: functions.php:352
+msgid "collapse child menu"
+msgstr ""
+
+#: header.php:24
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:46
+msgid "Menu"
+msgstr ""
+
+#: image.php:25
+msgid "Previous Image"
+msgstr ""
+
+#: image.php:26
+msgid "Next Image"
+msgstr ""
+
+#: image.php:58 template-parts/content-page.php:28
+#: template-parts/content-single.php:38 template-parts/content.php:46
+msgid "Pages:"
+msgstr ""
+
+#: image.php:88 template-parts/content-page.php:39
+#: template-parts/content-search.php:28 template-parts/content-search.php:43
+#: template-parts/content-single.php:50 template-parts/content.php:60
+#. translators: %s: Name of current post
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: inc/back-compat.php:41 inc/back-compat.php:54 inc/back-compat.php:72
+msgid ""
+"Twenty Sixteen requires at least WordPress version 4.4. You are running "
+"version %s. Please upgrade and try again."
+msgstr ""
+
+#: inc/customizer.php:153
+msgid "Base Color Scheme"
+msgstr ""
+
+#: inc/customizer.php:176
+msgid "Page Background Color"
+msgstr ""
+
+#: inc/customizer.php:200
+msgid "Link Color"
+msgstr ""
+
+#: inc/customizer.php:221
+msgid "Main Text Color"
+msgstr ""
+
+#: inc/customizer.php:242
+msgid "Secondary Text Color"
+msgstr ""
+
+#: inc/customizer.php:315
+msgid "Default"
+msgstr ""
+
+#: inc/customizer.php:325
+msgid "Dark"
+msgstr ""
+
+#: inc/customizer.php:335
+msgid "Gray"
+msgstr ""
+
+#: inc/customizer.php:345
+msgid "Red"
+msgstr ""
+
+#: inc/template-functions.php:56
+msgid "All Posts Feed"
+msgstr ""
+
+#: inc/template-tags.php:80
+msgid "Leave a response<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: inc/template-tags.php:257 template-parts/content.php:34
+#. translators: %s: Name of current post
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:38
+msgid "Next"
+msgstr ""
+
+#: single.php:39
+msgid "Next post:"
+msgstr ""
+
+#: single.php:41
+msgid "Previous"
+msgstr ""
+
+#: single.php:42
+msgid "Previous post:"
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:19
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content.php:14
+msgid "Featured"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "HCard Page"
+msgstr ""
+
+#: comments.php:31
+#. translators: %s: post title
+msgctxt "comments title"
+msgid "One response on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:35
+#. translators: 1: number of comments, 2: post title
+msgctxt "comments title"
+msgid "%1$s response on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s responses on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:277
+#. translators: If there are characters in your language that are not supported
+#. by Merriweather, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Merriweather font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:282
+#. translators: If there are characters in your language that are not supported
+#. by Montserrat, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:287
+#. translators: If there are characters in your language that are not supported
+#. by Inconsolata, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Inconsolata font: on or off"
+msgid "on"
+msgstr ""
+
+#: image.php:77
+msgctxt "Used before full size attachment link."
+msgid "Full size"
+msgstr ""
+
+#: image.php:107 single.php:31
+msgctxt "Parent post link"
+msgid ""
+"<span class=\"meta-nav\">Published in</span><span "
+"class=\"post-title\">%title</span>"
+msgstr ""
+
+#: inc/template-tags.php:24 inc/template-tags.php:47
+msgctxt "Used before post author name."
+msgid "Author"
+msgstr ""
+
+#: inc/template-tags.php:62
+msgctxt "Used before post kind."
+msgid "Kind"
+msgstr ""
+
+#: inc/template-tags.php:127
+msgctxt "Used before publish date."
+msgid "Posted on"
+msgstr ""
+
+#: inc/template-tags.php:151 inc/template-tags.php:160
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:155
+msgctxt "Used before series names."
+msgid "Series"
+msgstr ""
+
+#: inc/template-tags.php:164
+msgctxt "Used before tag names."
+msgid "Tags"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:14
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:16
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
