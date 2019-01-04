@@ -1,0 +1,133 @@
+/*
+Theme Name: IW26
+Theme URI: https://github.com/dshanske/iw26
+Author: David Shanske
+Author URI: https://david.shanske.com
+Description: This is an Indieweb Fork of Twenty Sixteen. Twenty Sixteen is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar. The theme is Microformats 2 compliant and supports all the major Indieweb plugins.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: indieweb, microformats, one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-kinds, rtl-language-support, sticky-post, threaded-comments, translation-re$
+Text Domain: iw26
+
+GitHub Theme URI: dshanske/iw26
+GitHub Theme URI: https://github.com/dshanske/iw26
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variables
+# Normalize
+# Genericons
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+ # Accessibility
+ # Alignments
+ # Clearings
+ # Widgets
+ # Content
+	## Header
+	## Posts and pages
+	## Post Formats
+	## Comments
+	## Sidebar
+	## Footer
+# Media
+	## Captions
+	## Galleries
+# Multisite
+# Media Queries
+	## >= 710px
+	## >= 783px
+	## >= 910px
+	## >= 985px
+	## >= 1200px
+# Print
+
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import "variables";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Genericons
+--------------------------------------------------------------*/
+@import "genericons";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "content/content";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/*--------------------------------------------------------------
+# Multisite
+--------------------------------------------------------------*/
+@import "multisite";
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+@import "queries/queries";
+
+/*--------------------------------------------------------------
+# Print
+--------------------------------------------------------------*/
+@import "print";
