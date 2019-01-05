@@ -9,6 +9,11 @@ module.exports = function(grunt) {
         }
       },
     },
+    copy: {
+	    main: {
+		    files: [ {expand: true, cwd: 'node_modules/genericons-neue/icon-font/', src: ['**'], dest: 'genericons-neue/'}, ],
+		},
+    },
     sass: {                              // Task
       dev: {                            // Target
         options: {                       // Target options
@@ -50,6 +55,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-wp-i18n');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-stylelint' );
 
   // Default task(s).

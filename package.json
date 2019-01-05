@@ -7,6 +7,7 @@
   "devDependencies": {
     "genericons-neue": "^4.0.5",
     "grunt": "^1.0.3",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-stylelint": "^0.10.1",
     "grunt-wp-i18n": "^1.0.3",
