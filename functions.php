@@ -324,7 +324,7 @@ function iw26_scripts() {
 	wp_enqueue_style( 'iw26-fonts', iw26_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.css', array(), '4.0.5' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'iw26-style', get_stylesheet_uri() );
