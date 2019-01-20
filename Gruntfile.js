@@ -20,7 +20,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {                         // Dictionary of files
-          'style.css': 'sass/style.scss'       // 'destination': 'source'
+          'css/default.css': 'sass/default.scss'       // 'destination': 'source'
         }
       },
       dist: {                            // Target
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {                         // Dictionary of files
-          'style.min.css': 'sass/style.scss',       // 'destination': 'source'
+          'css/default.min.css': 'sass/default.scss',       // 'destination': 'source'
 
         }
       }
@@ -59,6 +59,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-stylelint' );
 
   // Default task(s).
-  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'sass']);
+  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'sass', 'copy']);
 
 };

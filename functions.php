@@ -327,7 +327,7 @@ function iw26_scripts() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'iw26-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'iw26-style', get_template_directory_uri() . '/css/default.min.css', array(), '1.0' );
 
 	// Theme block stylesheet.
 	wp_enqueue_style( 'iw26-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'iw26-style' ), '20181018' );
