@@ -42,9 +42,9 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			if ( ! is_singular() ) {
 				$author_avatar_size = apply_filters( 'iw26_author_avatar_size', 49 );
 				printf(
-					'<span class="byline">%1$s<span class="author p-author vcard h-card"><span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
-					get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ),
+					'<span class="byline"><span class="screen-reader-text">%1$s</span><span class="author p-author vcard h-card">%2$s <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',	
 					_x( 'Author', 'Used before post author name.', 'iw26' ),
+					get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 					get_the_author()
 				);
