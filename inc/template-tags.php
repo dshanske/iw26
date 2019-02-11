@@ -39,7 +39,7 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 	 */
 	function iw26_entry_meta() {
 		if ( 'post' === get_post_type() ) {
-			if ( is_multi_author() && ! is_singular() ) {
+			if ( ! is_singular() ) {
 				$author_avatar_size = apply_filters( 'iw26_author_avatar_size', 49 );
 				printf(
 					'<span class="byline"><span class="author p-author vcard h-card">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',
