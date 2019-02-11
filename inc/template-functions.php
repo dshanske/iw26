@@ -152,10 +152,6 @@ function get_the_archive_thumbnail() {
 	if ( $image_id ) {
 		return wp_get_attachment_image( $image_id, 'thumbnail', true );
 	}
-	if ( is_tax( 'kind' ) ) {
-		$term = get_queried_object();
-		return Kind_Taxonomy::get_icon( $term->slug );
-	}
 }
 
 function the_archive_thumbnail() {
