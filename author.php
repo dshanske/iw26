@@ -1,6 +1,9 @@
 <?php
 /**
- * The template for displaying kind archive pages
+ * The template for displaying author archive pages
+ *
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  */
 
@@ -12,11 +15,17 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-			<?php
-					$term = get_queried_object();
-					echo Kind_Taxonomy::get_icon( $term->slug );
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+<?php
+			if ( class_exists( 'HCard_User' ) ) {
+				echo HCard_User::hcard(
+					get_the_author_meta( 'ID' ),
+					array(
+						'me' => false
+					)
+				);
+			} else {
+				get_template_part( 'template-parts/biography' );
+			}
 
 			?>
 			</header><!-- .page-header -->
@@ -58,8 +67,5 @@ get_header(); ?>
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
 
-
-<?php
-	get_sidebar();
-	get_footer(); 
-?>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
