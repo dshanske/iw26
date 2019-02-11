@@ -138,7 +138,7 @@ function get_the_archive_thumbnail_url() {
 		$image_id = get_term_meta( $term->term_id, 'image', true );
 	}
 	if ( $image_id ) {
-		return wp_get_attachment_imagE_url( $image_id, 'thumbnail', true );
+		return wp_get_attachment_image_url( $image_id, 'thumbnail', true );
 	}
 }
 
