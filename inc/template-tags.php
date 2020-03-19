@@ -69,6 +69,21 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			iw26_entry_taxonomies();
 		}
 
+		if ( 'attachment' === get_post_type() ) {
+			$data = get_post_meta( get_the_ID(), '_wp_attachment_metadata', true );
+			if ( ! $data ) {
+				return;
+			}
+			$data = array_filter( $data['image_meta'] );
+			if ( array_key_exists( 'camera', $data ) ) {
+				printf(
+					'<span class="camera-type"><span class="screen-reader-text">%1$s</span>%2$s</span>',
+					_x( 'Camera Model', 'Used before camera model.', 'iw26' ),
+					$data['camera']
+				);
+			}
+		}
+
 		if ( class_exists( 'WP_Geo_Data' ) ) {
 			echo Loc_View::get_location();
 			// If you want to just show the icon
@@ -108,26 +123,56 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 	 * @since Twenty Sixteen 1.0
 	 */
 	function iw26_entry_date() {
-		$time_string = '<time class="entry-date published updated dt-published dt-updated" datetime="%1$s">%2$s</time>';
+		$post = get_post();
+		if ( 'attachment' === get_post_type( $post ) ) {
+			$data = get_post_meta( $post->ID, '_wp_attachment_metadata', true );
+			if ( ! $data ) {
+				return;
+			}
+			$data = $data['image_meta'];
+			$created = null;
+			if ( array_key_exists( 'created', $data ) ) {
+				$created = new DateTime( $data['created'] );
+			} elseif ( array_key_exists( 'created_timestamp', $data ) ) {
+				$created = new DateTime( $data['created_timestamp'] );
+			}
+			if ( $created instanceOf DateTime ) {
+				$time_string = '<time class="published dt-published" datetime="%1$s">%2$s</time>';
+				$time_string = sprintf(
+					$time_string,
+					esc_attr( $created->format( DATE_W3C ) ),
+					$created->format( get_option( 'time_format' ) ) . '<BR />' . $created->format( get_option( 'date_format' ) ),
+				);
+				printf(
+					'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
+					_x( 'Taken on', 'Used before date taken.', 'iw26' ),
+					esc_url( get_permalink() ),
+					$time_string
+				);
+			}
+		} else {
+			$published = get_post_datetime( $post, 'date' );
+			$modified = get_post_datetime( $post, 'modified' );
+			$time_string = '<time class="entry-date published updated dt-published dt-updated" datetime="%1$s">%2$s</time>';
 
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time><time class="updated dt-updated" datetime="%3$s">%4$s</time>';
+			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+				$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time><time class="updated dt-updated" datetime="%3$s">%4$s</time>';
+			}
+
+			$time_string = sprintf(
+				$time_string,
+				esc_attr( $published->format( DATE_W3C ) ),
+				get_the_time( '', $post ) . '<BR />' . get_the_date( '', $post ),
+				esc_attr( $modified->format( DATE_W3C ) ),
+				get_the_modified_date( '', $post )
+			);
+			printf(
+				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
+				_x( 'Posted on', 'Used before publish date.', 'iw26' ),
+				esc_url( get_permalink() ),
+				$time_string
+			);
 		}
-
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			get_the_time() . '<BR />' . get_the_date(),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			get_the_modified_date()
-		);
-
-		printf(
-			'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
-			_x( 'Posted on', 'Used before publish date.', 'iw26' ),
-			esc_url( get_permalink() ),
-			$time_string
-		);
 	}
 endif;
 
