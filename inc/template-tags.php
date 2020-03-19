@@ -116,10 +116,14 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 			}
 			$data = $data['image_meta'];
 			$created = null;
-			if ( array_key_exists( 'created', $data ) ) {
+			$published = get_post_meta( $post->ID, 'mf2_published', true );
+			if ( $published ) {
+				$created = new DateTime( $published );
+			} elseif ( array_key_exists( 'created', $data ) ) {
 				$created = new DateTime( $data['created'] );
-			} elseif ( array_key_exists( 'created_timestamp', $data ) ) {
-				$created = new DateTime( $data['created_timestamp'] );
+			} elseif ( array_key_exists( 'created_timestamp', $data ) && ( 0 !== (int) $data['created_timestamp'] ) ) {
+				$created = new DateTime();
+				$created->setTimestamp( $data['created_timestamp'] );
 			}
 			if ( $created instanceOf DateTime ) {
 				$time_string = '<time class="published dt-published" datetime="%1$s">%2$s</time>';
