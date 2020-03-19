@@ -69,21 +69,6 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			iw26_entry_taxonomies();
 		}
 
-		if ( 'attachment' === get_post_type() ) {
-			$data = get_post_meta( get_the_ID(), '_wp_attachment_metadata', true );
-			if ( ! $data ) {
-				return;
-			}
-			$data = array_filter( $data['image_meta'] );
-			if ( array_key_exists( 'camera', $data ) ) {
-				printf(
-					'<span class="camera-type"><span class="screen-reader-text">%1$s</span>%2$s</span>',
-					_x( 'Camera Model', 'Used before camera model.', 'iw26' ),
-					$data['camera']
-				);
-			}
-		}
-
 		if ( class_exists( 'WP_Geo_Data' ) ) {
 			echo Loc_View::get_location();
 			// If you want to just show the icon

@@ -44,7 +44,7 @@ get_header(); ?>
 							 */
 							$image_size = apply_filters( 'iw26_attachment_size', 'large' );
 
-							echo wp_get_attachment_image( get_the_ID(), $image_size );
+							printf( '<a href="%1$s">%2$s</a>', esc_url( wp_get_attachment_url() ),	wp_get_attachment_image( get_the_ID(), $image_size ) );
 						?>
 
 						<?php iw26_excerpt( 'entry-caption' ); ?>
@@ -72,12 +72,21 @@ get_header(); ?>
 						// Retrieve attachment metadata.
 						$metadata = wp_get_attachment_metadata();
 						if ( $metadata ) {
+							if ( array_key_exists( 'camera', $metadata['image_meta'] ) ) {
+								printf(
+									'<span class="camera-type"><span class="screen-reader-text">%1$s</span>%2$s</span>',
+									_x( 'Camera Model', 'Used before camera model.', 'iw26' ),
+									$metadata['image_meta']['camera']
+								);
+							}
+						}
+						$source = get_post_meta( get_the_ID(), '_source_url', true );
+						if ( $source ) {
 							printf(
-								'<span class="full-size-link"><span class="screen-reader-text">%1$s </span><a href="%2$s">%3$s &times; %4$s</a></span>',
-								esc_html_x( 'Full size', 'Used before full size attachment link.', 'iw26' ),
-								esc_url( wp_get_attachment_url() ),
-								absint( $metadata['width'] ),
-								absint( $metadata['height'] )
+								'<span class="original-media-url"><span class="screen-reader-text">%1$s</span><a href="%2$s">%3$s</a></span>',
+								_x( 'Original Source URL', 'Used before original source URL.', 'iw26' ),
+								esc_url( $source ),
+								__( 'Original Source URL:', 'iw26' )
 							);
 						}
 						?>
