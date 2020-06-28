@@ -484,7 +484,7 @@ add_action( 'wp_enqueue_scripts', 'iw26_color_scheme_css' );
  * @since Twenty Sixteen 1.0
  */
 function iw26_customize_control_js() {
-	wp_enqueue_script( 'color-scheme-control', get_template_directory_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160816', true );
+	wp_enqueue_script( 'color-scheme-control', get_theme_file_uri() . '/js/color-scheme-control.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20160816', true );
 	wp_localize_script( 'color-scheme-control', 'colorScheme', iw26_get_color_schemes() );
 }
 add_action( 'customize_controls_enqueue_scripts', 'iw26_customize_control_js' );
@@ -495,7 +495,7 @@ add_action( 'customize_controls_enqueue_scripts', 'iw26_customize_control_js' );
  * @since Twenty Sixteen 1.0
  */
 function iw26_customize_preview_js() {
-	wp_enqueue_script( 'iw26-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160816', true );
+	wp_enqueue_script( 'iw26-customize-preview', get_theme_file_uri() . '/js/customize-preview.js', array( 'customize-preview' ), '20160816', true );
 }
 add_action( 'customize_preview_init', 'iw26_customize_preview_js' );
 

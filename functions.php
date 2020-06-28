@@ -326,25 +326,25 @@ function iw26_scripts() {
 	wp_enqueue_style( 'iw26-fonts', iw26_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
+	wp_enqueue_style( 'genericons', get_theme_file_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'iw26-style', get_template_directory_uri() . '/css/default.min.css', array(), '1.0' );
+	wp_enqueue_style( 'iw26-style', get_theme_file_uri() . '/css/default.min.css', array(), '1.0' );
 
 	// Theme block stylesheet.
-	wp_enqueue_style( 'iw26-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'iw26-style' ), '20181018' );
+	wp_enqueue_style( 'iw26-block-style', get_theme_file_uri() . '/css/blocks.css', array( 'iw26-style' ), '20181018' );
 
-	wp_enqueue_script( 'iw26-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20160816', true );
+	wp_enqueue_script( 'iw26-skip-link-focus-fix', get_theme_file_uri() . '/js/skip-link-focus-fix.js', array(), '20160816', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'iw26-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160816' );
+		wp_enqueue_script( 'iw26-keyboard-image-navigation', get_theme_file_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160816' );
 	}
 
-	wp_enqueue_script( 'iw26-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160816', true );
+	wp_enqueue_script( 'iw26-script', get_theme_file_uri() . '/js/functions.js', array( 'jquery' ), '20160816', true );
 
 	wp_localize_script(
 		'iw26-script',
@@ -364,7 +364,7 @@ add_action( 'wp_enqueue_scripts', 'iw26_scripts' );
  */
 function iw26_block_editor_styles() {
 	// Block styles.
-	wp_enqueue_style( 'iw26-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
+	wp_enqueue_style( 'iw26-block-editor-style', get_theme_file_uri() . '/css/editor-blocks.css' );
 	// Add custom fonts.
 	wp_enqueue_style( 'iw26-fonts', iw26_fonts_url(), array(), null );
 }
