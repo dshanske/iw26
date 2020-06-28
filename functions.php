@@ -108,6 +108,8 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 				'comment-list',
 				'gallery',
 				'caption',
+				'style',
+				'script'
 			)
 		);
 
