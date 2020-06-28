@@ -329,22 +329,22 @@ function iw26_scripts() {
 	wp_enqueue_style( 'genericons', get_theme_file_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'iw26-style', get_theme_file_uri() . '/css/default.min.css', array(), '1.0' );
+	wp_enqueue_style( 'iw26-style', get_theme_file_uri() . '/css/default.min.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// Theme block stylesheet.
-	wp_enqueue_style( 'iw26-block-style', get_theme_file_uri() . '/css/blocks.css', array( 'iw26-style' ), '20181018' );
+	wp_enqueue_style( 'iw26-block-style', get_theme_file_uri() . '/css/blocks.css', array( 'iw26-style' ), wp_get_theme()->get( 'Version' ) );
 
-	wp_enqueue_script( 'iw26-skip-link-focus-fix', get_theme_file_uri() . '/js/skip-link-focus-fix.js', array(), '20160816', true );
+	wp_enqueue_script( 'iw26-skip-link-focus-fix', get_theme_file_uri() . '/js/skip-link-focus-fix.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'iw26-keyboard-image-navigation', get_theme_file_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160816' );
+		wp_enqueue_script( 'iw26-keyboard-image-navigation', get_theme_file_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ) );
 	}
 
-	wp_enqueue_script( 'iw26-script', get_theme_file_uri() . '/js/functions.js', array( 'jquery' ), '20160816', true );
+	wp_enqueue_script( 'iw26-script', get_theme_file_uri() . '/js/functions.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 	wp_localize_script(
 		'iw26-script',
