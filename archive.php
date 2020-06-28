@@ -30,6 +30,12 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 
 			?>
+			<?php if ( class_exists( 'Simple_Location_Plugin' ) ) {
+				$self = get_self_link();
+				$self = trailingslashit( $self ) . 'map';
+			} ?>
+
+			<a href="<?php echo $self;?>">Map</a>
 			</header><!-- .page-header -->
 
 			<?php
