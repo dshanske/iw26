@@ -126,6 +126,10 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
+
+		// Add support for navigation widgets.
+		add_theme_support( 'navigation-widgets' );
+
 		// Add support for custom color scheme.
 		add_theme_support(
 			'editor-color-palette',
