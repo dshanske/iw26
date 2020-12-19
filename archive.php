@@ -28,6 +28,7 @@ get_header(); ?>
 					the_archive_thumbnail();
 					the_archive_title( '<h1 class="page-title p-name">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description p-summary">', '</div>' );
+					printf( '<a class="u-url" href="%1$s"></a>', get_self_link() );
 
 			?>
 			<?php if ( class_exists( 'Simple_Location_Plugin' ) ) {
