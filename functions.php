@@ -505,3 +505,10 @@ function iw26_resource_hints( $urls, $relation_type ) {
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'iw26_resource_hints', 10, 2 );
+
+function iw26_set_posts_per_page_for_kind_photos( $query ) {
+	if ( ! is_admin() && $query->is_main_query() && is_tax( 'kind', 'photo' ) ) {
+		$query->set( 'posts_per_page', '30' );
+	}
+}
+add_action( 'pre_get_posts', 'iw26_set_posts_per_page_for_kind_photos' );

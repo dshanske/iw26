@@ -2547,6 +2547,32 @@ p > video {
 }
 
 /*--------------------------------------------------------------
+# Photo Grid
+--------------------------------------------------------------*/
+.photogrid ul {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.photogrid ul li {
+  height: 40vh;
+  flex-grow: 1;
+  padding: 0.1em;
+}
+@media screen and (min-width: 50em) {
+  .photogrid ul li a {
+    width: calc(25% - 6px);
+  }
+}
+.photogrid ul li img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+/*--------------------------------------------------------------
 # Multisite
 --------------------------------------------------------------*/
 .widecolumn {
