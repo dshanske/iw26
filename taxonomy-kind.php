@@ -14,8 +14,7 @@ get_header(); ?>
 			<header class="page-header">
 			<?php
 					$term = get_queried_object();
-					echo Kind_Taxonomy::get_icon( $term->slug );
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_title( '<h1 class="page-title">' . Kind_Taxonomy::get_icon( $term->slug ), '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 
 			?>
