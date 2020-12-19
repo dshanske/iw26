@@ -31,7 +31,7 @@ get_header(); ?>
 					$photos = $kind_post->get_photo();
 					if ( ! empty( $photos ) ) {
 						foreach( $photos as $photo ) {
-							printf( '<li><a href="%1$s"><img src="%2$s" srcset="%3$s" alt="%4$s" /></a></li>', get_permalink(), wp_get_attachment_image_url( $photo ), wp_get_attachment_image_srcset( $photo ), '' );
+							printf( '<li class="h-entry"><a class="u-url" href="%1$s"><img src="%2$s" srcset="%3$s" alt="%4$s" /></a></li>', get_permalink(), wp_get_attachment_image_url( $photo ), wp_get_attachment_image_srcset( $photo ), get_the_excerpt( $photo ) );
 						}
 					}
 					// $view = new Kind_Media_View( $photos, 'photo' );
