@@ -422,6 +422,5 @@ function iw26_page_children() {
 	foreach( $children as $child ) {
 		$return[] = sprintf( '<a href="%1$s" rel="down">%2$s</a>', get_permalink( $child), get_the_title( $child ) );
 	}
-	$return[] = sprintf( '<a class="u-url" href="%1$s">%2$s</a>', get_permalink(), get_the_title() );
 	echo '<ul><li>' . implode( '</li><li> ', $return ) . '</li></ul>';
 }
