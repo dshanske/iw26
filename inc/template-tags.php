@@ -412,7 +412,8 @@ function iw26_page_children() {
 			array(
 				'post_parent' => get_the_ID(),
 				'post_type' => 'page',
-				'fields' => 'ids'
+				'fields' => 'ids',
+				'posts_per_page' => '-1'
 			)
 		);
 	if ( empty( $children ) ) {
