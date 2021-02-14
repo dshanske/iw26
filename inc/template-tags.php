@@ -51,21 +51,27 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			}
 		}
 
-		if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
+		if ( in_array( get_post_type(), array( 'post', 'attachment', 'page' ) ) ) {
 			iw26_entry_date();
 		}
 
-		if ( class_exists( 'Kind_Taxonomy' ) ) {
-			$kind = get_post_kind();
-			printf(
-				'<span class="entry-kind">%1$s<a href="%2$s">%3$s</a></span>',
-				sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'iw26' ) ),
-				esc_url( get_post_kind_link( $kind ) ),
-				get_post_kind_string( $kind )
-			);
+		if ( 'page' === get_post_type() ) {
+			echo '<span>';
+			iw26_page_permalink();
+			echo '</span>';
 		}
 
+
 		if ( 'post' === get_post_type() ) {
+			if ( class_exists( 'Kind_Taxonomy' ) ) {
+				$kind = get_post_kind();
+				printf(
+					'<span class="entry-kind">%1$s<a href="%2$s">%3$s</a></span>',
+					sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'iw26' ) ),
+					esc_url( get_post_kind_link( $kind ) ),
+					get_post_kind_string( $kind )
+				);
+			}
 			iw26_entry_taxonomies();
 		}
 
@@ -139,10 +145,24 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 					$time_string
 				);
 			}
+		} else if ( 'page' === get_post_type( $post ) ) {
+			$modified = get_post_datetime( $post, 'modified' );
+			$time_string = '<time class="entry-date dt-updated" datetime="%1$s">%2$s</time>';
+
+			$time_string = sprintf(
+				$time_string,
+				esc_attr( $modified->format( DATE_W3C ) ),
+				get_the_modified_date( '', $post ),
+			);
+			printf(
+				'<span class="posted-on">%1$s: %2$s</span>',
+				_x( 'Last Modified', 'Used before modified date.', 'iw26' ),
+				$time_string
+			);
 		} else {
 			$published = get_post_datetime( $post, 'date' );
 			$modified = get_post_datetime( $post, 'modified' );
-			$time_string = '<time class="entry-date published updated dt-published dt-updated" datetime="%1$s">%2$s</time>';
+			$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time>';
 
 			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 				$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time><time class="updated dt-updated" datetime="%3$s">%4$s</time>';
@@ -372,3 +392,36 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+function iw26_page_permalink() {
+	$ancestors = get_ancestors( get_the_ID(), 'page', 'post_type' );
+	if ( empty( $ancestors ) ) {
+		array();
+	}
+	$ancestors = array_reverse( $ancestors );
+	$return = array();
+	foreach( $ancestors as $ancestor ) {
+		$return[] = sprintf( '<a href="%1$s" rel="up">%2$s</a>', get_permalink( $ancestor ), get_the_title( $ancestor ) );
+	}
+	$return[] = sprintf( '<a class="u-url" href="%1$s">%2$s</a>', get_permalink(), get_the_title() );
+	echo implode( ' &raquo; ', $return );
+}
+
+function iw26_page_children() {
+	$children = get_posts(
+			array(
+				'post_parent' => get_the_ID(),
+				'post_type' => 'page',
+				'fields' => 'ids'
+			)
+		);
+	if ( empty( $children ) ) {
+		return;
+	}
+	$return = array();
+	foreach( $children as $child ) {
+		$return[] = sprintf( '<a href="%1$s" rel="down">%2$s</a>', get_permalink( $child), get_the_title( $child ) );
+	}
+	$return[] = sprintf( '<a class="u-url" href="%1$s">%2$s</a>', get_permalink(), get_the_title() );
+	echo '<ul><li>' . implode( '</li><li> ', $return ) . '</li></ul>';
+}
