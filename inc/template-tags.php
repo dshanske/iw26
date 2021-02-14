@@ -413,6 +413,7 @@ function iw26_page_children() {
 				'post_parent' => get_the_ID(),
 				'post_type' => 'page',
 				'fields' => 'ids',
+				'orderby' => 'title',
 				'posts_per_page' => '-1'
 			)
 		);
