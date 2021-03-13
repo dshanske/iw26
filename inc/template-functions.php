@@ -177,9 +177,20 @@ add_action( 'rss_head', 'iw26_image_rss)' );
 add_action( 'commentsrss2_head', 'iw26_image_rss' );
 
 
+function iw26_is_404_singular() {
+	// If any of these are present it is an attempt to get a single object not an archive.
+	foreach( array( 'name', 'page', 'p', 'pagename', 'attachment', 'attachment_id' ) as $var ) {
+		if ( get_query_var( $var ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
 if ( ! function_exists( 'has_content' ) ) {
 	function has_content( $post = 0 ) {
 		$post = get_post( $post );
 		return ( ! empty( $post->post_content ) );
 	}
 }
+
