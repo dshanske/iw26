@@ -105,6 +105,32 @@ function iw26_syndication_links() {
 	echo get_syndication_links( get_the_ID(), $args );
 }
 
+
+if ( ! function_exists( 'iw26_attachment_datetime' ) ) :
+	function iw26_attachment_datetime( $post ) {
+		$post = get_post( $post );
+		if ( ! 'attachment' === get_post_type( $post ) ) {
+			return false;
+		}
+		$data = get_post_meta( $post->ID, '_wp_attachment_metadata', true );
+		if ( ! $data ) {
+			return;
+		}
+		$data = $data['image_meta'];
+		$created = null;
+		$published = get_post_meta( $post->ID, 'mf2_published', true );
+		if ( $published ) {
+			$created = new DateTime( $published );
+		} elseif ( array_key_exists( 'created', $data ) ) {
+			$created = new DateTime( $data['created'] );
+		} elseif ( array_key_exists( 'created_timestamp', $data ) && ( 0 !== (int) $data['created_timestamp'] ) ) {
+			$created = new DateTime();
+			$created->setTimestamp( $data['created_timestamp'] );
+		}
+		return $created;
+	}
+endif;
+
 if ( ! function_exists( 'iw26_entry_date' ) ) :
 	/**
 	 * Prints HTML with date information for current post.
@@ -116,21 +142,7 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 	function iw26_entry_date() {
 		$post = get_post();
 		if ( 'attachment' === get_post_type( $post ) ) {
-			$data = get_post_meta( $post->ID, '_wp_attachment_metadata', true );
-			if ( ! $data ) {
-				return;
-			}
-			$data = $data['image_meta'];
-			$created = null;
-			$published = get_post_meta( $post->ID, 'mf2_published', true );
-			if ( $published ) {
-				$created = new DateTime( $published );
-			} elseif ( array_key_exists( 'created', $data ) ) {
-				$created = new DateTime( $data['created'] );
-			} elseif ( array_key_exists( 'created_timestamp', $data ) && ( 0 !== (int) $data['created_timestamp'] ) ) {
-				$created = new DateTime();
-				$created->setTimestamp( $data['created_timestamp'] );
-			}
+			$created = iw26_attachment_datetime( $post );
 			if ( $created instanceOf DateTime ) {
 				$time_string = '<time class="published dt-published" datetime="%1$s">%2$s</time>';
 				$time_string = sprintf(
