@@ -131,6 +131,51 @@ if ( ! function_exists( 'iw26_attachment_datetime' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'iw26_date_format' ) ) :
+	function iw26_date_format() {
+		
+		$format = get_option( 'date_format' );
+
+		if ( is_singular( 'post' ) ) {
+			$time_format = get_option( 'time_format' );
+			$timezone = get_post_meta( get_the_ID(), 'geo_timezone', true );
+			if ( $timezone ) {
+				$timezone = new DateTimeZone( $timezone );
+				if ( $timezone->getOffset( new Datetime( "now" ) ) !== wp_timezone()->getOffset( new DateTime( "now" ) ) ) {
+					$time_format = $time_format . ' T';
+				}
+			}
+					
+			return $format . ' ' . $time_format;
+		}
+		
+		// This is only used for date archives.
+		if ( ! is_date() ) {
+			return $format;
+		}
+
+
+		// If this is a On This Week archive.
+		if ( empty( get_query_var( 'year' ) ) && empty( get_query_var( 'monthnum' ) ) && ! empty( get_query_var( 'w' ) ) ) {
+			return $format;
+			// If this is a day archive.
+		} elseif ( is_day() ) {
+			// If this is an On This Day Archive.
+			if ( empty( get_query_var( 'year' ) ) ) {
+				$format = 'Y';
+			} else {
+				$format = get_option( 'time_format' );
+			}
+		} elseif ( is_year() ) {
+			$format = 'M d';
+		} elseif ( is_month() ) {
+			$format = 'M d';
+		}
+		return $format;
+	}
+endif;
+
+
 if ( ! function_exists( 'iw26_entry_date' ) ) :
 	/**
 	 * Prints HTML with date information for current post.
@@ -141,6 +186,7 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 	 */
 	function iw26_entry_date() {
 		$post = get_post();
+		$format = iw26_date_format();
 		if ( 'attachment' === get_post_type( $post ) ) {
 			$created = iw26_attachment_datetime( $post );
 			if ( $created instanceOf DateTime ) {
@@ -148,7 +194,7 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 				$time_string = sprintf(
 					$time_string,
 					esc_attr( $created->format( DATE_W3C ) ),
-					$created->format( get_option( 'time_format' ) ) . '<BR />' . $created->format( get_option( 'date_format' ) ),
+					$created->format( iw26_entry_format() ),
 				);
 				printf(
 					'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
@@ -164,7 +210,7 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 			$time_string = sprintf(
 				$time_string,
 				esc_attr( $modified->format( DATE_W3C ) ),
-				get_the_modified_date( '', $post ),
+				get_the_modified_date( $format, $post ),
 			);
 			printf(
 				'<span class="posted-on">%1$s: %2$s</span>',
@@ -183,9 +229,9 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 			$time_string = sprintf(
 				$time_string,
 				esc_attr( $published->format( DATE_W3C ) ),
-				get_the_time( '', $post ) . '<BR />' . get_the_date( '', $post ),
+				get_the_date( $format, $post ),
 				esc_attr( $modified->format( DATE_W3C ) ),
-				get_the_modified_date( '', $post )
+				get_the_modified_date( $format, $post )
 			);
 			printf(
 				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
