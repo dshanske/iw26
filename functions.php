@@ -109,7 +109,8 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 				'gallery',
 				'caption',
 				'style',
-				'script'
+				'script',
+				'navigation-widgets',
 			)
 		);
 
@@ -125,10 +126,6 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 		add_theme_support( 'wp-block-styles' );
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
-
-
-		// Add support for navigation widgets.
-		add_theme_support( 'navigation-widgets' );
 
 		// Add support for custom color scheme.
 		add_theme_support(
@@ -199,6 +196,9 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 
 		// Indicate widget sidebars can use selective refresh in the Customizer.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
 
 	}
 endif; // iw26_setup
@@ -409,6 +409,15 @@ function iw26_hex2rgb( $color ) {
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+* Block Patterns.
+*/
+require get_template_directory() . '/inc/block-patterns.php';
+
+
+
+
 require get_template_directory() . '/inc/template-functions.php';
 
 /**

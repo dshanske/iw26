@@ -1,6 +1,6 @@
 /*
 Theme Name: Twenty Sixteen
-Description: Used to style Gutenberg Blocks.
+Description: Used to style blocks.
 */
 
 /*--------------------------------------------------------------
@@ -145,10 +145,12 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-code {
 	border: 0;
 	font-family: Inconsolata, monospace;
-	font-size: 16px;
-	font-size: 1rem;
 	line-height: 1.75;
 	padding: 0;
+}
+
+.wp-block-code code {
+	font-size: inherit;
 }
 
 /* Pullquote */
@@ -158,17 +160,19 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-pullquote blockquote {
-	border-left: 0;
+	color: #686868;
+	border-left: 4px solid #1a1a1a;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 0 24px;
 }
 
 .rtl .wp-block-pullquote blockquote {
-	border-right: 0;
+	border-left: none;
+	border-right: 4px solid #1a1a1a;
+	padding: 0 24px 0 0;
 }
 
 .wp-block-pullquote p {
-	color: #686868;
 	font-size: 19px;
 	font-size: 1.1875rem;
 }
@@ -198,7 +202,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-table {
 	border-collapse: separate;
 	border-spacing: 0;
-	border-width: 1px 0 0 1px;
+	border-width: 0;
 	margin: 0 0 1.75em;
 	table-layout: fixed;
 	width: 100%;
@@ -232,21 +236,36 @@ p.has-drop-cap:not(:focus)::first-letter {
 /* Buttons */
 
 .wp-block-button .wp-block-button__link {
-	background: #1a1a1a;
-	border: 0;
-	border-radius: 2px;
-	color: #fff;
+	box-shadow: none;
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-weight: 700;
 	letter-spacing: 0.046875em;
 	line-height: 1;
-	padding: 0.84375em 0.875em 0.78125em;
+	padding: 0.84375em 1.3125em 0.78125em;
 	text-transform: uppercase;
 }
 
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
+.content .wp-block-button__link {
+	background: #1a1a1a;
+	color: #fff;
+}
+
+.content .is-style-outline .wp-block-button__link:not(.has-background) {
+	background: transparent;
+}
+
+.content .is-style-outline .wp-block-button__link:not(.has-text-color) {
+	color: #1a1a1a;
+}
+
+.content .wp-block-button__link:hover,
+.content .wp-block-button__link:focus,
+.content .is-style-outline .wp-block-button__link:not(.has-background):hover,
+.content .is-style-outline .wp-block-button__link:not(.has-background):focus,
+.content .is-style-outline .wp-block-button__link:not(.has-text-color):hover,
+.content .is-style-outline .wp-block-button__link:not(.has-text-color):focus {
 	background: #007acc;
+	color: #fff;
 }
 
 .wp-block-button .wp-block-button__link:focus {
@@ -308,7 +327,7 @@ hr.wp-block-separator {
 	line-height: 1.6153846154;
 }
 
-.wp-block-latest-comments .wp-block-latest-comments__comment {
+.wp-block-latest-comments .wp-block-latest-comments__comment:not(:first-child) {
 	border-top: 1px solid #d1d1d1;
 	margin-bottom: 0;
 	padding: 1.75em 0;
@@ -318,102 +337,117 @@ hr.wp-block-separator {
 	margin-bottom: 0;
 }
 
+/* Query Loop & Post Template */
+
+.wp-block-query .wp-block-post-template {
+	margin-left: 0;
+}
+
+.wp-block-query .wp-block-post-template li {
+	margin-bottom: 0;
+	padding: 1.5em 0 0;
+}
+
+.wp-block-query .wp-block-post-template li:not(:first-child) {
+	border-top: 1px solid #d1d1d1;
+}
+
 /*--------------------------------------------------------------
 6.0 Blocks - Colors
 --------------------------------------------------------------*/
 
-.has-dark-gray-color {
+.content .has-dark-gray-color {
 	color: #1a1a1a;
 }
 
-.has-dark-gray-background-color {
+.content .has-dark-gray-background-color {
 	background-color: #1a1a1a;
 }
 
-.has-medium-gray-color {
+.content .has-medium-gray-color {
 	color: #686868;
 }
 
-.has-medium-gray-background-color {
+.content .has-medium-gray-background-color {
 	background-color: #686868;
 }
 
-.has-light-gray-color {
+.content .has-light-gray-color {
 	color: #e5e5e5;
 }
 
-.has-light-gray-background-color {
+.content .has-light-gray-background-color {
 	background-color: #e5e5e5;
 }
 
-.has-white-color {
+.content .has-white-color {
 	color: #fff;
 }
 
-.has-white-background-color {
+.content .has-white-background-color {
 	background-color: #fff;
 }
 
-.has-blue-gray-color {
+.content .has-blue-gray-color {
 	color: #4d545c;
 }
 
-.has-blue-gray-background-color {
+.content .has-blue-gray-background-color {
 	background-color: #4d545c;
 }
 
-.has-bright-blue-color {
+.content .has-bright-blue-color {
 	color: #007acc;
 }
 
-.has-bright-blue-background-color {
+.content .has-bright-blue-background-color {
 	background-color: #007acc;
 }
 
-.has-light-blue-color {
+.content .has-light-blue-color {
 	color: #9adffd;
 }
 
-.has-light-blue-background-color {
+.content .has-light-blue-background-color {
 	background-color: #9adffd;
 }
 
-.has-dark-brown-color {
+.content .has-dark-brown-color {
 	color: #402b30;
 }
 
-.has-dark-brown-background-color {
+.content .has-dark-brown-background-color {
 	background-color: #402b30;
 }
 
-.has-medium-brown-color {
+.content .has-medium-brown-color {
 	color: #774e24;
 }
 
-.has-medium-brown-background-color {
+.content .has-medium-brown-background-color {
 	background-color: #774e24;
 }
 
-.has-dark-red-color {
+.content .has-dark-red-color {
 	color: #640c1f;
 }
 
-.has-dark-red-background-color {
+.content .has-dark-red-background-color {
 	background-color: #640c1f;
 }
 
-.has-bright-red-color {
+.content .has-bright-red-color {
 	color: #ff675f;
 }
 
-.has-bright-red-background-color {
+.content .has-bright-red-background-color {
 	background-color: #ff675f;
 }
 
-.has-yellow-color {
+.content .has-yellow-color {
 	color: #ffef8e;
 }
 
-.has-yellow-background-color {
+.content .has-yellow-background-color {
 	background-color: #ffef8e;
 }

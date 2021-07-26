@@ -5,7 +5,8 @@
 }
 
 .widget-area > :last-child,
-.widget > :last-child {
+.widget > :last-child,
+.widget > nav > :last-child {
 	margin-bottom: 0;
 }
 
