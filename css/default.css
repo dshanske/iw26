@@ -393,7 +393,7 @@ template {
   font-variant: normal;
   font-weight: normal;
   line-height: 1;
-  speak: none;
+  speak: never;
   text-align: center;
   text-decoration: inherit;
   text-transform: none;
@@ -1339,7 +1339,8 @@ blockquote::after,
 }
 
 .widget-area > :last-child,
-.widget > :last-child {
+.widget > :last-child,
+.widget > nav > :last-child {
   margin-bottom: 0;
 }
 

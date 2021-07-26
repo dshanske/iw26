@@ -34,6 +34,7 @@ module.exports = function(grunt) {
       }
     },
     stylelint: {
+	    	"extends": "@wordpress/stylelint-config",
 	        all: ['sass/**/*.scss']
     },
     makepot: {

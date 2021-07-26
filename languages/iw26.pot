@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2019
+# <!=Copyright (C) 2021
 # This file is distributed under the same license as the  package.=!>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/iw26\n"
-"POT-Creation-Date: 2019-01-03 22:21:22+00:00\n"
+"POT-Creation-Date: 2021-07-26 00:35:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
@@ -17,25 +17,35 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:21
+#: 404.php:20
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: 404.php:28
+#: 404.php:27 404.php:47
 msgid "Or search for posts by their syndicated copies"
 msgstr ""
 
-#: archive.php:56 index.php:51 search.php:39
+#: 404.php:37
+msgid "Oops! That archive can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:40
+msgid "It looks there are no posts available"
+msgstr ""
+
+#: archive.php:63 author.php:54 index.php:51 kind-photos.php:50 search.php:39
+#: taxonomy-kind-photo.php:50 taxonomy-kind.php:45
 msgid "Previous page"
 msgstr ""
 
-#: archive.php:57 index.php:52 search.php:40
+#: archive.php:64 author.php:55 index.php:52 kind-photos.php:51 search.php:40
+#: taxonomy-kind-photo.php:51 taxonomy-kind.php:46
 msgid "Next page"
 msgstr ""
 
-#: archive.php:58 image.php:62 index.php:53 search.php:41
-#: template-parts/content-page.php:32 template-parts/content-single.php:42
-#: template-parts/content.php:50
+#: archive.php:65 author.php:56 image.php:62 index.php:53 kind-photos.php:52
+#: search.php:41 taxonomy-kind-photo.php:52 taxonomy-kind.php:47
+#: template-parts/content-single.php:42 template-parts/content.php:50
 msgid "Page"
 msgstr ""
 
@@ -55,91 +65,91 @@ msgstr ""
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: functions.php:95 header.php:50
+#: functions.php:95 header.php:51
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:135
 msgid "Dark Gray"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:140
 msgid "Medium Gray"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:145
 msgid "Light Gray"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:150
 msgid "White"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:155
 msgid "Blue Gray"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:160
 msgid "Bright Blue"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:165
 msgid "Light Blue"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:170
 msgid "Dark Brown"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:175
 msgid "Medium Brown"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:180
 msgid "Dark Red"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:185
 msgid "Bright Red"
 msgstr ""
 
-#: functions.php:187 inc/customizer.php:355
+#: functions.php:190 inc/customizer.php:355
 msgid "Yellow"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:231
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:227
+#: functions.php:233
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:237
+#: functions.php:243
 msgid "Content Bottom 1"
 msgstr ""
 
-#: functions.php:239 functions.php:251
+#: functions.php:245 functions.php:257
 msgid "Appears at the bottom of the content on posts and pages."
 msgstr ""
 
-#: functions.php:249
+#: functions.php:255
 msgid "Content Bottom 2"
 msgstr ""
 
-#: functions.php:351
+#: functions.php:357
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:352
+#: functions.php:358
 msgid "collapse child menu"
 msgstr ""
 
-#: header.php:24
+#: header.php:25
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:46
+#: header.php:47
 msgid "Menu"
 msgstr ""
 
@@ -151,12 +161,16 @@ msgstr ""
 msgid "Next Image"
 msgstr ""
 
-#: image.php:58 template-parts/content-page.php:28
-#: template-parts/content-single.php:38 template-parts/content.php:46
+#: image.php:58 template-parts/content-single.php:38
+#: template-parts/content.php:46
 msgid "Pages:"
 msgstr ""
 
-#: image.php:88 template-parts/content-page.php:39
+#: image.php:89
+msgid "Original Source URL:"
+msgstr ""
+
+#: image.php:97 template-parts/content-page.php:34
 #: template-parts/content-search.php:28 template-parts/content-search.php:43
 #: template-parts/content-single.php:50 template-parts/content.php:60
 #. translators: %s: Name of current post
@@ -167,6 +181,70 @@ msgstr ""
 msgid ""
 "Twenty Sixteen requires at least WordPress version 4.4. You are running "
 "version %s. Please upgrade and try again."
+msgstr ""
+
+#: inc/block-patterns.php:17 inc/block-patterns.php:57
+msgid "Twenty Sixteen"
+msgstr ""
+
+#: inc/block-patterns.php:28
+msgid "Large heading with short description"
+msgstr ""
+
+#: inc/block-patterns.php:35
+msgid ""
+"Twenty Sixteen is a modern take on the horizontal masthead with an optional "
+"right sidebar. It works perfectly for WordPress websites and blogs."
+msgstr ""
+
+#: inc/block-patterns.php:38
+msgid ""
+"Twenty Sixteen will make your WordPress website look beautiful everywhere. "
+"Take advantage of custom color options, beautiful default color schemes, a "
+"harmonious fluid grid using a mobile-first approach, and impeccable polish "
+"in every detail."
+msgstr ""
+
+#: inc/block-patterns.php:50
+msgid "Big Title with Two Columns Text"
+msgstr ""
+
+#: inc/block-patterns.php:67
+msgid ""
+"Twenty Sixteen will make your WordPress website look beautiful everywhere. "
+"Take advantage of its custom color options and beautiful default color "
+"schemes."
+msgstr ""
+
+#: inc/block-patterns.php:73
+msgid ""
+"The theme features a harmonious fluid grid using a mobile-first approach. "
+"The layout is a modern take on the horizontal masthead with an optional "
+"right sidebar. "
+msgstr ""
+
+#: inc/block-patterns.php:87
+msgid "Large Blockquote"
+msgstr ""
+
+#: inc/block-patterns.php:98
+msgid "Twenty Sixteen will make your WordPress look beautiful everywhere."
+msgstr ""
+
+#: inc/block-patterns.php:102
+msgid "— Takashi Irie"
+msgstr ""
+
+#: inc/block-patterns.php:122
+msgid "Call to Action"
+msgstr ""
+
+#: inc/block-patterns.php:133
+msgid "My new book “Twenty Sixteen” is available for pre-order."
+msgstr ""
+
+#: inc/block-patterns.php:140
+msgid "Pre-Order Now"
 msgstr ""
 
 #: inc/customizer.php:153
@@ -209,13 +287,29 @@ msgstr ""
 msgid "All Posts Feed"
 msgstr ""
 
-#: inc/template-tags.php:80
+#: inc/template-tags.php:86
 msgid "Leave a response<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:257 template-parts/content.php:34
+#: inc/template-tags.php:369 template-parts/content.php:34
 #. translators: %s: Name of current post
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: originalofform.php:9
+msgid "Search"
+msgstr ""
+
+#: originalofform.php:10
+msgid "Original Of &hellip;"
+msgstr ""
+
+#: originalofform.php:11
+msgid "Lookup Original"
+msgstr ""
+
+#: page-location.php:15
+msgid "Locations"
 msgstr ""
 
 #: search.php:18
@@ -280,7 +374,7 @@ msgid_plural "%1$s responses on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:277
+#: functions.php:283
 #. translators: If there are characters in your language that are not supported
 #. by Merriweather, translate this to 'off'. Do not translate into your own
 #. language.
@@ -288,7 +382,7 @@ msgctxt "Merriweather font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:282
+#: functions.php:288
 #. translators: If there are characters in your language that are not supported
 #. by Montserrat, translate this to 'off'. Do not translate into your own
 #. language.
@@ -296,7 +390,7 @@ msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:287
+#: functions.php:293
 #. translators: If there are characters in your language that are not supported
 #. by Inconsolata, translate this to 'off'. Do not translate into your own
 #. language.
@@ -304,44 +398,59 @@ msgctxt "Inconsolata font: on or off"
 msgid "on"
 msgstr ""
 
-#: image.php:77
-msgctxt "Used before full size attachment link."
-msgid "Full size"
+#: image.php:78
+msgctxt "Used before camera model."
+msgid "Camera Model"
 msgstr ""
 
-#: image.php:107 single.php:31
+#: image.php:87
+msgctxt "Used before original source URL."
+msgid "Original Source URL"
+msgstr ""
+
+#: image.php:116 single.php:31
 msgctxt "Parent post link"
 msgid ""
 "<span class=\"meta-nav\">Published in</span><span "
 "class=\"post-title\">%title</span>"
 msgstr ""
 
-#: inc/template-tags.php:24 inc/template-tags.php:47
+#: inc/template-tags.php:24 inc/template-tags.php:46
 msgctxt "Used before post author name."
 msgid "Author"
 msgstr ""
 
-#: inc/template-tags.php:62
+#: inc/template-tags.php:70
 msgctxt "Used before post kind."
 msgid "Kind"
 msgstr ""
 
-#: inc/template-tags.php:127
+#: inc/template-tags.php:201
+msgctxt "Used before date taken."
+msgid "Taken on"
+msgstr ""
+
+#: inc/template-tags.php:217
+msgctxt "Used before modified date."
+msgid "Last Modified"
+msgstr ""
+
+#: inc/template-tags.php:238
 msgctxt "Used before publish date."
 msgid "Posted on"
 msgstr ""
 
-#: inc/template-tags.php:151 inc/template-tags.php:160
+#: inc/template-tags.php:263 inc/template-tags.php:272
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:155
+#: inc/template-tags.php:267
 msgctxt "Used before series names."
 msgid "Series"
 msgstr ""
 
-#: inc/template-tags.php:164
+#: inc/template-tags.php:276
 msgctxt "Used before tag names."
 msgid "Tags"
 msgstr ""
