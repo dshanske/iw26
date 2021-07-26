@@ -118,7 +118,7 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
-		add_editor_style( array( 'css/editor-style.css', iw26_fonts_url() ) );
+		add_editor_style( array( 'css/editor-style.css', '' ) );
 
 		// Load regular editor styles into the new block-based editor.
 		add_theme_support( 'editor-styles' );
@@ -264,50 +264,6 @@ function iw26_widgets_init() {
 }
 add_action( 'widgets_init', 'iw26_widgets_init' );
 
-if ( ! function_exists( 'iw26_fonts_url' ) ) :
-	/**
-	 * Register Google fonts for Twenty Sixteen.
-	 *
-	 * Create your own iw26_fonts_url() function to override in a child theme.
-	 *
-	 * @since Twenty Sixteen 1.0
-	 *
-	 * @return string Google fonts URL for the theme.
-	 */
-	function iw26_fonts_url() {
-		$fonts_url = '';
-		$fonts     = array();
-		$subsets   = 'latin,latin-ext';
-
-		/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'iw26' ) ) {
-			$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
-		}
-
-		/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'iw26' ) ) {
-			$fonts[] = 'Montserrat:400,700';
-		}
-
-		/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-		if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'iw26' ) ) {
-			$fonts[] = 'Inconsolata:400';
-		}
-
-		if ( $fonts ) {
-			$fonts_url = add_query_arg(
-				array(
-					'family' => urlencode( implode( '|', $fonts ) ),
-					'subset' => urlencode( $subsets ),
-				),
-				'https://fonts.googleapis.com/css'
-			);
-		}
-
-		return $fonts_url;
-	}
-endif;
-
 /**
  * Handles JavaScript detection.
  *
@@ -326,9 +282,6 @@ add_action( 'wp_head', 'iw26_javascript_detection', 0 );
  * @since Twenty Sixteen 1.0
  */
 function iw26_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'iw26-fonts', iw26_fonts_url(), array(), null );
-
 	// Add Genericons, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_theme_file_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
 
@@ -369,8 +322,6 @@ add_action( 'wp_enqueue_scripts', 'iw26_scripts' );
 function iw26_block_editor_styles() {
 	// Block styles.
 	wp_enqueue_style( 'iw26-block-editor-style', get_theme_file_uri() . '/css/editor-blocks.css' );
-	// Add custom fonts.
-	wp_enqueue_style( 'iw26-fonts', iw26_fonts_url(), array(), null );
 }
 add_action( 'enqueue_block_editor_assets', 'iw26_block_editor_styles' );
 

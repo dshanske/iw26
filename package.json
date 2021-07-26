@@ -10,7 +10,6 @@
     "grunt": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-sass": "^2.0.0",
-    "grunt-stylelint": "^0.16.0",
     "grunt-wp-i18n": "*",
     "grunt-wp-readme-to-markdown": "*",
     "normalize.css": "^8.0.1",
@@ -18,7 +17,9 @@
     "stylelint-config-recommended-scss": "^4.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint-fix:scss": "./node_modules/stylelint/bin/stylelint.js **/*.scss --fix",
+    "lint:scss": "stylelint **/*.scss"
   },
   "repository": {
     "type": "git",
