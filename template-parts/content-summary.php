@@ -14,8 +14,8 @@
 		<span class="sticky-post"><?php _e( 'Featured', 'iw26' ); ?></span>
 	<?php endif; ?>
 	<?php
-	if ( class_exists( 'Kind_Taxonomy' ) && 'article' === get_post_kind_slug() ) {
-		the_title( sprintf( '<a class="entry-title p-name" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+	if ( ! class_exists( 'Kind_Taxonomy' ) ) {
+		the_title( sprintf( '<a class="entry-title p-name" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
 	} else {
 		echo iw26_post_link();
 	}
