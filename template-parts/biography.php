@@ -29,7 +29,7 @@
 
 	<div class="author-description">
 		<h2 class="author-title">
-		<a class="p-name u-url author-link" href="<?php echo esc_url( get_author_posts_url( $id ); ?>"><?php echo get_the_author(); ?></a></h2>
+		<a class="p-name u-url author-link" href="<?php echo esc_url( get_author_posts_url( $id ) ); ?>"><?php echo get_the_author(); ?></a></h2>
 
 		<p class="author-bio">
 			<?php the_author_meta( 'description' ); ?>
