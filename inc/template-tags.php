@@ -484,3 +484,47 @@ function iw26_page_children() {
 	}
 	echo '<ul><li>' . implode( '</li><li> ', $return ) . '</li></ul>';
 }
+
+function iw26_post_link( $post = null ) {
+	$post = get_post( $post );
+	if ( ! empty( $post->post_title ) ) {
+		$title = $post->post_title;
+	} elseif ( ! empty( $post->post_excerpt ) ) {
+		$title = $post->post_excerpt;
+	} elseif ( ! empty( $post->post_content ) ) {
+		$title = mb_strimwidth( wp_strip_all_tags( $post->post_content ), 0, 40, '...' );
+	} else {
+		$title = get_the_date( 'Y ' . get_option( 'time_format' ), $post );
+	}
+
+	if( class_exists( 'Kind_Post' ) ) {
+		$kind_post = new Kind_Post( $post );
+
+		$content = $kind_post->get_name();
+		if ( ! empty( $content ) ) {
+			$title = $content;
+		} else {
+			$kind = $kind_post->get_kind();
+			if ( ! in_array( $kind, array( 'note', 'article' ), true ) ) {
+				$cite = $kind_post->get_cite( 'name' );
+				if ( false === $cite ) {
+					$content = Kind_View::get_post_type_string( $kind_post->get_cite( 'url' ) );
+				} else {
+					$content = $cite;
+				}
+			} else {
+				$content = $post->post_excerpt;
+				// If no excerpt use content
+				if ( ! $content ) {
+					$content = $post->post_content;
+				}
+				// If no content use date
+				if ( $content ) {
+					$content = mb_strimwidth( wp_strip_all_tags( $content ), 0, 40, '...' );
+				}
+			}
+			$title = trim( Kind_Taxonomy::get_before_kind( $kind ) . $content );
+		}
+	}
+	return trim( sprintf( '<a href="%1$s class="entry-title p-name" rel="bookmark">%2$s</a>', get_the_permalink( $post ), $title ) );
+}
