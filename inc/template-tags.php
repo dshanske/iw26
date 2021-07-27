@@ -508,18 +508,11 @@ function iw26_post_link( $post = null ) {
 			} else {
 				$content = $cite;
 			}
-		} else {
-			$content = $post->post_excerpt;
-			// If no excerpt use content
-			if ( ! $content ) {
-				$content = $post->post_content;
-			}
-			// If no content use date
-			if ( $content ) {
-				$content = mb_strimwidth( wp_strip_all_tags( $content ), 0, 40, '...' );
-			}
 		}
-		$title = trim( Kind_Taxonomy::get_before_kind( $kind ) . $content );
+		if ( ! empty( $content ) ) {
+			$title = $content;
+		}
+		$title = trim( Kind_Taxonomy::get_before_kind( $kind ) . $title );
 	} 
 	return trim( sprintf( '<a href="%1$s" class="p-name" rel="bookmark">%2$s</a>', get_the_permalink( $post ), $title ) );
 }
