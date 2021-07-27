@@ -521,5 +521,5 @@ function iw26_post_link( $post = null ) {
 		}
 		$title = trim( Kind_Taxonomy::get_before_kind( $kind ) . $content );
 	} 
-	return trim( sprintf( '<a href="%1$s class="entry-title p-name" rel="bookmark">%2$s</a>', get_the_permalink( $post ), $title ) );
+	return trim( sprintf( '<a href="%1$s" class="p-name" rel="bookmark">%2$s</a>', get_the_permalink( $post ), $title ) );
 }
