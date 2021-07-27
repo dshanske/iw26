@@ -27,7 +27,7 @@ get_header(); ?>
 		<hr />
 		<ul class="front-page-list">
 		<?php
-		if ( have_posts() ) {
+		if ( have_posts() && ! is_singular() ) {
 			?><h2><?php _e( 'Recent Posts', 'iw26' );?></h2> <?php
 			// Start the loop.
 			while ( have_posts() ) {
