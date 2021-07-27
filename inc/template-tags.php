@@ -194,7 +194,7 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 				$time_string = sprintf(
 					$time_string,
 					esc_attr( $created->format( DATE_W3C ) ),
-					$created->format( iw26_entry_format() ),
+					$created->format( iw26_date_format() ),
 				);
 				printf(
 					'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
