@@ -48,6 +48,15 @@ get_header(); ?>
 		}
 		?>
 		</ul>
+		<?php
+			// Previous/next page navigation.
+			the_posts_navigation(
+				array(
+					'prev_text'          => __( 'Older Posts', 'iw26' ),
+					'next_text'          => __( 'Newer Posts', 'iw26' ),
+				)
+			);
+		?>
 
 	</main><!-- .site-main -->
 
