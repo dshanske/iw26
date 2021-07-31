@@ -1353,16 +1353,6 @@ a:active {
   z-index: 1;
 }
 
-.pagination .nav-links::before {
-  content: "";
-  right: -1px;
-}
-
-.pagination .nav-links::after {
-  content: "";
-  right: 55px;
-}
-
 /* reset screen-reader-text */
 .pagination .current .screen-reader-text {
   position: static !important;
@@ -1423,20 +1413,16 @@ a:active {
   right: 54px;
 }
 
-.pagination .prev::before {
-  content: "";
-  left: -1px;
-  top: -1px;
-}
-
 .pagination .next {
   right: 0;
 }
 
-.pagination .next::before {
-  content: "";
-  right: -1px;
-  top: -1px;
+.nav-links svg {
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  top: -0.0625em;
+  vertical-align: middle;
 }
 
 .image-navigation,
