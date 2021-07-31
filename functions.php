@@ -472,3 +472,19 @@ function iw26_set_posts_per_page_for_kind_photos( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'iw26_set_posts_per_page_for_kind_photos' );
+
+/**
+ * After the first page, do not use the front-page.php template.
+**/
+
+function iw26_front_paged( $template ) {
+	if( is_front_page() && is_paged() ) {
+		$new_template = locate_template( array( 'home.php', 'index.php' ) );
+		if ( '' !== $new_template ) {
+			return $new_template;
+		}
+	}
+	return $template;
+		
+}
+add_filter( 'template_include', 'iw26_front_paged', 99 );
