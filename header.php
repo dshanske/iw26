@@ -44,22 +44,25 @@ if ( $description || is_customize_preview() ) :
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'iw26' ); ?></button>
+					<div class="navigation-top">
+						<div class="wrap">
+							<?php if ( has_nav_menu( 'primary' ) ) : ?>
+								<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Top Menu', 'twentyseventeen' ); ?>">
+								<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo iw26_get_icon( 'menu' ); echo iw26_get_icon( 'close' ); _e( 'Menu', 'twentysixteen' ); ?></button>
+								<?php wp_nav_menu( 
+									array(
+										'theme_location' => 'primary',
+										'menu_id'        => 'primary-menu',
+									) 
+								); ?>
 
-					<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'iw26' ); ?>">
-								<?php
-									wp_nav_menu(
-										array(
-											'theme_location' => 'primary',
-											'menu_class' => 'primary-menu',
-										)
-									);
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-					</div><!-- .site-header-menu -->
+								<?php if ( is_home() && is_front_page()  ) : ?>
+									<a href="#content" class="menu-scroll-down"><?php echo iw26_get_icon( 'next' ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down', 'twentysixteen' ); ?></span></a>
+								<?php endif; ?>
+								</nav><!-- #site-navigation -->
+							<?php endif; ?>
+						</div><!-- .wrap -->
+					</div><!-- .navigation-top -->
 				<?php endif; ?>
 			</div><!-- .site-header-main -->
 

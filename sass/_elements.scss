@@ -111,6 +111,11 @@ td {
 	padding: 0.4375em;
 }
 
+svg {
+	width: 1em;
+}
+	
+
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
 	color: #686868;

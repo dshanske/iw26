@@ -282,9 +282,6 @@ add_action( 'wp_head', 'iw26_javascript_detection', 0 );
  * @since Twenty Sixteen 1.0
  */
 function iw26_scripts() {
-	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_theme_file_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
-
 	// Theme stylesheet.
 	wp_enqueue_style( 'iw26-style', get_theme_file_uri() . '/css/default.min.css', array(), wp_get_theme()->get( 'Version' ) );
 

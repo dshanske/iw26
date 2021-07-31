@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     },
     copy: {
 	    main: {
-		    files: [ {expand: true, cwd: 'node_modules/genericons-neue/icon-font/', src: ['**'], dest: 'genericons-neue/'}, ],
+		    files: [ {expand: true, cwd: 'node_modules/genericons-neue/svg-min/', src: ['**'], dest: 'genericons-neue/'}, ],
 		},
     },
     sass: {                              // Task

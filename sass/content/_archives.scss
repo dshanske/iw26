@@ -1,9 +1,15 @@
 header {
 
-	svg {
-		width: 48px;
-		height: 48px;
+	.page-title {
+		margin-bottom: 0.5em;
+	}
+	.page-title svg {
+		width: 2em;
 		color: #000;
+		position: relative; /* Align more nicely with capital letters */
+		top: -0.0625em;
+		vertical-align: middle;
+		width: 2em;
 	}
 }
 

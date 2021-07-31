@@ -194,3 +194,58 @@ if ( ! function_exists( 'has_content' ) ) {
 	}
 }
 
+// Return the filename of an icon based on name if the file exists
+function iw26_get_icon_filename( $name ) {
+	$svg = sprintf( '%1$sgenericons-neue/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
+	if ( file_exists( $svg ) ) {
+		return $svg;
+	}
+	return null;
+}
+
+function iw26_get_icon_svg( $icon ) {
+	if ( ! is_string( $icon ) ) {
+		return $icon;
+	}
+
+	$file = iw26_get_icon_filename( $icon );
+	
+	if ( $file ) {
+		$icon = file_get_contents( $file ); // phpcs:ignore
+		if ( $icon ) {
+			return $icon;
+		}
+	}
+	
+	return null;
+}
+
+function iw26_get_icon( $name ) {
+	$svg  = iw26_get_icon_svg( $name );
+	if ( ! $svg ) {
+		return '';
+	}
+	return sprintf( '<span class="icon icon-%1$s">%2$s</svg>', $name, $svg );
+}
+
+/**
+ * Add dropdown icon if menu item has children.
+ *
+ * @param  string $title The menu item's title.
+ * @param  object $item  The current menu item.
+ * @param  array  $args  An array of wp_nav_menu() arguments.
+ * @param  int    $depth Depth of menu item. Used for padding.
+ * @return string $title The menu item's title with dropdown icon.
+ */
+function iw26_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
+	if ( 'primary' === $args->theme_location ) {
+		foreach ( $item->classes as $value ) {
+			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
+				$title = $title . iw26_get_icon( 'expand' );
+			}
+		}
+	}
+
+	return $title;
+}
+add_filter( 'nav_menu_item_title', 'iw26_dropdown_icon_to_menu_link', 10, 4 );
