@@ -3,12 +3,16 @@ header {
 	.page-title {
 		margin-bottom: 0.5em;
 	}
+	.page-title span {
+		display: inline;
+	}
 	.page-title svg {
 		width: 2em;
-		color: #000;
+		color: var(--main-text-color);
 		position: relative; /* Align more nicely with capital letters */
 		top: -0.0625em;
 		vertical-align: middle;
+		margin-right: 5px;
 		width: 2em;
 	}
 }

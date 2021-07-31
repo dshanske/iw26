@@ -225,7 +225,7 @@ function iw26_get_icon( $name ) {
 	if ( ! $svg ) {
 		return '';
 	}
-	return sprintf( '<span class="icon icon-%1$s">%2$s</svg>', $name, $svg );
+	return sprintf( '<span class="icon icon-%1$s">%2$s</svg></span>', $name, $svg );
 }
 
 /**

@@ -516,3 +516,24 @@ function iw26_post_link( $post = null ) {
 	} 
 	return trim( sprintf( '<a href="%1$s" class="p-name" rel="bookmark">%2$s</a>', get_the_permalink( $post ), $title ) );
 }
+
+function iw26_archive_title( $title, $original_title, $prefix ) {
+	if ( get_query_var( 'kind_photos' ) ) {
+		return iw26_get_icon( 'image' ) . $title;
+	} else if ( is_numeric( get_query_var( 'w' ) ) && is_date() ) {
+		return iw26_get_icon( 'week' ) . $title;
+	} else if ( is_day() ) {
+		return iw26_get_icon( 'day' ) . $title;
+	} else if ( is_month() ) {
+		return iw26_get_icon( 'month' ) . $title;
+	} else if ( is_year() ) { 
+		return iw26_get_icon( 'year' ) . $title;
+	} else if ( get_query_var( 'kind_photos' ) ) {
+		return iw26_get_icon( 'picture' ) . $title;
+	}
+
+	return $title;
+		
+}
+
+add_filter( 'get_the_archive_title', 'iw26_archive_title', 11, 3 );
