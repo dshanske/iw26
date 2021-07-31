@@ -789,15 +789,6 @@ input[type=search].search-field {
   width: calc(100% - 42px);
 }
 
-.search-submit::before {
-  content: "";
-  font-size: 24px;
-  left: 2px;
-  line-height: 42px;
-  position: relative;
-  width: 40px;
-}
-
 .search-submit {
   border-radius: 0 2px 2px 0;
   bottom: 0;
