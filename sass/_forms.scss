@@ -14,10 +14,10 @@ input[type="reset"][disabled]:focus,
 input[type="submit"],
 input[type="submit"][disabled]:hover,
 input[type="submit"][disabled]:focus {
-	background: #1a1a1a;
+	background: var(--background-color);;
 	border: 0;
 	border-radius: 2px;
-	color: #fff;
+	color: var(--page-background-color);
 	font-family: $font-family-input;
 	font-weight: 700;
 	letter-spacing: 0.046875em;
@@ -34,7 +34,7 @@ input[type="reset"]:hover,
 input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus {
-	background: #007acc;
+	background: var(--link-color);
 }
 
 button:focus,
@@ -62,7 +62,7 @@ textarea {
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 	border: 1px solid #d1d1d1;
 	border-radius: 2px;
-	color: #686868;
+	color: var(--secondary-text-color);
 	padding: 0.625em 0.4375em;
 	width: 100%;
 }
@@ -80,9 +80,9 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus,
 textarea:focus {
-	background-color: #fff;
-	border-color: #007acc;
-	color: #1a1a1a;
+	background-color: var(--page-background-color);
+	border-color: var(--link-color);
+	color: var(--main-text-color);;
 	outline: 0;
 }
 
@@ -91,7 +91,7 @@ textarea:focus {
 }
 
 .post-password-form label {
-	color: #686868;
+	color: var(--secondary-text-color);
 	display: block;
 	font-family: $font-family-input;
 	font-size: 13px;

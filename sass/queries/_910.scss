@@ -45,7 +45,7 @@
 
 	.main-navigation li:hover > a,
 	.main-navigation li.focus > a {
-		color: #007acc;
+		color: var(--link-color);
 	}
 
 	.main-navigation ul ul {
@@ -67,7 +67,7 @@
 	}
 
 	.main-navigation ul ul li {
-		background-color: #fff;
+		background-color: var(--page-background-color);
 		border: 1px solid #d1d1d1;
 		border-bottom-width: 0;
 	}
@@ -92,7 +92,7 @@
 	}
 
 	.main-navigation ul ul::after {
-		border-color: #fff transparent;
+		border-color: var(--page-background-color) transparent;
 		border-width: 0 8px 8px;
 		right: 11px;
 		top: -7px;

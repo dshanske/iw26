@@ -15,7 +15,7 @@ html {
 }
 
 body {
-	background: #1a1a1a;
+	background: var(--background-color);;
 
 	/* Fallback for when there is no custom background color defined. */
 }
@@ -118,17 +118,17 @@ svg {
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-family: $font-family-input;
 }
 
 :-moz-placeholder {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-family: $font-family-input;
 }
 
 ::-moz-placeholder {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-family: $font-family-input;
 	opacity: 1;
 
@@ -136,7 +136,7 @@ svg {
 }
 
 :-ms-input-placeholder {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-family: $font-family-input;
 }
 

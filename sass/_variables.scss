@@ -2,3 +2,12 @@ $font-family-base: merriweather, georgia, serif;
 $font-family-input: montserrat, "Helvetica Neue", sans-serif;
 $font-family-mono: inconsolata, monospace;
 $font-family-title: montserrat, sans-serif;
+
+:root {
+  --background-color: #1a1a1a;
+  --page-background-color: #ffffff;
+  --link-color: #007acc;
+  --main-text-color: #1a1a1a;
+  --secondary-text-color: #68686868;
+  --border-color: rgba( 26, 26, 26, 0.2 );
+      }

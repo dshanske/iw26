@@ -9,7 +9,7 @@
 
 .comments-title,
 .comment-reply-title {
-	border-top: 4px solid #1a1a1a;
+	border-top: 4px solid var(--main-text-color);
 	font-family: $font-family-input;
 	font-size: 23px;
 	font-size: 1.4375rem;
@@ -44,7 +44,7 @@
 }
 
 .comment-author {
-	color: #1a1a1a;
+	color: var(--main-text-color);
 	margin-bottom: 0.4375em;
 }
 
@@ -65,7 +65,7 @@
 
 .comment-metadata,
 .pingback .edit-link {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-family: $font-family_input;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -78,14 +78,14 @@
 
 .comment-metadata a,
 .pingback .comment-edit-link {
-	color: #686868;
+	color: var(--secondary-text-color);
 }
 
 .comment-metadata a:hover,
 .comment-metadata a:focus,
 .pingback .comment-edit-link:hover,
 .pingback .comment-edit-link:focus {
-	color: #007acc;
+	color: var(--link-color);
 }
 
 .comment-metadata .edit-link,
@@ -114,7 +114,7 @@
 .comment-reply-link {
 	border: 1px solid #d1d1d1;
 	border-radius: 2px;
-	color: #007acc;
+	color: var(--link-color);
 	display: inline-block;
 	font-family: $font-family-input;
 	font-size: 13px;
@@ -127,7 +127,7 @@
 .comment-reply-link:hover,
 .comment-reply-link:focus {
 	border-color: currentColor;
-	color: #007acc;
+	color: var(--link-color);
 	outline: 0;
 }
 
@@ -136,7 +136,7 @@
 }
 
 .comment-form label {
-	color: #686868;
+	color: var(--secondary-text-color);
 	display: block;
 	font-family: $font-family-input;
 	font-size: 13px;
@@ -155,7 +155,7 @@
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -184,7 +184,7 @@
 }
 
 .required {
-	color: #007acc;
+	color: var(--link-color);
 	font-family: $font-family-base;
 }
 
@@ -202,7 +202,7 @@
 
 .comment-reply-title small a:hover,
 .comment-reply-title small a:focus {
-	color: #1a1a1a;
+	color: var(--main-text-color);
 }
 
 .comment-reply-title small a::before {

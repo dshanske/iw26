@@ -3,19 +3,19 @@
 }
 
 .site-info {
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
 }
 
 .site-info a {
-	color: #686868;
+	color: var(--secondary-text-color);
 }
 
 .site-info a:hover,
 .site-info a:focus {
-	color: #007acc;
+	color: var(--link-color);
 }
 
 .site-footer .site-title {

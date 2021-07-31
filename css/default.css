@@ -37,6 +37,15 @@
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
+:root {
+  --background-color: #1a1a1a;
+  --page-background-color: #ffffff;
+  --link-color: #007acc;
+  --main-text-color: #1a1a1a;
+  --secondary-text-color: #68686868;
+  --border-color: rgba( 26, 26, 26, 0.2 );
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -387,7 +396,7 @@ button,
 input,
 select,
 textarea {
-  color: #1a1a1a;
+  color: var(--main-text-color);
   font-family: Merriweather, Georgia, serif;
   font-size: 16px;
   font-size: 1rem;
@@ -418,9 +427,9 @@ i {
 }
 
 blockquote {
-  border: 0 solid #1a1a1a;
+  border: 0 solid var(--main-text-color);
   border-left-width: 4px;
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 19px;
   font-size: 1.1875rem;
   font-style: italic;
@@ -448,7 +457,7 @@ blockquote p {
 
 blockquote cite,
 blockquote small {
-  color: #1a1a1a;
+  color: var(--main-text-color);
   display: block;
   font-size: 16px;
   font-size: 1rem;
@@ -516,8 +525,8 @@ acronym {
 
 mark,
 ins {
-  background: #007acc;
-  color: #fff;
+  background: var(--link-color);
+  color: var(--page-background-color);
   padding: 0.125em 0.25em;
   text-decoration: none;
 }
@@ -545,7 +554,7 @@ html {
 }
 
 body {
-  background: #1a1a1a;
+  background: var(--background-color);
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -643,24 +652,24 @@ svg {
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
 }
 
 :-moz-placeholder {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
 }
 
 ::-moz-placeholder {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   opacity: 1;
   /* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
 }
 
@@ -683,10 +692,10 @@ input[type=reset][disabled]:focus,
 input[type=submit],
 input[type=submit][disabled]:hover,
 input[type=submit][disabled]:focus {
-  background: #1a1a1a;
+  background: var(--background-color);
   border: 0;
   border-radius: 2px;
-  color: #fff;
+  color: var(--page-background-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-weight: 700;
   letter-spacing: 0.046875em;
@@ -703,7 +712,7 @@ input[type=reset]:hover,
 input[type=reset]:focus,
 input[type=submit]:hover,
 input[type=submit]:focus {
-  background: #007acc;
+  background: var(--link-color);
 }
 
 button:focus,
@@ -731,7 +740,7 @@ textarea {
   background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   border: 1px solid #d1d1d1;
   border-radius: 2px;
-  color: #686868;
+  color: var(--secondary-text-color);
   padding: 0.625em 0.4375em;
   width: 100%;
 }
@@ -749,9 +758,9 @@ input[type=search]:focus,
 input[type=tel]:focus,
 input[type=number]:focus,
 textarea:focus {
-  background-color: #fff;
-  border-color: #007acc;
-  color: #1a1a1a;
+  background-color: var(--page-background-color);
+  border-color: var(--link-color);
+  color: var(--main-text-color);
   outline: 0;
 }
 
@@ -760,7 +769,7 @@ textarea:focus {
 }
 
 .post-password-form label {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: block;
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
@@ -804,14 +813,14 @@ input[type=search].search-field {
 # Navigation
 --------------------------------------------------------------*/
 a {
-  color: #007acc;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #686868;
+  color: var(--secondary-text-color);
 }
 
 a:focus {
@@ -866,7 +875,7 @@ a:active {
 }
 
 .navigation-top {
-  background: #fff;
+  background: var(--page-background-color);
   border-bottom: 1px solid #eee;
   border-top: 1px solid #eee;
   font-size: 16px;
@@ -879,7 +888,7 @@ a:active {
 }
 
 .navigation-top a {
-  color: #222;
+  color: var(--main-text-color);
   font-weight: 600;
   -webkit-transition: color 0.2s;
   transition: color 0.2s;
@@ -887,7 +896,7 @@ a:active {
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-  color: #767676;
+  color: var(--secondary-text-color);
 }
 
 .main-navigation {
@@ -904,7 +913,7 @@ a:active {
 }
 
 .main-navigation ul {
-  background: #fff;
+  background: var(--page-background-color);
   list-style: none;
   margin: 0;
   padding: 0 1.5em;
@@ -971,7 +980,7 @@ a:active {
   border: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #222;
+  color: var(--main-text-color);
   display: none;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1056,7 +1065,7 @@ a:active {
 }
 
 .main-navigation ul ul {
-  background: #fff;
+  background: var(--page-background-color);
   border: 1px solid #bbb;
   left: -999em;
   padding: 0;
@@ -1100,7 +1109,7 @@ a:active {
 
 .main-navigation ul li.menu-item-has-children:after,
 .main-navigation ul li.page_item_has_children:after {
-  border-color: transparent transparent #fff;
+  border-color: transparent transparent var(--page-background-color);
 }
 
 .main-navigation ul ul li:hover > ul,
@@ -1138,7 +1147,7 @@ a:active {
 .main-navigation li li.current-menu-item a:hover,
 .main-navigation li li.current_page_item a:focus,
 .main-navigation li li.current-menu-item a:focus {
-  color: #fff;
+  color: var(--page-background-color);
 }
 
 .main-navigation ul li:hover > ul,
@@ -1192,7 +1201,7 @@ a:active {
 
 /* Scroll down arrow */
 .navigation-top .menu-scroll-down {
-  color: #767676;
+  color: var(--secondary-text-color);
   display: block;
   padding: 0.5em 0.5em 0.4em;
   position: absolute;
@@ -1222,7 +1231,7 @@ a:active {
   border: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #222;
+  color: var(--main-text-color);
   display: block;
   font-size: 16px;
   right: -0.5em;
@@ -1257,15 +1266,15 @@ a:active {
 }
 
 .post-navigation {
-  border-top: 4px solid #1a1a1a;
-  border-bottom: 4px solid #1a1a1a;
+  border-top: 4px solid var(--main-text-color);
+  border-bottom: 4px solid var(--main-text-color);
   clear: both;
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   margin: 0 7.6923% 3.5em;
 }
 
 .post-navigation a {
-  color: #1a1a1a;
+  color: var(--main-text-color);
   display: block;
   padding: 1.75em 0;
 }
@@ -1275,7 +1284,7 @@ a:active {
 }
 
 .post-navigation .meta-nav {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   letter-spacing: 0.076923077em;
@@ -1296,15 +1305,15 @@ a:active {
 
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
-  color: #007acc;
+  color: var(--link-color);
 }
 
 .post-navigation div + div {
-  border-top: 4px solid #1a1a1a;
+  border-top: 4px solid var(--main-text-color);
 }
 
 .pagination {
-  border-top: 4px solid #1a1a1a;
+  border-top: 4px solid var(--main-text-color);
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 19px;
   font-size: 1.1875rem;
@@ -1315,7 +1324,7 @@ a:active {
 
 .pagination::before,
 .pagination::after {
-  background-color: #1a1a1a;
+  background-color: var(--page-background-color);
   content: "";
   height: 52px;
   position: absolute;
@@ -1334,7 +1343,7 @@ a:active {
 
 .pagination a:hover,
 .pagination a:focus {
-  color: #1a1a1a;
+  color: var(--main-text-color);
 }
 
 .pagination .nav-links {
@@ -1344,7 +1353,7 @@ a:active {
 
 .pagination .nav-links::before,
 .pagination .nav-links::after {
-  color: #fff;
+  color: var(--page-background-color);
   font-size: 32px;
   line-height: 51px;
   opacity: 0.3;
@@ -1374,8 +1383,8 @@ a:active {
 
 .pagination .prev,
 .pagination .next {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--page-background-color);
+  color: var(--main-text-color);
   display: inline-block;
   height: 52px;
   margin: 0;
@@ -1400,8 +1409,8 @@ a:active {
 .pagination .prev:focus,
 .pagination .next:hover,
 .pagination .next:focus {
-  background-color: #007acc;
-  color: #fff;
+  background-color: var(--link-color);
+  color: var(--page-background-color);
 }
 
 .pagination .prev:focus,
@@ -1429,7 +1438,7 @@ a:active {
 .comment-navigation {
   border-top: 1px solid #d1d1d1;
   border-bottom: 1px solid #d1d1d1;
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -1583,7 +1592,7 @@ blockquote::after,
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  border-top: 4px solid #1a1a1a;
+  border-top: 4px solid var(--main-text-color);
   margin-bottom: 3.5em;
   padding-top: 1.75em;
 }
@@ -1609,7 +1618,7 @@ blockquote::after,
 }
 
 .widget-title a {
-  color: #1a1a1a;
+  color: var(--main-text-color);
 }
 
 /* Calendar widget */
@@ -1645,21 +1654,21 @@ blockquote::after,
 }
 
 .widget_calendar tbody a {
-  background-color: #007acc;
-  color: #fff;
+  background-color: var(--link-color);
+  color: var(--page-background-color);
   display: block;
   font-weight: 700;
 }
 
 .widget_calendar tbody a:hover,
 .widget_calendar tbody a:focus {
-  background-color: #686868;
-  color: #fff;
+  background-color: var(--secondary-text-color);
+  color: var(--page-background-color);
 }
 
 /* Recent Posts widget */
 .widget_recent_entries .post-date {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: block;
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
@@ -1679,7 +1688,7 @@ blockquote::after,
 
 .widget_rss .rss-date,
 .widget_rss cite {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: block;
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
@@ -1710,8 +1719,8 @@ blockquote::after,
 
 .tagcloud a:hover,
 .tagcloud a:focus {
-  border-color: #007acc;
-  color: #007acc;
+  border-color: var(--link-color);
+  color: var(--link-color);
   outline: 0;
 }
 
@@ -1719,7 +1728,7 @@ blockquote::after,
 # Content
 --------------------------------------------------------------*/
 .site {
-  background-color: #fff;
+  background-color: var(--page-background-color);
 }
 
 .site-inner {
@@ -1790,12 +1799,12 @@ blockquote::after,
 }
 
 .site-branding .site-title a {
-  color: #1a1a1a;
+  color: var(--main-text-color);
 }
 
 .site-branding .site-title a:hover,
 .site-branding .site-title a:focus {
-  color: #007acc;
+  color: var(--link-color);
 }
 
 .wp-custom-logo .site-title {
@@ -1803,7 +1812,7 @@ blockquote::after,
 }
 
 .site-description {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: none;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -1815,7 +1824,7 @@ blockquote::after,
 .menu-toggle {
   background-color: transparent;
   border: 1px solid #d1d1d1;
-  color: #1a1a1a;
+  color: var(--main-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   margin: 1.076923077em 0;
@@ -1829,16 +1838,16 @@ blockquote::after,
 .menu-toggle:hover,
 .menu-toggle:focus {
   background-color: transparent;
-  border-color: #007acc;
-  color: #007acc;
+  border-color: var(--link-color);
+  color: var(--link-color);
 }
 
 .menu-toggle.toggled-on,
 .menu-toggle.toggled-on:hover,
 .menu-toggle.toggled-on:focus {
-  background-color: #1a1a1a;
-  border-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--page-background-color);
+  border-color: var(--main-text-color);
+  color: var(--page-background-color);
 }
 
 .menu-toggle:focus {
@@ -1910,12 +1919,12 @@ header .page-title svg {
 }
 
 .entry-title a {
-  color: #1a1a1a;
+  color: var(--main-text-color);
 }
 
 .entry-title a:hover,
 .entry-title a:focus {
-  color: #007acc;
+  color: var(--link-color);
 }
 
 .post-thumbnail {
@@ -2072,7 +2081,7 @@ a.post-thumbnail:focus {
 }
 
 body:not(.search-results) .entry-summary {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 19px;
   font-size: 1.1875rem;
   line-height: 1.4736842105;
@@ -2172,7 +2181,7 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 
 .author-bio {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -2187,7 +2196,7 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 
 .entry-footer {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2200,12 +2209,12 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 
 .entry-footer a {
-  color: #686868;
+  color: var(--secondary-text-color);
 }
 
 .entry-footer a:hover,
 .entry-footer a:focus {
-  color: #007acc;
+  color: var(--link-color);
 }
 
 .entry-footer > span:not(:last-child)::after {
@@ -2222,7 +2231,7 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 
 .sticky-post {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: block;
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
@@ -2252,7 +2261,7 @@ body:not(.search-results) .entry-summary > :last-child,
 }
 
 .page-header {
-  border-top: 4px solid #1a1a1a;
+  border-top: 4px solid var(--main-text-color);
   margin: 0 7.6923% 3.5em;
   padding-top: 1.75em;
 }
@@ -2271,7 +2280,7 @@ body.search-no-results .page-header {
 }
 
 .taxonomy-description {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -2306,21 +2315,21 @@ body.search-no-results .page-header {
 }
 
 .page-links a {
-  background-color: #1a1a1a;
-  border-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--page-background-color);
+  border-color: var(--main-text-color);
+  color: var(--page-background-color);
 }
 
 .page-links a:hover,
 .page-links a:focus {
-  background-color: #007acc;
+  background-color: var(--link-color);
   border-color: transparent;
-  color: #fff;
+  color: var(--page-background-color);
 }
 
 .page-links > .page-links-title {
   border: 0;
-  color: #1a1a1a;
+  color: var(--main-text-color);
   height: auto;
   margin: 0;
   padding-right: 0.6153846154em;
@@ -2332,7 +2341,7 @@ body.search-no-results .page-header {
 }
 
 .entry-caption {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   font-style: italic;
@@ -2389,7 +2398,7 @@ body.search-no-results .page-header {
 
 .comments-title,
 .comment-reply-title {
-  border-top: 4px solid #1a1a1a;
+  border-top: 4px solid var(--main-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 23px;
   font-size: 1.4375rem;
@@ -2424,7 +2433,7 @@ body.search-no-results .page-header {
 }
 
 .comment-author {
-  color: #1a1a1a;
+  color: var(--main-text-color);
   margin-bottom: 0.4375em;
 }
 
@@ -2445,7 +2454,7 @@ body.search-no-results .page-header {
 
 .comment-metadata,
 .pingback .edit-link {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2458,14 +2467,14 @@ body.search-no-results .page-header {
 
 .comment-metadata a,
 .pingback .comment-edit-link {
-  color: #686868;
+  color: var(--secondary-text-color);
 }
 
 .comment-metadata a:hover,
 .comment-metadata a:focus,
 .pingback .comment-edit-link:hover,
 .pingback .comment-edit-link:focus {
-  color: #007acc;
+  color: var(--link-color);
 }
 
 .comment-metadata .edit-link,
@@ -2494,7 +2503,7 @@ body.search-no-results .page-header {
 .comment-reply-link {
   border: 1px solid #d1d1d1;
   border-radius: 2px;
-  color: #007acc;
+  color: var(--link-color);
   display: inline-block;
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
@@ -2507,7 +2516,7 @@ body.search-no-results .page-header {
 .comment-reply-link:hover,
 .comment-reply-link:focus {
   border-color: currentColor;
-  color: #007acc;
+  color: var(--link-color);
   outline: 0;
 }
 
@@ -2516,7 +2525,7 @@ body.search-no-results .page-header {
 }
 
 .comment-form label {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: block;
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
@@ -2535,7 +2544,7 @@ body.search-no-results .page-header {
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
@@ -2564,7 +2573,7 @@ body.search-no-results .page-header {
 }
 
 .required {
-  color: #007acc;
+  color: var(--link-color);
   font-family: merriweather, georgia, serif;
 }
 
@@ -2582,7 +2591,7 @@ body.search-no-results .page-header {
 
 .comment-reply-title small a:hover,
 .comment-reply-title small a:focus {
-  color: #1a1a1a;
+  color: var(--main-text-color);
 }
 
 .comment-reply-title small a::before {
@@ -2608,19 +2617,19 @@ body.search-no-results .page-header {
 }
 
 .site-info {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.6153846154;
 }
 
 .site-info a {
-  color: #686868;
+  color: var(--secondary-text-color);
 }
 
 .site-info a:hover,
 .site-info a:focus {
-  color: #007acc;
+  color: var(--link-color);
 }
 
 .site-footer .site-title {
@@ -2743,7 +2752,7 @@ p > video {
 }
 
 .wp-caption .wp-caption-text {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
   font-style: italic;
@@ -2805,7 +2814,7 @@ p > video {
 }
 
 .gallery-caption {
-  color: #686868;
+  color: var(--secondary-text-color);
   display: block;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2896,7 +2905,7 @@ p > video {
 
 .widecolumn label,
 .widecolumn .mu_register label {
-  color: #686868;
+  color: var(--secondary-text-color);
   font-family: montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2969,6 +2978,19 @@ p > video {
 }
 @viewport {
   width: device-width;
+}
+/*--------------------------------------------------------------
+# dark-mode
+--------------------------------------------------------------*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #262626;
+    --page-background-color: #1a1a1a;
+    --link-color: #9adffd;
+    --main-text-color: #e5e5e5;
+    --secondary-text-color: #c1c1c1;
+    --border-color: rgba( 229, 229, 229, 0.2 );
+  }
 }
 /*--------------------------------------------------------------
 # >= 710px
@@ -3242,7 +3264,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
 
   .main-navigation li:hover > a,
 .main-navigation li.focus > a {
-    color: #007acc;
+    color: var(--link-color);
   }
 
   .main-navigation ul ul {
@@ -3264,7 +3286,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul ul li {
-    background-color: #fff;
+    background-color: var(--page-background-color);
     border: 1px solid #d1d1d1;
     border-bottom-width: 0;
   }
@@ -3289,7 +3311,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul ul::after {
-    border-color: #fff transparent;
+    border-color: var(--page-background-color) transparent;
     border-width: 0 8px 8px;
     right: 11px;
     top: -7px;
@@ -4145,7 +4167,7 @@ td,
 .comment-content a,
 .pingback .comment-body > a {
     box-shadow: none;
-    border-bottom: 1px solid #007acc !important;
+    border-bottom: 1px solid #686868 !important;
     /* Make sure color schemes don't affect to print */
   }
 

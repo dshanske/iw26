@@ -41,12 +41,12 @@
 }
 
 .site-branding .site-title a {
-	color: #1a1a1a;
+	color: var(--main-text-color);
 }
 
 .site-branding .site-title a:hover,
 .site-branding .site-title a:focus {
-	color: #007acc;
+	color: var(--link-color);
 }
 
 .wp-custom-logo .site-title {
@@ -54,7 +54,7 @@
 }
 
 .site-description {
-	color: #686868;
+	color: var(--secondary-text-color);
 	display: none;
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -66,7 +66,7 @@
 .menu-toggle {
 	background-color: transparent;
 	border: 1px solid #d1d1d1;
-	color: #1a1a1a;
+	color: var(--main-text-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	margin: 1.076923077em 0;
@@ -80,16 +80,16 @@
 .menu-toggle:hover,
 .menu-toggle:focus {
 	background-color: transparent;
-	border-color: #007acc;
-	color: #007acc;
+	border-color: var(--link-color);
+	color: var(--link-color);
 }
 
 .menu-toggle.toggled-on,
 .menu-toggle.toggled-on:hover,
 .menu-toggle.toggled-on:focus {
-	background-color: #1a1a1a;
-	border-color: #1a1a1a;
-	color: #fff;
+	background-color: var(--page-background-color);
+	border-color: var(--main-text-color);
+	color: var(--page-background-color);
 }
 
 .menu-toggle:focus {

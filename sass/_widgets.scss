@@ -1,5 +1,5 @@
 .widget {
-	border-top: 4px solid #1a1a1a;
+	border-top: 4px solid var(--main-text-color);
 	margin-bottom: 3.5em;
 	padding-top: 1.75em;
 }
@@ -25,7 +25,7 @@
 }
 
 .widget-title a {
-	color: #1a1a1a;
+	color: var(--main-text-color);
 }
 
 /* Calendar widget */
@@ -61,21 +61,21 @@
 }
 
 .widget_calendar tbody a {
-	background-color: #007acc;
-	color: #fff;
+	background-color: var(--link-color);
+	color: var(--page-background-color);
 	display: block;
 	font-weight: 700;
 }
 
 .widget_calendar tbody a:hover,
 .widget_calendar tbody a:focus {
-	background-color: #686868;
-	color: #fff;
+	background-color: var(--secondary-text-color);
+	color: var(--page-background-color);
 }
 
 /* Recent Posts widget */
 .widget_recent_entries .post-date {
-	color: #686868;
+	color: var(--secondary-text-color);
 	display: block;
 	font-family: $font-family-input;
 	font-size: 13px;
@@ -95,7 +95,7 @@
 
 .widget_rss .rss-date,
 .widget_rss cite {
-	color: #686868;
+	color: var(--secondary-text-color);
 	display: block;
 	font-family: $font-family-input;
 	font-size: 13px;
@@ -126,7 +126,7 @@
 
 .tagcloud a:hover,
 .tagcloud a:focus {
-	border-color: #007acc;
-	color: #007acc;
+	border-color: var(--link-color);
+	color: var(--link-color);
 	outline: 0;
 }

@@ -1,12 +1,12 @@
 a {
-	color: #007acc;
+	color: var(--link-color);
 	text-decoration: none;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #686868;
+	color: var(--secondary-text-color);
 }
 
 a:focus {

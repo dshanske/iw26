@@ -3,7 +3,7 @@ button,
 input,
 select,
 textarea {
-	color: #1a1a1a;
+	color: var(--main-text-color);
 	font-family: Merriweather, Georgia, serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -34,9 +34,9 @@ i {
 }
 
 blockquote {
-	border: 0 solid #1a1a1a;
+	border: 0 solid var(--main-text-color);
 	border-left-width: 4px;
-	color: #686868;
+	color: var(--secondary-text-color);
 	font-size: 19px;
 	font-size: 1.1875rem;
 	font-style: italic;
@@ -64,7 +64,7 @@ blockquote p {
 
 blockquote cite,
 blockquote small {
-	color: #1a1a1a;
+	color: var(--main-text-color);
 	display: block;
 	font-size: 16px;
 	font-size: 1rem;
@@ -132,8 +132,8 @@ acronym {
 
 mark,
 ins {
-	background: #007acc;
-	color: #fff;
+	background: var(--link-color);
+	color: var(--page-background-color);
 	padding: 0.125em 0.25em;
 	text-decoration: none;
 }
