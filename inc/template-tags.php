@@ -66,7 +66,8 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			if ( class_exists( 'Kind_Taxonomy' ) ) {
 				$kind = get_post_kind();
 				printf(
-					'<span class="entry-kind">%1$s<a href="%2$s">%3$s</a></span>',
+					'<span class="entry-kind">%1$s %2$s<a href="%3$s">%4$s</a></span>',
+					Kind_Taxonomy::get_icon( get_post_kind_slug() ),
 					sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'iw26' ) ),
 					esc_url( get_post_kind_link( $kind ) ),
 					get_post_kind_string( $kind )
@@ -520,20 +521,30 @@ function iw26_post_link( $post = null ) {
 function iw26_archive_title( $title, $original_title, $prefix ) {
 	if ( get_query_var( 'kind_photos' ) ) {
 		return iw26_get_icon( 'image' ) . $title;
-	} else if ( is_numeric( get_query_var( 'w' ) ) && is_date() ) {
-		return iw26_get_icon( 'week' ) . $title;
 	} else if ( is_day() ) {
 		return iw26_get_icon( 'day' ) . $title;
 	} else if ( is_month() ) {
 		return iw26_get_icon( 'month' ) . $title;
 	} else if ( is_year() ) { 
-		return iw26_get_icon( 'year' ) . $title;
+		return iw26_get_icon( 'time' ) . $title;
+	} else if ( is_numeric( get_query_var( 'w' ) ) && is_date() ) {
+		return iw26_get_icon( 'week' ) . $title;
 	} else if ( get_query_var( 'kind_photos' ) ) {
 		return iw26_get_icon( 'picture' ) . $title;
+	} else if ( is_tag() ) {
+		return iw26_get_icon( 'tag' ) . $title;
+	} else if ( is_category() ) {
+		return iw26_get_icon( 'category' ) . $title;
+	} else if ( is_tax( 'series' ) ) {
+		return iw26_get_icon( 'standard' ) . $title;
+	} else if ( is_author() ) {
+		return iw26_get_icon( 'user' ) . $title;
+	} else if ( is_tax( 'location' ) ) {
+		return iw26_get_icon( 'location' ) . $title;
 	}
-
 	return $title;
 		
 }
 
 add_filter( 'get_the_archive_title', 'iw26_archive_title', 11, 3 );
+
