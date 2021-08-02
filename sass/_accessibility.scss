@@ -19,7 +19,7 @@
 		box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 		color: #21759b;
 		display: block;
-		font-family: $font-family-input;
+		font-family: var(--font-family-input); 
 		font-size: 14px;
 		font-weight: 700;
 		left: -9999em;

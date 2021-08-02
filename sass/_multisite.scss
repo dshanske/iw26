@@ -39,7 +39,7 @@
 .widecolumn label,
 .widecolumn .mu_register label {
 	color: var(--secondary-text-color);
-	font-family: $font-family-input;
+	font-family: var(--font-family-input);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-weight: 400;
