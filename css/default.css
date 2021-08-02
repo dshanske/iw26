@@ -26,6 +26,7 @@
 	## Captions
 	## Galleries
 # Multisite
+# Plugin Specific
 # Media Queries
 	## >= 710px
 	## >= 783px
@@ -44,6 +45,10 @@
   --main-text-color: #1a1a1a;
   --secondary-text-color: #68686868;
   --border-color: rgba( 26, 26, 26, 0.2 );
+  --font-family-base: merriweather, georgia, serif;
+  --font-family-input: montserrat, "Helvetica Neue", sans-serif;
+  --font-family-mono: inconsolata, monospace;
+  --font-family-title: montserrat, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -1493,7 +1498,7 @@ a:active {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: #21759b;
   display: block;
-  font-family: montserrat, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-input);
   font-size: 14px;
   font-weight: 700;
   left: -9999em;
@@ -1604,7 +1609,7 @@ blockquote::after,
 }
 
 .widget .widget-title {
-  font-family: montserrat, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-input);
   font-size: 16px;
   font-size: 1rem;
   letter-spacing: 0.046875em;
@@ -1670,7 +1675,7 @@ blockquote::after,
 .widget_recent_entries .post-date {
   color: var(--secondary-text-color);
   display: block;
-  font-family: montserrat, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-input);
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 1.615384615;
@@ -1690,7 +1695,7 @@ blockquote::after,
 .widget_rss cite {
   color: var(--secondary-text-color);
   display: block;
-  font-family: montserrat, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-input);
   font-size: 13px;
   font-size: 0.8125rem;
   font-style: normal;
@@ -1711,7 +1716,7 @@ blockquote::after,
   border: 1px solid #d1d1d1;
   border-radius: 2px;
   display: inline-block;
-  font-family: montserrat, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-input);
   line-height: 1;
   margin: 0 0.1875em 0.4375em 0;
   padding: 0.5625em 0.4375em 0.5em;
@@ -2910,7 +2915,7 @@ p > video {
 .widecolumn label,
 .widecolumn .mu_register label {
   color: var(--secondary-text-color);
-  font-family: montserrat, "Helvetica Neue", sans-serif;
+  font-family: var(--font-family-input);
   font-size: 13px;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -2963,6 +2968,17 @@ p > video {
 .widecolumn .mu_register > :last-child,
 .widecolumn form > :last-child {
   margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Plugin Specific
+--------------------------------------------------------------*/
+.relme a {
+  color: var(--main-text-color);
+}
+
+.relme li a .svg-github {
+  color: var(--main-text-color);
 }
 
 /*--------------------------------------------------------------
