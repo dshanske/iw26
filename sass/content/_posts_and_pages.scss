@@ -294,7 +294,7 @@ body:not(.search-results) .entry-summary > :last-child,
 
 .author-link {
 	white-space: nowrap;
-	color: #000000;
+	color: var(--main-text-color);
 	text-decoration: none;
 }
 

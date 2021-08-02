@@ -45,6 +45,7 @@
 			);
 
 			edit_post_link(
+				iw26_get_icon( 'edit' ) .
 				sprintf(
 					/* translators: %s: Name of current post */
 					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'iw26' ),

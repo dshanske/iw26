@@ -66,10 +66,10 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			if ( class_exists( 'Kind_Taxonomy' ) ) {
 				$kind = get_post_kind();
 				printf(
-					'<span class="entry-kind">%1$s %2$s<a href="%3$s">%4$s</a></span>',
-					Kind_Taxonomy::get_icon( get_post_kind_slug() ),
+					'<span class="entry-kind">%1$s<a href="%2$s">%3$s %4$s</a></span>',
 					sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Kind', 'Used before post kind.', 'iw26' ) ),
 					esc_url( get_post_kind_link( $kind ) ),
+					Kind_Taxonomy::get_icon( get_post_kind_slug() ),
 					get_post_kind_string( $kind )
 				);
 			}
@@ -84,7 +84,7 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 
 		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
-			comments_popup_link( sprintf( __( 'Leave a response<span class="screen-reader-text"> on %s</span>', 'iw26' ), get_the_title() ) );
+			comments_popup_link( iw26_get_icon( 'comment' ) . sprintf( __( 'Leave a response<span class="screen-reader-text"> on %s</span>', 'iw26' ), get_the_title() ) );
 			echo '</span>';
 		}
 
@@ -198,7 +198,8 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 					$created->format( iw26_date_format() ),
 				);
 				printf(
-					'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
+					'<span class="posted-on">%1$s<span class="screen-reader-text">%2$s </span><a class="u-url" href="%3$s">%4$s</a></span>',
+					iw26_get_icon( 'time' ),
 					_x( 'Taken on', 'Used before date taken.', 'iw26' ),
 					esc_url( get_permalink() ),
 					$time_string
@@ -235,7 +236,8 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 				get_the_modified_date( $format, $post )
 			);
 			printf(
-				'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
+				'<span class="posted-on">%1$s<span class="screen-reader-text">%2$s </span><a class="u-url" href="%3$s">%4$s</a></span>',
+				iw26_get_icon( 'time' ),
 				_x( 'Posted on', 'Used before publish date.', 'iw26' ),
 				esc_url( get_permalink() ),
 				$time_string
@@ -273,7 +275,8 @@ if ( ! function_exists( 'iw26_entry_taxonomies' ) ) :
 		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'iw26' ) );
 		if ( $tags_list ) {
 			printf(
-				'<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				'<span class="tags-links">%1$s<span class="screen-reader-text">%2$s </span>%3$s</span>',
+				iw26_get_icon( 'tag' ),
 				_x( 'Tags', 'Used before tag names.', 'iw26' ),
 				$tags_list
 			);
