@@ -268,7 +268,7 @@ if ( ! function_exists( 'iw26_entry_taxonomies' ) ) :
 				printf(
 					'<span class="series-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 					_x( 'Series', 'Used before series names.', 'iw26' ),
-					$series_list
+					iw26_get_icon( 'hierarchy' ) . $series_list
 				);
 			}
 		}
@@ -539,7 +539,7 @@ function iw26_archive_title( $title, $original_title, $prefix ) {
 	} else if ( is_category() ) {
 		return iw26_get_icon( 'category' ) . $title;
 	} else if ( is_tax( 'series' ) ) {
-		return iw26_get_icon( 'standard' ) . $title;
+		return iw26_get_icon( 'hierarchy' ) . $title;
 	} else if ( is_author() ) {
 		return iw26_get_icon( 'user' ) . $title;
 	} else if ( is_tax( 'location' ) ) {
