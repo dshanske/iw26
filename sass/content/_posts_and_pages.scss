@@ -333,6 +333,12 @@ body:not(.search-results) .entry-summary > :last-child,
 	width: 21px;
 }
 
+.entry-footer .icon {
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	margin-right: 0.5em;
+}
+
 .sticky-post {
 	color: var(--secondary-text-color);
 	display: block;

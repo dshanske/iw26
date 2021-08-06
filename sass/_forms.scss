@@ -17,7 +17,7 @@ input[type="submit"][disabled]:focus {
 	background: var(--main-text-color);;
 	border: 0;
 	border-radius: 2px;
-	color: var(--page-background-color);
+	color: var(--background-color);
 	font-family: $font-family-input;
 	font-weight: 700;
 	letter-spacing: 0.046875em;
@@ -58,7 +58,7 @@ input[type="search"],
 input[type="tel"],
 input[type="number"],
 textarea {
-	background: #f7f7f7;
+	background: var(--background-color);
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
 	border: 1px solid #d1d1d1;
 	border-radius: 2px;
