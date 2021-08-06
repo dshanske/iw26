@@ -42,8 +42,8 @@ get_header(); ?>
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(
-					'prev_text'          => __( 'Previous page', 'iw26' ),
-					'next_text'          => __( 'Next page', 'iw26' ),
+					'prev_text'          => iw26_get_icon( 'previous' ). '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
+					'next_text'          => iw26_get_icon( 'next') . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'iw26' ) . ' </span>',
 				)
 			);
