@@ -271,3 +271,54 @@ function iw26_comment_reply_link_args( $args, $comment, $post ) {
 }
 
 add_filter( 'comment_reply_link_args', 'iw26_comment_reply_link_args', 10, 3 );
+
+function iw26_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
+	$previous = ( 'previous' === $adjacent );
+		
+	if ( empty( $post->post_title ) ) {
+		if ( ! empty( $post->post_excerpt ) ) {
+			$title = mb_strimwidth( wp_strip_all_tags( $post->post_excerpt ), 0, 40, '...' );
+		} elseif ( ! empty( $post->post_content ) ) {
+			$title = mb_strimwidth( wp_strip_all_tags( $post->post_content ), 0, 40, '...' );
+		} else {
+			$title = get_the_date( 'Y ' . get_option( 'time_format' ), $post );
+		}
+
+		if( class_exists( 'Kind_Post' ) ) {
+			$kind_post = new Kind_Post( $post );
+			$content = $kind_post->get_name();
+			$kind = $kind_post->get_kind();
+			if ( ! in_array( $kind, array( 'note', 'article' ), true ) ) {
+				$cite = $kind_post->get_cite( 'name' );
+				if ( false === $cite ) {
+					$content = Kind_View::get_post_type_string( $kind_post->get_cite( 'url' ) );
+				} else {
+					$content = $cite;
+				}
+			}
+			if ( ! empty( $content ) ) {
+				$title = $content;
+			}
+			$title = trim( Kind_Taxonomy::get_before_kind( $kind ) . $title );
+		}
+
+		/** This filter is documented in wp-includes/post-template.php */
+		$title = apply_filters( 'the_title', $title, $post->ID );
+		       
+		$date = mysql2date( get_option( 'date_format' ), $post->post_date );
+		$rel  = $previous ? 'prev' : 'next';
+
+		$string = '<a href="' . get_permalink( $post ) . '" rel="' . $rel . '">';
+		
+		$inlink = str_replace( '%title', $title, $link );
+		$inlink = str_replace( '%date', $date, $inlink );
+		$inlink = $string . $inlink . '</a>';
+										 
+		$output = str_replace( '%link', $inlink, $format );
+	}						      
+
+	return $output;
+}
+
+add_filter( 'next_post_link', 'iw26_adjacent_post_link', 11, 5 );
+add_filter( 'previous_post_link', 'iw26_adjacent_post_link', 11, 5 );
