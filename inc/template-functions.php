@@ -249,3 +249,25 @@ function iw26_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	return $title;
 }
 add_filter( 'nav_menu_item_title', 'iw26_dropdown_icon_to_menu_link', 10, 4 );
+
+/**
+ * Add icon to widget title for specific widgets.
+**/
+
+function iw26_widget_title( $title, $instance, $id_base ) {
+	if ( 'tempus_thisweek_widget' === $id_base ) {
+		$title = iw26_get_icon( 'week' ) . $title;
+	}
+	if ( 'tempus_onthisday_widget' === $id_base ) {
+		$title = iw26_get_icon( 'day' ) . $title;
+	}
+	return $title;
+}
+add_filter( 'widget_title', 'iw26_widget_title', 10, 3 );
+
+function iw26_comment_reply_link_args( $args, $comment, $post ) {
+	$args['reply_text'] = iw26_get_icon( 'reply' ) . '<span class="screen-reader-text">' . $args['reply_text'] . '</span>';
+	return $args;
+}
+
+add_filter( 'comment_reply_link_args', 'iw26_comment_reply_link_args', 10, 3 );
