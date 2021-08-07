@@ -263,12 +263,12 @@ if ( ! function_exists( 'iw26_entry_taxonomies' ) ) :
 		// );
 		// }
 		if ( taxonomy_exists( 'series' ) ) {
-			$series_list = get_the_term_list( get_the_ID(), 'series', '', _x( ', ', 'Used between list items, there is a space after the comma.', 'iw26' ) );
+			$series_list = get_the_term_list( get_the_ID(), 'series', iw26_get_icon( 'hierarchy' ), _x( ', ', 'Used between list items, there is a space after the comma.', 'iw26' ) );
 			if ( $series_list ) {
 				printf(
 					'<span class="series-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 					_x( 'Series', 'Used before series names.', 'iw26' ),
-					iw26_get_icon( 'hierarchy' ) . $series_list
+					$series_list
 				);
 			}
 		}
