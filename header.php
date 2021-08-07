@@ -47,8 +47,8 @@ if ( $description || is_customize_preview() ) :
 					<div class="navigation-top">
 						<div class="wrap">
 							<?php if ( has_nav_menu( 'primary' ) ) : ?>
-								<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Top Menu', 'twentyseventeen' ); ?>">
-								<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo iw26_get_icon( 'menu' ); echo iw26_get_icon( 'close' ); _e( 'Menu', 'twentysixteen' ); ?></button>
+								<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'iw26' ); ?>">
+								<button id="menu_toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo iw26_get_icon( 'menu' ); echo iw26_get_icon( 'close' ); _e( 'Menu', 'iw26' ); ?></button>
 								<?php wp_nav_menu( 
 									array(
 										'theme_location' => 'primary',
@@ -57,7 +57,7 @@ if ( $description || is_customize_preview() ) :
 								); ?>
 
 								<?php if ( is_home() && is_front_page()  ) : ?>
-									<a href="#content" class="menu-scroll-down"><?php echo iw26_get_icon( 'next' ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down', 'twentysixteen' ); ?></span></a>
+									<a href="#content" class="menu-scroll-down"><?php echo iw26_get_icon( 'next' ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down', 'iw26' ); ?></span></a>
 								<?php endif; ?>
 								</nav><!-- #site-navigation -->
 							<?php endif; ?>

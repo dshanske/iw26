@@ -317,11 +317,11 @@ body:not(.search-results) .entry-summary > :last-child,
 
 .entry-footer a:hover,
 .entry-footer a:focus {
+	text-decoration: inherit;
 	color: var(--link-color);
 }
 
 .entry-footer > span:not(:last-child)::after {
-	content: "\002f";
 	display: inline-block;
 	opacity: 0.7;
 	padding: 0 0.538461538em;
