@@ -48,7 +48,7 @@ if ( $description || is_customize_preview() ) :
 						<div class="wrap">
 							<?php if ( has_nav_menu( 'primary' ) ) : ?>
 								<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'iw26' ); ?>">
-								<button id="menu_toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo iw26_get_icon( 'menu' ); echo iw26_get_icon( 'close' ); _e( 'Menu', 'iw26' ); ?></button>
+								<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo iw26_get_icon( 'menu' ); echo iw26_get_icon( 'close' ); _e( 'Menu', 'iw26' ); ?></button>
 								<?php wp_nav_menu( 
 									array(
 										'theme_location' => 'primary',

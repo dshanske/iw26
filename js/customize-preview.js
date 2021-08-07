@@ -3,14 +3,6 @@
  */
 
 ( function( $ ) {
-	var style = $( '#twentysixteen-color-scheme-css' ),
-		api = wp.customize;
-
-	if ( ! style.length ) {
-		style = $( 'head' ).append( '<style type="text/css" id="twentysixteen-color-scheme-css" />' )
-		                    .find( '#twentysixteen-color-scheme-css' );
-	}
-
 	// Site title.
 	api( 'blogname', function( value ) {
 		value.bind( function( to ) {
@@ -32,10 +24,4 @@
 		} );
 	} );
 
-	// Color Scheme CSS.
-	api.bind( 'preview-ready', function() {
-		api.preview.bind( 'update-color-scheme-css', function( css ) {
-			style.html( css );
-		} );
-	} );
 } )( jQuery );
