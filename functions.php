@@ -306,6 +306,7 @@ function iw26_scripts() {
 		array(
 			'expand'   => __( 'expand child menu', 'iw26' ),
 			'collapse' => __( 'collapse child menu', 'iw26' ),
+			'icon' => iw26_get_icon( 'expand' )
 		)
 	);
 }
