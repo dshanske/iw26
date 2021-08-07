@@ -322,3 +322,15 @@ function iw26_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
 
 add_filter( 'next_post_link', 'iw26_adjacent_post_link', 11, 5 );
 add_filter( 'previous_post_link', 'iw26_adjacent_post_link', 11, 5 );
+
+function iw26_get_single_post_term_name( $taxonomy, $post = null ) {
+	$_terms = get_the_terms( $post, $taxonomy );
+	if ( ! empty( $_terms ) ) {
+		$term = array_shift( $_terms );
+		return $term->name;
+	}
+	return false;
+}
+
+		
+
