@@ -273,6 +273,9 @@ function iw26_comment_reply_link_args( $args, $comment, $post ) {
 add_filter( 'comment_reply_link_args', 'iw26_comment_reply_link_args', 10, 3 );
 
 function iw26_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
+	if ( ! $post ) {
+		return $output;
+	}
 	$previous = ( 'previous' === $adjacent );
 		
 	if ( empty( $post->post_title ) ) {
