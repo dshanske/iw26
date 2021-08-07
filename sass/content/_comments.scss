@@ -10,7 +10,7 @@
 .comments-title,
 .comment-reply-title {
 	border-top: 4px solid var(--main-text-color);
-	font-family: $font-family-input;
+	font-family: var(--font-family-input);
 	font-size: 23px;
 	font-size: 1.4375rem;
 	font-weight: 700;
@@ -66,7 +66,7 @@
 .comment-metadata,
 .pingback .edit-link {
 	color: var(--secondary-text-color);
-	font-family: $font-family_input;
+	font-family: var(--font-family_input);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -116,7 +116,7 @@
 	border-radius: 2px;
 	color: var(--link-color);
 	display: inline-block;
-	font-family: $font-family-input;
+	font-family: var(--font-family-input);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1;
@@ -138,7 +138,7 @@
 .comment-form label {
 	color: var(--secondary-text-color);
 	display: block;
-	font-family: $font-family-input;
+	font-family: var(--font-family-input);
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
@@ -164,7 +164,7 @@
 
 .no-comments {
 	border-top: 1px solid #d1d1d1;
-	font-family: $font-family-input;
+	font-family: var(--font-family-input);
 	font-weight: 700;
 	margin: 0;
 	padding-top: 1.75em;
@@ -176,7 +176,7 @@
 }
 
 .form-allowed-tags code {
-	font-family: $font-family-mono;
+	font-family: var(--font-family-mono);
 }
 
 .form-submit {
@@ -185,7 +185,7 @@
 
 .required {
 	color: var(--link-color);
-	font-family: $font-family-base;
+	font-family: var(--font-family-base);
 }
 
 .comment-reply-title small {

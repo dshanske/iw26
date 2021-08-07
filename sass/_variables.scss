@@ -1,7 +1,3 @@
-$font-family-base: merriweather, georgia, serif;
-$font-family-input: montserrat, "Helvetica Neue", sans-serif;
-$font-family-mono: inconsolata, monospace;
-$font-family-title: montserrat, sans-serif;
 
 :root {
   --background-color: #1a1a1a;
@@ -11,8 +7,8 @@ $font-family-title: montserrat, sans-serif;
   --secondary-text-color: #686868;
   --border-color: rgba( 26, 26, 26, 0.2 );
   --form-color: #f7f7f7;
-  --font-family-base: merriweather, georgia, serif;
-  --font-family-input: montserrat, "Helvetica Neue", sans-serif;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+  --font-family-input: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
   --font-family-mono: inconsolata, monospace;
-  --font-family-title: montserrat, sans-serif;
+  --font-family-title: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
       }
