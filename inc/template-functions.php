@@ -196,7 +196,7 @@ if ( ! function_exists( 'has_content' ) ) {
 
 // Return the filename of an icon based on name if the file exists
 function iw26_get_icon_filename( $name ) {
-	$svg = sprintf( '%1$sgenericons-neue/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
+	$svg = sprintf( '%1$ssvg/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
 	if ( file_exists( $svg ) ) {
 		return $svg;
 	}
