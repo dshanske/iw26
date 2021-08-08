@@ -1,17 +1,17 @@
 === IndieWeb Twenty Sixteen ===
 Contributors: dshanske
-Requires at least: WordPress 4.7
-Tested up to: WordPress 5.0.2
+Requires at least: WordPress 5.5
+Tested up to: WordPress 5.8
 Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 == Description ==
 This is an IndieWeb fork of Twenty Sixteen, which itself is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites.
 
 * Mobile-first, Responsive Layout
-* Custom Colors
+* Dark Mode
 * Custom Header
 * Post Kinds Plugin Support
 * Simple Location Plugin Support
@@ -65,9 +65,10 @@ Image used in screenshot.png: A photo by Austin Schmid (https://unsplash.com/sch
 * Add support for Simple Location plugin
 * Add support for Syndication Links plugin
 * Remove HTML5 shiv and IE compat support
-* Replace Genericons with Genericons Neue
+* Replace Genericons Icon Font with Genericons Neue SVGs
 * Add developer tool support
 * Update codesniffing and add composer dev dependencies for codesniffing
+* Removal of customisable colors in favor of automatic dark mode.
 
 = Pre-Form =
 * Original release of TwentySixteen was December 2015.
