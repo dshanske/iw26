@@ -27,8 +27,7 @@ if ( post_password_required() ) {
 			<?php
 				$comments_number = get_comments_number();
 			if ( 1 === (int) $comments_number ) {
-				/* translators: %s: post title */
-				printf( _x( 'One response on &ldquo;%s&rdquo;', 'comments title', 'iw26' ), get_the_title() );
+				_x( 'One response', 'comments title', 'iw26' );
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */
