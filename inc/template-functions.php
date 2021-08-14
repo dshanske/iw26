@@ -256,7 +256,7 @@ add_filter( 'nav_menu_item_title', 'iw26_dropdown_icon_to_menu_link', 10, 4 );
  * Add icon to widget title for specific widgets.
 **/
 
-function iw26_widget_title( $title, $instance, $id_base ) {
+function iw26_widget_title( $title, $instance = null, $id_base = null ) {
 	if ( 'tempus_thisweek_widget' === $id_base ) {
 		$title = iw26_get_icon( 'week' ) . $title;
 	}
