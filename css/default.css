@@ -865,6 +865,15 @@ a:active {
   box-shadow: none;
 }
 
+.breadcrumbs {
+  background: var(--page-background-color);
+  list-style: none;
+  margin: 0;
+}
+.breadcrumbs li {
+  display: inline-block;
+}
+
 .navigation-top {
   background: var(--page-background-color);
   border-bottom: 1px solid var(--border-color);
@@ -1987,6 +1996,7 @@ body:not(.search-results) .entry-summary > :last-child,
   text-decoration: none;
 }
 
+.page .entry-header,
 .entry-footer {
   color: var(--secondary-text-color);
   font-family: var(--font-family-input);
@@ -1996,32 +2006,39 @@ body:not(.search-results) .entry-summary > :last-child,
   margin-top: 2.1538461538em;
 }
 
+.page .entry-header:empty,
 .entry-footer:empty {
   margin: 0;
 }
 
+.page .entry-header a,
 .entry-footer a {
   color: var(--secondary-text-color);
 }
 
+.page .entry-header a:hover,
+.page .entry-header a:focus,
 .entry-footer a:hover,
 .entry-footer a:focus {
   text-decoration: inherit;
   color: var(--link-color);
 }
 
+.page .entry-header > span:not(:last-child)::after,
 .entry-footer > span:not(:last-child)::after {
   display: inline-block;
   opacity: 0.7;
   padding: 0 0.538461538em;
 }
 
+.page .entry-header .avatar,
 .entry-footer .avatar {
   height: 21px;
   margin: -0.1538461538em 0.5384615385em 0 0;
   width: 21px;
 }
 
+.page .entry-header .icon,
 .entry-footer .icon {
   position: relative;
   /* Align more nicely with capital letters */
@@ -2158,6 +2175,14 @@ body.search-no-results .page-header {
 
 .content-bottom-widgets .widget-area {
   margin-bottom: 3.5em;
+}
+
+.page-children {
+  margin-left: 1.5em;
+}
+
+.page-children li {
+  list-style: none;
 }
 
 /*-------------------------------------------------------------
@@ -3604,21 +3629,6 @@ body:not(.search-results) .entry-summary blockquote > ol {
     float: none;
     margin: 0;
     width: 100%;
-  }
-
-  .no-sidebar .entry-header,
-.no-sidebar .content,
-.no-sidebar .entry-summary,
-.no-sidebar .entry-footer,
-.no-sidebar .comments-area,
-.no-sidebar .image-navigation,
-.no-sidebar .post-navigation,
-.no-sidebar .pagination,
-.no-sidebar .page-header,
-.no-sidebar .page-content,
-.no-sidebar .content-bottom-widgets {
-    margin-right: 15%;
-    margin-left: 15%;
   }
 
   .widecolumn {

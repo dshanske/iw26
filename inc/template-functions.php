@@ -30,8 +30,10 @@ function iw26_body_classes( $classes ) {
 		$classes[] = 'h-feed';
 	} else {
 		if ( 'page' !== get_post_type() ) {
-				$classes[] = 'hentry';
-				$classes[] = 'h-entry';
+			$classes[] = 'hentry';
+			$classes[] = 'h-entry';
+		}  else if ( 'page' === get_post_type() ) {
+			$classes[] = 'no-sidebar';
 		}
 	}
 	return $classes;

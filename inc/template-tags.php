@@ -55,9 +55,10 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			iw26_entry_date();
 		}
 
+
 		if ( 'page' === get_post_type() ) {
 			echo '<span>';
-			iw26_page_permalink();
+			iw26_page_children();
 			echo '</span>';
 		}
 
@@ -215,10 +216,13 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 				get_the_modified_date( $format, $post ),
 			);
 			printf(
-				'<span class="posted-on">%1$s: %2$s</span>',
-				_x( 'Last Modified', 'Used before modified date.', 'iw26' ),
+				'<span class="posted-on">%1$s<a class="u-url" href="%2$s">%3$s</a></span>',
+				iw26_get_icon( 'time' ),
+				esc_url( get_permalink() ),
+				_x( 'Last Modified: ', 'Used before modified date.', 'iw26' ) .
 				$time_string
 			);
+
 		} else {
 			$published = get_post_datetime( $post, 'date' );
 			$modified = get_post_datetime( $post, 'modified' );
@@ -463,10 +467,10 @@ function iw26_page_permalink() {
 	$ancestors = array_reverse( $ancestors );
 	$return = array();
 	foreach( $ancestors as $ancestor ) {
-		$return[] = sprintf( '<a href="%1$s" rel="up">%2$s</a>', get_permalink( $ancestor ), get_the_title( $ancestor ) );
+		$return[] = sprintf( '<a href="%1$s" rel="up">%2$s</a>', esc_url( get_permalink( $ancestor ) ), get_the_title( $ancestor ) );
 	}
-	$return[] = sprintf( '<a class="u-url" href="%1$s">%2$s</a>', get_permalink(), get_the_title() );
-	echo implode( ' &raquo; ', $return );
+	$return[] = sprintf( '<a class="u-url" href="%1$s">%2$s</a>', esc_url( get_permalink() ), get_the_title() );
+	echo '<ul class="breadcrumbs"><li>' . implode( '</li><li>' . iw26_get_icon( 'next' ) . ' ', $return ) . '</li></ul>';
 }
 
 function iw26_page_children() {
@@ -486,7 +490,7 @@ function iw26_page_children() {
 	foreach( $children as $child ) {
 		$return[] = sprintf( '<a href="%1$s" rel="down">%2$s</a>', get_permalink( $child), get_the_title( $child ) );
 	}
-	echo '<ul><li>' . implode( '</li><li> ', $return ) . '</li></ul>';
+	echo '<ul class="page-children"><li>' . iw26_get_icon( 'fastforward' ) . implode( '</li><li>' . iw26_get_icon( 'fastforward' ), $return ) . '</li></ul>';
 }
 
 function iw26_post_link( $post = null ) {
