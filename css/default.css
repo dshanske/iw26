@@ -38,6 +38,7 @@
 # Variables
 --------------------------------------------------------------*/
 :root {
+  color-scheme: dark light;
   --background-color: #1a1a1a;
   --page-background-color: #ffffff;
   --link-color: #007acc;
@@ -2826,6 +2827,10 @@ p > video {
     --secondary-text-color: #c1c1c1;
     --form-color: #262626;
     --border-color: rgba( 229, 229, 229, 0.2 );
+  }
+
+  img:not([src*=".svg"]) {
+    filter: brightness(0.8) contrast(1.2);
   }
 }
 /*--------------------------------------------------------------
