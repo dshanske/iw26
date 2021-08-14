@@ -32,7 +32,7 @@ function iw26_body_classes( $classes ) {
 		if ( 'page' !== get_post_type() ) {
 			$classes[] = 'hentry';
 			$classes[] = 'h-entry';
-		}  else if ( 'page' === get_post_type() ) {
+		}  else if ( 'page' === get_post_type() && ! is_front_page() ) {
 			$classes[] = 'no-sidebar';
 		}
 	}

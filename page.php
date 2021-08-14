@@ -37,4 +37,12 @@ get_header(); ?>
 	<?php get_sidebar( 'content-bottom' ); ?>
 
 </div><!-- .content-area -->
+
+<!-- Show sidebar only if front page -->
+<?php 
+	if ( is_front_page() ) {
+		get_sidebar(); 
+?>
+}
+
 <?php get_footer(); ?>
