@@ -289,22 +289,8 @@ function iw26_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
 			$title = get_the_date( 'Y ' . get_option( 'time_format' ), $post );
 		}
 
-		if( class_exists( 'Kind_Post' ) ) {
-			$kind_post = new Kind_Post( $post );
-			$content = $kind_post->get_name();
-			$kind = $kind_post->get_kind();
-			if ( ! in_array( $kind, array( 'note', 'article' ), true ) ) {
-				$cite = $kind_post->get_cite( 'name' );
-				if ( false === $cite ) {
-					$content = Kind_View::get_post_type_string( $kind_post->get_cite( 'url' ) );
-				} else {
-					$content = $cite;
-				}
-			}
-			if ( ! empty( $content ) ) {
-				$title = $content;
-			}
-			$title = trim( Kind_Taxonomy::get_before_kind( $kind ) . $title );
+		if( function_exists( 'kind_get_the_title' ) ) {
+			$title = kind_get_the_title( $post, array( 'photo_size' => 'thumbnail' ) );
 		}
 
 		/** This filter is documented in wp-includes/post-template.php */

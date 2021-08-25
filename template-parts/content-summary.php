@@ -17,7 +17,11 @@
 	if ( ! class_exists( 'Kind_Taxonomy' ) ) {
 		the_title( sprintf( '<a class="entry-title p-name" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
 	} else {
-		echo iw26_post_link();
+		if ( function_exists( 'kind_get_the_link' ) ) {
+			echo kind_get_the_link();
+		} else {
+			echo iw26_post_link();
+		}
 	}
 	?>
 	</li>
