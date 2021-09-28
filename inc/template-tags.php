@@ -199,7 +199,7 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 					$created->format( iw26_date_format() ),
 				);
 				printf(
-					'<span class="posted-on"><span class="screen-reader-text">%2$s </span><a class="u-url" href="%3$s">%4$s</a></span>',
+					'<span class="posted-on"><span class="screen-reader-text">%1$s </span><a class="u-url" href="%2$s">%3$s</a></span>',
 					_x( 'Taken on', 'Used before date taken.', 'iw26' ),
 					esc_url( get_permalink() ),
 					iw26_get_icon( 'time' ) .
