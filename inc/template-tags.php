@@ -92,6 +92,10 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 		if ( function_exists( 'get_syndication_links' ) ) {
 			iw26_syndication_links();
 		}
+
+		if ( function_exists( 'micropub_client_info' ) ) {
+			micropub_client_info();
+		}
 	}
 endif;
 
