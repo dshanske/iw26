@@ -108,6 +108,10 @@ function iw26_syndication_links() {
 		'icons'            => true,
 		'show_text_before' => false,
 	);
+	if ( 'hidden' === Syn_Meta::get_syndication_links_display_option() ) {
+		$args['icons'] = false;
+	}
+	
 	echo get_syndication_links( get_the_ID(), $args );
 }
 
