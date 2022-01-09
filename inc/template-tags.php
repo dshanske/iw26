@@ -42,7 +42,7 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			if ( ! is_singular() ) {
 				$author_avatar_size = apply_filters( 'iw26_author_avatar_size', 49 );
 				printf(
-					'<span class="byline"><span class="screen-reader-text">%1$s</span><span class="author p-author vcard h-card">%2$s <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',	
+					'<span class="byline"><span class="screen-reader-text">%1$s</span><span class="author p-author vcard h-card">%2$s <a class="url fn n u-url" href="%3$s">%4$s</a></span></span>',    
 					_x( 'Author', 'Used before post author name.', 'iw26' ),
 					get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ),
 					esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -126,8 +126,8 @@ if ( ! function_exists( 'iw26_attachment_datetime' ) ) :
 		if ( ! $data ) {
 			return;
 		}
-		$data = $data['image_meta'];
-		$created = null;
+		$data      = $data['image_meta'];
+		$created   = null;
 		$published = get_post_meta( $post->ID, 'mf2_published', true );
 		if ( $published ) {
 			$created = new DateTime( $published );
@@ -148,10 +148,10 @@ if ( ! function_exists( 'iw26_date_format' ) ) :
 
 		if ( is_singular( 'post' ) ) {
 			$time_format = get_option( 'time_format' );
-			$timezone = get_post_meta( get_the_ID(), 'geo_timezone', true );
+			$timezone    = get_post_meta( get_the_ID(), 'geo_timezone', true );
 			if ( $timezone ) {
 				$timezone = new DateTimeZone( $timezone );
-				if ( $timezone->getOffset( new Datetime( "now" ) ) !== wp_timezone()->getOffset( new DateTime( "now" ) ) ) {
+				if ( $timezone->getOffset( new Datetime( 'now' ) ) !== wp_timezone()->getOffset( new DateTime( 'now' ) ) ) {
 					$time_format = $time_format . ' T';
 				}
 			}
@@ -195,11 +195,11 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 	 * @since Twenty Sixteen 1.0
 	 */
 	function iw26_entry_date() {
-		$post = get_post();
+		$post   = get_post();
 		$format = iw26_date_format();
 		if ( 'attachment' === get_post_type( $post ) ) {
 			$created = iw26_attachment_datetime( $post );
-			if ( $created instanceOf DateTime ) {
+			if ( $created instanceof DateTime ) {
 				$time_string = '<time class="published dt-published" datetime="%1$s">%2$s</time>';
 				$time_string = sprintf(
 					$time_string,
@@ -214,8 +214,8 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 					$time_string
 				);
 			}
-		} else if ( 'page' === get_post_type( $post ) ) {
-			$modified = get_post_datetime( $post, 'modified' );
+		} elseif ( 'page' === get_post_type( $post ) ) {
+			$modified    = get_post_datetime( $post, 'modified' );
 			$time_string = '<time class="entry-date dt-updated" datetime="%1$s">%2$s</time>';
 
 			$time_string = sprintf(
@@ -232,8 +232,8 @@ if ( ! function_exists( 'iw26_entry_date' ) ) :
 			);
 
 		} else {
-			$published = get_post_datetime( $post, 'date' );
-			$modified = get_post_datetime( $post, 'modified' );
+			$published   = get_post_datetime( $post, 'date' );
+			$modified    = get_post_datetime( $post, 'modified' );
 			$time_string = '<time class="entry-date published dt-published" datetime="%1$s">%2$s</time>';
 
 			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -336,7 +336,7 @@ if ( ! function_exists( 'iw26_post_thumbnail' ) ) :
 		?>
 	</a>
 
-	<?php
+		<?php
 	endif; // End is_singular()
 	}
 endif;
@@ -473,8 +473,8 @@ function iw26_page_permalink() {
 		array();
 	}
 	$ancestors = array_reverse( $ancestors );
-	$return = array();
-	foreach( $ancestors as $ancestor ) {
+	$return    = array();
+	foreach ( $ancestors as $ancestor ) {
 		$return[] = sprintf( '<a href="%1$s" rel="up">%2$s</a>', esc_url( get_permalink( $ancestor ) ), get_the_title( $ancestor ) );
 	}
 	$return[] = sprintf( '<a class="u-url" href="%1$s">%2$s</a>', esc_url( get_permalink() ), get_the_title() );
@@ -483,20 +483,20 @@ function iw26_page_permalink() {
 
 function iw26_page_children() {
 	$children = get_posts(
-			array(
-				'post_parent' => get_the_ID(),
-				'post_type' => 'page',
-				'fields' => 'ids',
-				'orderby' => 'title',
-				'posts_per_page' => '-1'
-			)
-		);
+		array(
+			'post_parent'    => get_the_ID(),
+			'post_type'      => 'page',
+			'fields'         => 'ids',
+			'orderby'        => 'title',
+			'posts_per_page' => '-1',
+		)
+	);
 	if ( empty( $children ) ) {
 		return;
 	}
 	$return = array();
-	foreach( $children as $child ) {
-		$return[] = sprintf( '<a href="%1$s" rel="down">%2$s</a>', get_permalink( $child), get_the_title( $child ) );
+	foreach ( $children as $child ) {
+		$return[] = sprintf( '<a href="%1$s" rel="down">%2$s</a>', get_permalink( $child ), get_the_title( $child ) );
 	}
 	echo '<ul class="page-children"><li>' . iw26_get_icon( 'fastforward' ) . implode( '</li><li>' . iw26_get_icon( 'fastforward' ), $return ) . '</li></ul>';
 }
@@ -513,10 +513,10 @@ function iw26_post_link( $post = null ) {
 		$title = get_the_date( 'Y ' . get_option( 'time_format' ), $post );
 	}
 
-	if( class_exists( 'Kind_Post' ) ) {
+	if ( class_exists( 'Kind_Post' ) ) {
 		$kind_post = new Kind_Post( $post );
-		$content = $kind_post->get_name();
-		$kind = $kind_post->get_kind();
+		$content   = $kind_post->get_name();
+		$kind      = $kind_post->get_kind();
 		if ( ! in_array( $kind, array( 'note', 'article' ), true ) ) {
 			$cite = $kind_post->get_cite( 'name' );
 			if ( false === $cite ) {
@@ -536,25 +536,25 @@ function iw26_post_link( $post = null ) {
 function iw26_archive_title( $title, $original_title, $prefix ) {
 	if ( get_query_var( 'kind_photos' ) ) {
 		return iw26_get_icon( 'image' ) . $title;
-	} else if ( is_day() ) {
+	} elseif ( is_day() ) {
 		return iw26_get_icon( 'day' ) . $title;
-	} else if ( is_month() ) {
+	} elseif ( is_month() ) {
 		return iw26_get_icon( 'month' ) . $title;
-	} else if ( is_year() ) { 
+	} elseif ( is_year() ) { 
 		return iw26_get_icon( 'time' ) . $title;
-	} else if ( is_numeric( get_query_var( 'w' ) ) && is_date() ) {
+	} elseif ( is_numeric( get_query_var( 'w' ) ) && is_date() ) {
 		return iw26_get_icon( 'week' ) . $title;
-	} else if ( get_query_var( 'kind_photos' ) ) {
+	} elseif ( get_query_var( 'kind_photos' ) ) {
 		return iw26_get_icon( 'picture' ) . $title;
-	} else if ( is_tag() ) {
+	} elseif ( is_tag() ) {
 		return iw26_get_icon( 'tag' ) . $title;
-	} else if ( is_category() ) {
+	} elseif ( is_category() ) {
 		return iw26_get_icon( 'category' ) . $title;
-	} else if ( is_tax( 'series' ) ) {
+	} elseif ( is_tax( 'series' ) ) {
 		return iw26_get_icon( 'hierarchy' ) . $title;
-	} else if ( is_author() ) {
+	} elseif ( is_author() ) {
 		return iw26_get_icon( 'user' ) . $title;
-	} else if ( is_tax( 'location' ) ) {
+	} elseif ( is_tax( 'location' ) ) {
 		return iw26_get_icon( 'location' ) . $title;
 	}
 	return $title;

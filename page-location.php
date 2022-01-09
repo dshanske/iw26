@@ -16,23 +16,23 @@ get_header(); ?>
 	</header><!-- .entry-header -->
 			<div class="content">
 		<?php 
-			if ( class_exists( 'Location_Taxonomy' ) ) {
-				if ( method_exists( 'list_locations', 'Location_Taxonomy' ) ) {
-					Location_Taxonomy::list_locations();
-				} else {
-					wp_list_categories( 
-						array(
-							'taxonomy' => 'location',
-							'title_li' => null
-						)
-					);
-				}
+		if ( class_exists( 'Location_Taxonomy' ) ) {
+			if ( method_exists( 'list_locations', 'Location_Taxonomy' ) ) {
+				Location_Taxonomy::list_locations();
+			} else {
+				wp_list_categories( 
+					array(
+						'taxonomy' => 'location',
+						'title_li' => null,
+					)
+				);
 			}
+		}
 			// Start the loop.
-			while ( have_posts() ) :
-				the_post();
+		while ( have_posts() ) :
+			the_post();
 			?>
-					<?php the_content(); ?>
+				<?php the_content(); ?>
 				</div><!-- .content -->
 			<?php
 

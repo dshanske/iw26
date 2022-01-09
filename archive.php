@@ -31,12 +31,14 @@ get_header(); ?>
 					printf( '<a class="u-url" href="%1$s"></a>', get_self_link() );
 
 			?>
-			<?php if ( class_exists( 'Simple_Location_Plugin' ) ) {
+			<?php 
+			if ( class_exists( 'Simple_Location_Plugin' ) ) {
 				$self = get_self_link();
 				$self = trailingslashit( $self ) . 'map';
-			} ?>
+			} 
+			?>
 
-			<a href="<?php echo $self;?>">Map</a>
+			<a href="<?php echo $self; ?>">Map</a>
 			</header><!-- .page-header -->
 
 			<?php
@@ -60,8 +62,8 @@ get_header(); ?>
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(
-					'prev_text'          => iw26_get_icon( 'previous' ). '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
-					'next_text'          => iw26_get_icon( 'next') . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
+					'prev_text'          => iw26_get_icon( 'previous' ) . '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
+					'next_text'          => iw26_get_icon( 'next' ) . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'iw26' ) . ' </span>',
 				)
 			);

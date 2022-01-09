@@ -1,7 +1,6 @@
 <?php
 /**
  * Functions which enhance the theme by hooking into WordPress
- *
  */
 
 /**
@@ -32,7 +31,7 @@ function iw26_body_classes( $classes ) {
 		if ( 'page' !== get_post_type() ) {
 			$classes[] = 'hentry';
 			$classes[] = 'h-entry';
-		}  else if ( 'page' === get_post_type() && ! is_front_page() ) {
+		} elseif ( 'page' === get_post_type() && ! is_front_page() ) {
 			$classes[] = 'no-sidebar';
 		}
 	}
@@ -181,7 +180,7 @@ add_action( 'commentsrss2_head', 'iw26_image_rss' );
 
 function iw26_is_404_singular() {
 	// If any of these are present it is an attempt to get a single object not an archive.
-	foreach( array( 'name', 'page', 'p', 'pagename', 'attachment', 'attachment_id' ) as $var ) {
+	foreach ( array( 'name', 'page', 'p', 'pagename', 'attachment', 'attachment_id' ) as $var ) {
 		if ( get_query_var( $var ) ) {
 			return true;
 		}
@@ -223,7 +222,7 @@ function iw26_get_icon_svg( $icon ) {
 }
 
 function iw26_get_icon( $name ) {
-	$svg  = iw26_get_icon_svg( $name );
+	$svg = iw26_get_icon_svg( $name );
 	if ( ! $svg ) {
 		return '';
 	}
@@ -254,7 +253,7 @@ add_filter( 'nav_menu_item_title', 'iw26_dropdown_icon_to_menu_link', 10, 4 );
 
 /**
  * Add icon to widget title for specific widgets.
-**/
+ **/
 
 function iw26_widget_title( $title, $instance = null, $id_base = null ) {
 	if ( 'tempus_thisweek_widget' === $id_base ) {
@@ -289,13 +288,13 @@ function iw26_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
 			$title = get_the_date( 'Y ' . get_option( 'time_format' ), $post );
 		}
 
-		if( function_exists( 'kind_get_the_title' ) ) {
+		if ( function_exists( 'kind_get_the_title' ) ) {
 			$title = kind_get_the_title( $post, array( 'photo_size' => 'thumbnail' ) );
 		}
 
 		/** This filter is documented in wp-includes/post-template.php */
 		$title = apply_filters( 'the_title', $title, $post->ID );
-		       
+			   
 		$date = mysql2date( get_option( 'date_format' ), $post->post_date );
 		$rel  = $previous ? 'prev' : 'next';
 
@@ -306,13 +305,204 @@ function iw26_adjacent_post_link( $output, $format, $link, $post, $adjacent ) {
 		$inlink = $string . $inlink . '</a>';
 										 
 		$output = str_replace( '%link', $inlink, $format );
-	}						      
+	}                             
 
 	return $output;
 }
 
 add_filter( 'next_post_link', 'iw26_adjacent_post_link', 11, 5 );
 add_filter( 'previous_post_link', 'iw26_adjacent_post_link', 11, 5 );
+
+function iw26_previous_posts_link_attributes( $attr ) {
+	$attr   = explode( ' ', $attr );
+	$attr[] = 'rel="prev"';
+	return trim( implode( ' ', $attr ) );
+}
+
+add_filter( 'previous_posts_link_attributes', 'iw26_previous_posts_link_attributes', 9 );
+
+
+function iw26_next_posts_link_attributes( $attr ) {
+	$attr   = explode( ' ', $attr );
+	$attr[] = 'rel="next"';
+	return trim( implode( ' ', $attr ) );
+}
+
+add_filter( 'next_posts_link_attributes', 'iw26_next_posts_link_attributes', 9 );
+
+function iw26_paginate_links( $r, $args = '' ) {
+	global $wp_query, $wp_rewrite;
+ 
+	// Setting up default values based on the current URL.
+	$pagenum_link = html_entity_decode( get_pagenum_link() );
+	$url_parts    = explode( '?', $pagenum_link );
+ 
+	// Get max pages and current page out of the current query, if available.
+	$total   = isset( $wp_query->max_num_pages ) ? $wp_query->max_num_pages : 1;
+	$current = get_query_var( 'paged' ) ? (int) get_query_var( 'paged' ) : 1;
+ 
+	// Append the format placeholder to the base URL.
+	$pagenum_link = trailingslashit( $url_parts[0] ) . '%_%';
+ 
+	// URL base depends on permalink settings.
+	$format  = $wp_rewrite->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
+	$format .= $wp_rewrite->using_permalinks() ? user_trailingslashit( $wp_rewrite->pagination_base . '/%#%', 'paged' ) : '?paged=%#%';
+ 
+	$defaults = array(
+		'base'               => $pagenum_link, // http://example.com/all_posts.php%_% : %_% is replaced by format (below).
+		'format'             => $format, // ?page=%#% : %#% is replaced by the page number.
+		'total'              => $total,
+		'current'            => $current,
+		'aria_current'       => 'page',
+		'show_all'           => false,
+		'prev_next'          => true,
+		'prev_text'          => __( '&laquo; Previous' ),
+		'next_text'          => __( 'Next &raquo;' ),
+		'end_size'           => 1,
+		'mid_size'           => 2,
+		'type'               => 'plain',
+		'add_args'           => array(), // Array of query args to add.
+		'add_fragment'       => '',
+		'before_page_number' => '',
+		'after_page_number'  => '',
+	);
+ 
+	$args = wp_parse_args( $args, $defaults );
+ 
+	if ( ! is_array( $args['add_args'] ) ) {
+		$args['add_args'] = array();
+	}
+ 
+	// Merge additional query vars found in the original URL into 'add_args' array.
+	if ( isset( $url_parts[1] ) ) {
+		// Find the format argument.
+		$format       = explode( '?', str_replace( '%_%', $args['format'], $args['base'] ) );
+		$format_query = isset( $format[1] ) ? $format[1] : '';
+		wp_parse_str( $format_query, $format_args );
+ 
+		// Find the query args of the requested URL.
+		wp_parse_str( $url_parts[1], $url_query_args );
+ 
+		// Remove the format argument from the array of query arguments, to avoid overwriting custom format.
+		foreach ( $format_args as $format_arg => $format_arg_value ) {
+			unset( $url_query_args[ $format_arg ] );
+		}
+ 
+		$args['add_args'] = array_merge( $args['add_args'], urlencode_deep( $url_query_args ) );
+	}
+ 
+	// Who knows what else people pass in $args.
+	$total = (int) $args['total'];
+	if ( $total < 2 ) {
+		return;
+	}
+	$current  = (int) $args['current'];
+	$end_size = (int) $args['end_size']; // Out of bounds? Make it the default.
+	if ( $end_size < 1 ) {
+		$end_size = 1;
+	}
+	$mid_size = (int) $args['mid_size'];
+	if ( $mid_size < 0 ) {
+		$mid_size = 2;
+	}
+ 
+	$add_args   = $args['add_args'];
+	$r          = '';
+	$page_links = array();
+	$dots       = false;
+ 
+	if ( $args['prev_next'] && $current && 1 < $current ) :
+		$link = str_replace( '%_%', 2 == $current ? '' : $args['format'], $args['base'] );
+		$link = str_replace( '%#%', $current - 1, $link );
+		if ( $add_args ) {
+			$link = add_query_arg( $add_args, $link );
+		}
+		$link .= $args['add_fragment'];
+ 
+		$page_links[] = sprintf(
+			'<a class="prev page-numbers" href="%s" rel="prev">%s</a>',
+			/**
+			 * Filters the paginated links for the given archive pages.
+			 *
+			 * @since 3.0.0
+			 *
+			 * @param string $link The paginated link URL.
+			 */
+			esc_url( apply_filters( 'paginate_links', $link ) ),
+			$args['prev_text']
+		);
+	endif;
+ 
+	for ( $n = 1; $n <= $total; $n++ ) :
+		if ( $n == $current ) :
+			$page_links[] = sprintf(
+				'<span aria-current="%s" class="page-numbers current">%s</span>',
+				esc_attr( $args['aria_current'] ),
+				$args['before_page_number'] . number_format_i18n( $n ) . $args['after_page_number']
+			);
+ 
+			$dots = true;
+		else :
+			if ( $args['show_all'] || ( $n <= $end_size || ( $current && $n >= $current - $mid_size && $n <= $current + $mid_size ) || $n > $total - $end_size ) ) :
+				$link = str_replace( '%_%', 1 == $n ? '' : $args['format'], $args['base'] );
+				$link = str_replace( '%#%', $n, $link );
+				if ( $add_args ) {
+					$link = add_query_arg( $add_args, $link );
+				}
+				$link .= $args['add_fragment'];
+ 
+				$page_links[] = sprintf(
+					'<a class="page-numbers" href="%s">%s</a>',
+					/** This filter is documented in wp-includes/general-template.php */
+					esc_url( apply_filters( 'paginate_links', $link ) ),
+					$args['before_page_number'] . number_format_i18n( $n ) . $args['after_page_number']
+				);
+ 
+				$dots = true;
+			elseif ( $dots && ! $args['show_all'] ) :
+				$page_links[] = '<span class="page-numbers dots">' . __( '&hellip;' ) . '</span>';
+ 
+				$dots = false;
+			endif;
+		endif;
+	endfor;
+ 
+	if ( $args['prev_next'] && $current && $current < $total ) :
+		$link = str_replace( '%_%', $args['format'], $args['base'] );
+		$link = str_replace( '%#%', $current + 1, $link );
+		if ( $add_args ) {
+			$link = add_query_arg( $add_args, $link );
+		}
+		$link .= $args['add_fragment'];
+ 
+		$page_links[] = sprintf(
+			'<a class="next page-numbers" href="%s" rel="next">%s</a>',
+			/** This filter is documented in wp-includes/general-template.php */
+			esc_url( apply_filters( 'paginate_links', $link ) ),
+			$args['next_text']
+		);
+	endif;
+ 
+	switch ( $args['type'] ) {
+		case 'array':
+			return $page_links;
+ 
+		case 'list':
+			$r .= "<ul class='page-numbers'>\n\t<li>";
+			$r .= implode( "</li>\n\t<li>", $page_links );
+			$r .= "</li>\n</ul>\n";
+			break;
+ 
+		default:
+			$r = implode( "\n", $page_links );
+			break;
+	}
+ 
+	return $r;
+}
+
+add_filter( 'paginate_links_output', 'iw26_paginate_links', 11, 2 );
+
 
 function iw26_get_single_post_term_name( $taxonomy, $post = null ) {
 	$_terms = get_the_terms( $post, $taxonomy );

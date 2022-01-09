@@ -1,7 +1,6 @@
 <?php
 /**
  * The template for displaying kind archive pages
- *
  */
 
 get_header(); ?>
@@ -28,9 +27,9 @@ get_header(); ?>
 				the_post();
 				if ( class_exists( 'Kind_Post' ) ) {
 					$kind_post = new Kind_Post( get_the_ID() );
-					$photos = $kind_post->get_photo( false );
+					$photos    = $kind_post->get_photo( false );
 					if ( ! empty( $photos ) ) {
-						foreach( $photos as $photo ) {
+						foreach ( $photos as $photo ) {
 							printf( '<li class="h-entry"><a class="u-url" href="%1$s"><img src="%2$s" srcset="%3$s" alt="%4$s" /></a></li>', get_permalink(), wp_get_attachment_image_url( $photo ), wp_get_attachment_image_srcset( $photo ), get_the_excerpt( $photo ) );
 						}
 					}
@@ -39,7 +38,8 @@ get_header(); ?>
 				}
 				// End the loop.
 			endwhile; 
-			?> 
+			?>
+			 
 			</ul> 
 			</div>
 			<?php
@@ -47,8 +47,8 @@ get_header(); ?>
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(
-					'prev_text'          => iw26_get_icon( 'previous' ). '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
-					'next_text'          => iw26_get_icon( 'next') . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
+					'prev_text'          => iw26_get_icon( 'previous' ) . '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
+					'next_text'          => iw26_get_icon( 'next' ) . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'iw26' ) . ' </span>',
 				)
 			);

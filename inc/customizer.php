@@ -36,8 +36,8 @@ function iw26_custom_header_and_background() {
 		apply_filters(
 			'iw26_custom_header_args',
 			array(
-			//	'default-text-color'     => $default_text_color,
-				'width'                  => 1200,
+				// 'default-text-color'     => $default_text_color,
+					'width'              => 1200,
 				'height'                 => 280,
 				'flex-height'            => true,
 				'wp-head-callback'       => 'iw26_header_style',

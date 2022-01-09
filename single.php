@@ -34,40 +34,40 @@ get_header(); ?>
 			} elseif ( is_singular( 'post' ) ) {
 				
 				$series = get_the_terms( get_the_ID(), 'series' );
-				if( ! empty( $series ) ) {
+				if ( ! empty( $series ) ) {
 					$series = iw26_get_single_post_term_name( 'series' );
 					// Previous/next post navigation.
 					the_post_navigation(
 						array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . 
+							'next_text'    => '<span class="meta-nav" aria-hidden="true">' . 
 								sprintf( __( 'Next in %1$s Series', 'iw26' ), $series ) . '</span> ' .
 								'<span class="screen-reader-text">' . __( 'Next post in Series:', 'iw26' ) . '</span> ' .
 								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . 
+							'prev_text'    => '<span class="meta-nav" aria-hidden="true">' . 
 								sprintf( __( 'Previous in %1$s Series', 'iw26' ), $series ) . '</span> ' .
 								'<span class="screen-reader-text">' . __( 'Previous post in Series:', 'iw26' ) . '</span> ' .
 								'<span class="post-title">%title</span>',
 							'in_same_term' => 'true',
-							'taxonomy' => 'series'
+							'taxonomy'     => 'series',
 						)
 					);
-				} else if ( class_exists( 'Kind_Taxonomy' ) ) {
+				} elseif ( class_exists( 'Kind_Taxonomy' ) ) {
 					$kind = get_post_kind( get_post() );
 					// Previous/next post navigation.
 					the_post_navigation(
 						array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . 
+							'next_text'    => '<span class="meta-nav" aria-hidden="true">' . 
 								sprintf( __( 'Next %1s', 'iw26' ), $kind ) . '</span> ' .
 								'<span class="screen-reader-text">' . 
 								sprintf( __( 'Next %1s:', 'iw26' ), $kind ) . '</span> ' .
 								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . 
+							'prev_text'    => '<span class="meta-nav" aria-hidden="true">' . 
 								sprintf( __( 'Previous %1$s', 'iw26' ), $kind ) . '</span> ' .
 								'<span class="screen-reader-text">' .
 								sprintf( __( 'Previous %1s:', 'iw26' ), $kind ) . '</span> ' .
 								'<span class="post-title">%title</span>',
 							'in_same_term' => 'true',
-							'taxonomy' => 'kind'
+							'taxonomy'     => 'kind',
 						)
 					);
 				} else {

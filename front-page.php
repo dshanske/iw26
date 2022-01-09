@@ -10,25 +10,27 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<?php
-			if ( class_exists( 'HCard_User' ) ) {
-				if ( get_option( 'iw_single_author' ) ) {
-					echo HCard_User::hcard(
-						get_option( 'iw_default_author' ),
-						array(
-							'me' => true,
-						)
-					);
-				}
-			} else {
-				get_template_part( 'template-parts/biography' );
+		if ( class_exists( 'HCard_User' ) ) {
+			if ( get_option( 'iw_single_author' ) ) {
+				echo HCard_User::hcard(
+					get_option( 'iw_default_author' ),
+					array(
+						'me' => true,
+					)
+				);
 			}
+		} else {
+			get_template_part( 'template-parts/biography' );
+		}
 			
 		?>
 		<hr />
 		<ul class="front-page-list">
 		<?php
 		if ( have_posts() && ! is_singular() ) {
-			?><h2><?php _e( 'Recent Posts', 'iw26' );?></h2> <?php
+			?>
+			<h2><?php _e( 'Recent Posts', 'iw26' ); ?></h2> 
+			<?php
 			// Start the loop.
 			while ( have_posts() ) {
 				the_post();
@@ -56,7 +58,7 @@ get_header(); ?>
 					'next_text'          => __( 'Newer Posts', 'iw26' ),
 				)
 			);
-		?>
+			?>
 
 	</main><!-- .site-main -->
 

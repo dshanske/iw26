@@ -44,7 +44,7 @@ get_header(); ?>
 							 */
 							$image_size = apply_filters( 'iw26_attachment_size', 'large' );
 
-							printf( '<a href="%1$s">%2$s</a>', esc_url( wp_get_attachment_url() ),	wp_get_attachment_image( get_the_ID(), $image_size ) );
+							printf( '<a href="%1$s">%2$s</a>', esc_url( wp_get_attachment_url() ), wp_get_attachment_image( get_the_ID(), $image_size ) );
 						?>
 
 						<?php iw26_excerpt( 'entry-caption' ); ?>

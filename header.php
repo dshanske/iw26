@@ -33,12 +33,12 @@
 						<h1 class="site-title p-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
+						<?php
 					endif;
 
 					$description = get_bloginfo( 'description', 'display' );
-if ( $description || is_customize_preview() ) :
-	?>
+					if ( $description || is_customize_preview() ) :
+						?>
 						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif; ?>
 				</div><!-- .site-branding -->
@@ -48,15 +48,23 @@ if ( $description || is_customize_preview() ) :
 						<div class="wrap">
 							<?php if ( has_nav_menu( 'primary' ) ) : ?>
 								<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'iw26' ); ?>">
-								<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo iw26_get_icon( 'menu' ); echo iw26_get_icon( 'close' ); _e( 'Menu', 'iw26' ); ?></button>
-								<?php wp_nav_menu( 
+								<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+								<?php 
+								echo iw26_get_icon( 'menu' );
+								echo iw26_get_icon( 'close' );
+								_e( 'Menu', 'iw26' ); 
+								?>
+								</button>
+								<?php 
+								wp_nav_menu( 
 									array(
 										'theme_location' => 'primary',
 										'menu_id'        => 'primary-menu',
 									) 
-								); ?>
+								); 
+								?>
 
-								<?php if ( is_home() && is_front_page()  ) : ?>
+								<?php if ( is_home() && is_front_page() ) : ?>
 									<a href="#content" class="menu-scroll-down"><?php echo iw26_get_icon( 'next' ); ?><span class="screen-reader-text"><?php _e( 'Scroll Down', 'iw26' ); ?></span></a>
 								<?php endif; ?>
 								</nav><!-- #site-navigation -->

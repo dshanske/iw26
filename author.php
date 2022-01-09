@@ -2,9 +2,7 @@
 /**
  * The template for displaying author archive pages
  *
- *
  * @link https://codex.wordpress.org/Template_Hierarchy
- *
  */
 
 get_header(); ?>
@@ -15,12 +13,12 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-<?php
+			<?php
 			if ( class_exists( 'HCard_User' ) ) {
 				echo HCard_User::hcard(
 					get_the_author_meta( 'ID' ),
 					array(
-						'me' => false
+						'me' => false,
 					)
 				);
 			} else {
@@ -51,8 +49,8 @@ get_header(); ?>
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(
-					'prev_text'          => iw26_get_icon( 'previous' ). '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
-					'next_text'          => iw26_get_icon( 'next') . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
+					'prev_text'          => iw26_get_icon( 'previous' ) . '<span class="screen-reader-text">' . __( 'Previous page', 'iw26' ) . '</span>',
+					'next_text'          => iw26_get_icon( 'next' ) . '<span class="screen-reader-text">' . __( 'Next page', 'iw26' ) . '</span>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'iw26' ) . ' </span>',
 				)
 			);

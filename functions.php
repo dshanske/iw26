@@ -306,7 +306,7 @@ function iw26_scripts() {
 		array(
 			'expand'   => __( 'expand child menu', 'iw26' ),
 			'collapse' => __( 'collapse child menu', 'iw26' ),
-			'icon' => iw26_get_icon( 'expand' )
+			'icon'     => iw26_get_icon( 'expand' ),
 		)
 	);
 }
@@ -473,10 +473,10 @@ add_action( 'pre_get_posts', 'iw26_set_posts_per_page_for_kind_photos' );
 
 /**
  * After the first page, do not use the front-page.php template.
-**/
+ **/
 
 function iw26_front_paged( $template ) {
-	if( is_front_page() && is_paged() ) {
+	if ( is_front_page() && is_paged() ) {
 		$new_template = locate_template( array( 'home.php', 'index.php' ) );
 		if ( '' !== $new_template ) {
 			return $new_template;
