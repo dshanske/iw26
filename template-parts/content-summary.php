@@ -18,7 +18,13 @@
 		the_title( sprintf( '<a class="entry-title p-name" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
 	} else {
 		if ( function_exists( 'kind_get_the_link' ) ) {
-			echo kind_get_the_link();
+			echo kind_get_the_link( null, array( 'dt-published' ) );
+			$args = array(
+				'text'             => false,
+				'icons'            => false,
+				'show_text_before' => false,
+			);
+			echo get_syndication_links( get_the_ID(), $args );
 		} else {
 			echo iw26_post_link();
 		}
