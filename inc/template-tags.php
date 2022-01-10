@@ -488,6 +488,7 @@ function iw26_page_children() {
 			'post_type'      => 'page',
 			'fields'         => 'ids',
 			'orderby'        => 'title',
+			'order'          => 'ASC',
 			'posts_per_page' => '-1',
 		)
 	);
