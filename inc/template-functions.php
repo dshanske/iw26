@@ -57,7 +57,7 @@ function iw26_feed_header() {
 		printf( '<link rel="alternate" type="text/mf2+html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'H-Feed', 'iw26' ) );
 	}
 	if ( get_query_var( 'kind_firehose' ) ) {
-		printf( '<link rel="alternate" type="text/mf2+html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_self_link(), __( 'H-Feed', 'iw26' ) );
+		printf( '<link rel="alternate" type="text/mf2+html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_self_link() ), __( 'H-Feed', 'iw26' ) );
 	}
 
 }
