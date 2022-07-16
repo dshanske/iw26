@@ -54,8 +54,12 @@ add_action( 'wp_head', 'iw26_pingback_header' );
  */
 function iw26_feed_header() {
 	if ( is_front_page() && 0 !== (int) get_option( 'page_for_posts', 0 ) ) {
-		printf( '<link rel="feed" type="text/html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'All Posts Feed', 'iw26' ) );
+		printf( '<link rel="alternate" type="text/mf2+html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_post_type_archive_link( 'post' ) ), __( 'H-Feed', 'iw26' ) );
 	}
+	if ( get_query_var( 'kind_firehose' ) ) {
+		printf( '<link rel="alternate" type="text/mf2+html" href="%1$s" title="%2$s" />' . PHP_EOL, esc_url( get_self_link(), __( 'H-Feed', 'iw26' ) );
+	}
+
 }
 add_action( 'wp_head', 'iw26_feed_header' );
 
