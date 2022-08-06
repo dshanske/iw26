@@ -40,6 +40,30 @@ function iw26_body_classes( $classes ) {
 add_filter( 'body_class', 'iw26_body_classes' );
 
 /**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function iw26_privacy_link( $link, $privacy_policy_url ) {
+	$privacy_policy_url = get_privacy_policy_url();
+	$policy_page_id = (int) get_option( 'wp_page_for_privacy_policy' );
+	$page_title     = ( $policy_page_id ) ? get_the_title( $policy_page_id ) : '';
+		 
+	if ( $privacy_policy_url && $page_title ) {
+		$link = sprintf(
+			'<a class="privacy-policy-link" href="%s" rel="privacy-policy">%s</a>',
+			esc_url( $privacy_policy_url ),
+			esc_html( $page_title )
+		);
+	}
+	return $link;
+}
+
+add_filter( 'the_privacy_policy_link', 'iw26_privacy_link', 10, 2 );
+
+
+/**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
 function iw26_pingback_header() {
