@@ -77,8 +77,8 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 			iw26_entry_taxonomies();
 		}
 
-		if ( class_exists( 'WP_Geo_Data' ) ) {
-			echo Loc_View::get_location();
+		if ( class_exists( 'Simple_Location_Plugin' ) ) {
+			echo get_post_location();
 			// If you want to just show the icon
 			// echo '<span class="sloc-display">' . Loc_View::get_icon() . '</span>';
 		}

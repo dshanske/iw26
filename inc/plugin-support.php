@@ -13,8 +13,8 @@ function twenty_sixteen_indieweb_plugin_support() {
 	/*
 	 * Adds support for Simple Location
 	 */
-	if ( class_exists( 'Loc_View' ) && has_filter( 'the_content', array( 'Loc_View', 'location_content' ) ) ) {
-		remove_filter( 'the_content', array( 'Loc_View', 'location_content' ), 12 );
+	if ( class_exists( 'Simple_Location_Plugin' ) && has_filter( 'the_content', array( 'Geo_Data', 'location_content' ) ) ) {
+		remove_filter( 'the_content', array( 'Geo_Data', 'location_content' ), 12 );
 	}
 
 }

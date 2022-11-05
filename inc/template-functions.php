@@ -28,7 +28,9 @@ function iw26_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 		$classes[] = 'h-feed';
 	} else {
-		if ( 'page' !== get_post_type() ) {
+		if ( 'venue' === get_post_type() ) {
+			$classes[] = 'h-card';
+		} elseif ( 'page' !== get_post_type() ) {
 			$classes[] = 'hentry';
 			$classes[] = 'h-entry';
 		} elseif ( 'page' === get_post_type() && ! is_front_page() ) {
@@ -97,7 +99,9 @@ add_action( 'wp_head', 'iw26_feed_header' );
 function iw26_post_classes( $classes ) {
 	$classes = array_diff( $classes, array( 'hentry' ) );
 	if ( ! is_singular() ) {
-		if ( 'page' !== get_post_type() ) {
+		if ( 'venue' === get_post_type() ) {
+			$classes[] = 'h-card';
+		} elseif ( 'page' !== get_post_type() ) {
 			// Adds a class for microformats v2
 			$classes[] = 'h-entry';
 			// add hentry to the same tag as h-entry
