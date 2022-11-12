@@ -99,6 +99,19 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 	}
 endif;
 
+function iw26_related_venues() {
+	$checkins = Post_Venue::get_venue_posts();
+	if ( empty ( $checkins ) ) {
+		return '';
+	}
+	printf( '<h3>%1$s</h3>', __( 'Checkins at this Venue', 'simple-location' ) );
+	echo '<ul class="h-feed">';
+	foreach( $checkins as $checkin ) {
+		printf( '<li class="h-entry"><a class="u-url" href="%1$s">%2$s</a></li>', get_permalink( $checkin ), get_the_date( '', $checkin ) );
+	}
+	echo '</ul>';
+}
+
 /*
  * Wrapper function for a possible custom display of Syndication Links output
   */
