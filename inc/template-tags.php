@@ -79,8 +79,17 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 
 		if ( class_exists( 'Simple_Location_Plugin' ) ) {
 			echo get_post_location();
-			// If you want to just show the icon
-			// echo '<span class="sloc-display">' . Loc_View::get_icon() . '</span>';
+			if ( 'venue' === get_post_type() ) {
+				$types = Post_Venue::get_venue_type();
+				if ( ! $types ) {
+					return;
+				}
+				echo '<span class="venue-type">';
+				foreach( $types as $type ) {
+					printf( '<a href="%1$s">%2$s</a>', get_term_link( $type ), get_term( $type, 'venue_type' )->name );
+				}
+				echo '</span>';
+			}
 		}
 
 		if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
