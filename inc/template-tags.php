@@ -109,6 +109,15 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 endif;
 
 function iw26_related_venues() {
+	$parents = Post_Venue::get_venue_ancestors();
+	if ( ! empty( $parents ) ) {
+		$parents = array_reverse( $parents );
+		$return = array();
+		foreach ( $parents as $ancestor ) {
+			$return[] = sprintf( '<a href="%1$s" rel="up">%2$s</a>', esc_url( get_permalink( $ancestor ) ), get_the_title( $ancestor ) );
+		}
+		echo '<ul class="breadcrumbs"><li>' . implode( '</li><li>' . iw26_get_icon( 'next' ) . ' ', $return ) . '</li></ul>';
+	}
 	$checkins = Post_Venue::get_venue_posts();
 	if ( empty ( $checkins ) ) {
 		return '';
@@ -119,6 +128,14 @@ function iw26_related_venues() {
 		printf( '<li class="h-entry"><a class="u-url" href="%1$s">%2$s</a></li>', get_permalink( $checkin ), get_the_date( '', $checkin ) );
 	}
 	echo '</ul>';
+
+
+	$gallery = Post_Venue::get_venue_gallery( );
+
+	if ( ! empty( $gallery ) ) {
+		printf( '<h3>%1$s</h3>', __( 'Images from this Venue', 'simple-location' ) );
+		echo $gallery;
+	}
 }
 
 /*

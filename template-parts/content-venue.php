@@ -10,7 +10,18 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title p-name">', '</h1>' ); ?>
+		<h1 class="entry-title">
+		<?php the_title( '<span class="p-name">', '</span>' ); ?>
+		<?php
+			if ( class_exists( 'Location_Taxonomy' ) ) {
+				$term = Location_Taxonomy::get_location_taxonomy( get_post() );
+				if ( $term ) {
+					printf( ' - %1$s', Location_Taxonomy::display_name( $term, false ) );
+				}
+			}
+		?> 
+		</h1>
+		
 	</header><!-- .entry-header -->
 
 	<?php iw26_post_thumbnail(); ?>
