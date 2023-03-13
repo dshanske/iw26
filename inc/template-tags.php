@@ -166,17 +166,7 @@ if ( ! function_exists( 'iw26_attachment_datetime' ) ) :
 			return;
 		}
 		$data      = $data['image_meta'];
-		$created   = null;
-		$published = get_post_meta( $post->ID, 'mf2_published', true );
-		if ( $published ) {
-			$created = new DateTime( $published );
-		} elseif ( array_key_exists( 'created_timestamp', $data ) && ( 0 !== (int) $data['created_timestamp'] ) ) {
-			$created = new DateTime( $data['created_timestamp'] );
-		} elseif ( array_key_exists( 'created', $data ) ) {
-			$created = new DateTime();
-			$created->setTimestamp( intval( $data['created'] ) );
-			$created->setTimezone( wp_timezone() );
-		}
+		$created   = sloc_get_attachment_datetime( $post );
 		return $created;
 	}
 endif;
