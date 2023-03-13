@@ -34,11 +34,15 @@ get_header(); ?>
 			<?php 
 			if ( class_exists( 'Simple_Location_Plugin' ) ) {
 				$self = get_self_link();
-				$self = trailingslashit( $self ) . 'map';
+				if ( is_tax( 'location' ) ) {
+					$self = str_replace( trailingslashit( home_url() ), trailingslashit( home_url() ) . 'map/', $self );
+				} else {
+					$self = trailingslashit( $self ) . 'map';
+				}
+				printf( '<a href="%1$s">Map</a>', $self );
 			} 
 			?>
 
-			<a href="<?php echo $self; ?>">Map</a>
 			</header><!-- .page-header -->
 
 			<?php
