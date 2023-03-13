@@ -87,14 +87,14 @@
 	.main-navigation ul ul::before {
 		border-color: #d1d1d1 transparent;
 		border-width: 0 10px 10px;
-		right: 9px;
+		left: 9px;
 		top: -9px;
 	}
 
 	.main-navigation ul ul::after {
 		border-color: var(--page-background-color) transparent;
 		border-width: 0 8px 8px;
-		right: 11px;
+		left: 11px;
 		top: -7px;
 	}
 

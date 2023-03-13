@@ -286,7 +286,7 @@
 	.main-navigation ul li.page_item_has_children:hover:before,
 	.main-navigation ul li.page_item_has_children.focus:after,
 	.main-navigation ul li.page_item_has_children:hover:after {
-		display: block;
+		display: none;
 	}
 
 	.main-navigation ul li.menu-item-has-children:before,
