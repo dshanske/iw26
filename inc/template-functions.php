@@ -542,7 +542,7 @@ function iw26_get_single_post_term_name( $taxonomy, $post = null ) {
 		return false;
 	}
 	$_terms = get_the_terms( $post, $taxonomy );
-	if ( is_wp_error( $_terms ) {
+	if ( is_wp_error( $_terms ) ) {
 		return false;
 	}
 	if ( ! empty( $_terms ) ) {
