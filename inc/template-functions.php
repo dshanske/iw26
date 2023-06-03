@@ -537,7 +537,14 @@ add_filter( 'paginate_links_output', 'iw26_paginate_links', 11, 2 );
 
 
 function iw26_get_single_post_term_name( $taxonomy, $post = null ) {
+	$post = get_post( $post );
+	if ( ! $post ) {
+		return false;
+	}
 	$_terms = get_the_terms( $post, $taxonomy );
+	if ( is_wp_error( $_terms ) {
+		return false;
+	}
 	if ( ! empty( $_terms ) ) {
 		$term = array_shift( $_terms );
 		return $term->name;
