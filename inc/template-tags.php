@@ -80,15 +80,20 @@ if ( ! function_exists( 'iw26_entry_meta' ) ) :
 		if ( class_exists( 'Simple_Location_Plugin' ) ) {
 			echo get_post_location();
 			if ( 'venue' === get_post_type() ) {
+				$url = get_post_meta( get_the_ID(), 'venue_url', true );
+				if ( $url ) {
+					echo '<br /><span class="venue_url">';
+					printf( __( 'Also at: <a href="%s">%s</a>', 'simple-location' ), $url, wp_parse_url( $url, PHP_URL_HOST ) );
+					echo '</span>';
+				}
 				$types = Post_Venue::get_venue_type();
-				if ( ! $types ) {
-					return;
+				if ( $types ) {
+					echo '<br /><span class="venue_type">';
+					foreach( $types as $type ) {
+						printf( '<a href="%1$s">%2$s</a>', get_term_link( $type ), get_term( $type, 'venue_type' )->name );
+					}
+					echo '</span>';
 				}
-				echo '<span class="venue-type">';
-				foreach( $types as $type ) {
-					printf( '<a href="%1$s">%2$s</a>', get_term_link( $type ), get_term( $type, 'venue_type' )->name );
-				}
-				echo '</span>';
 			}
 		}
 
