@@ -15,10 +15,10 @@
 	<?php endif; ?>
 	<?php
 	if ( ! class_exists( 'Kind_Taxonomy' ) ) {
-		the_title( sprintf( '<a class="entry-title p-name" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
+		the_title( sprintf( '<a class="entry-title p-name u-url" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' );
 	} else {
 		if ( function_exists( 'kind_get_the_link' ) ) {
-			echo kind_get_the_link( null, array( 'dt-published' ) );
+			echo kind_get_the_link( null, array( 'u-url', 'p-summary' ), 'dt-published' );
 			$args = array(
 				'text'             => false,
 				'icons'            => false,

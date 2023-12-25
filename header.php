@@ -29,8 +29,8 @@
 				<div class="site-branding">
 					<?php iw26_the_custom_logo(); ?>
 
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title p-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php if ( is_front_page() || is_home() ) : ?>
+						<h1 class="site-title p-name"><a class="u-url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php else : ?>
 						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 						<?php
