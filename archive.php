@@ -63,6 +63,10 @@ get_header(); ?>
 				// End the loop.
 			endwhile;
 
+			if ( is_date() && function_exists( 'tempus_get_the_date_navigation' ) ) {
+				echo tempus_get_the_date_navigation();
+			}
+
 			// Previous/next page navigation.
 			the_posts_pagination(
 				array(

@@ -189,7 +189,7 @@
 	display: none;
 }
 
-.post-navigation {
+.post-navigation, .date-navigation {
 	border-top: 4px solid var(--main-text-color);
 	border-bottom: 4px solid var(--main-text-color);
 	clear: both;
@@ -197,21 +197,21 @@
 	margin: 0 7.6923% 3.5em;
 }
 
-.post-navigation a {
+.post-navigation a, .date-navigation a {
 	color: var(--main-text-color);
 	display: block;
 	padding: 1.75em 0;
 }
 
-.post-navigation .svg-icon {
+.post-navigation .svg-icon, .date-navigation .svg-icon {
 	display: inline-block;
 }
 
-.post-navigation span {
+.post-navigation span, .date-navigation span {
 	display: block;
 }
 
-.post-navigation .meta-nav {
+.post-navigation .meta-nav, .date-navigation .meta-nav {
 	color: var(--secondary-text-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -236,7 +236,7 @@
 	color: var(--link-color);
 }
 
-.post-navigation div + div {
+.post-navigation div + div, .date-navigation div + div {
 	border-top: 4px solid var(--main-text-color);
 }
 

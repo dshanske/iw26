@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -244,9 +243,9 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -254,9 +253,9 @@ button,
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -265,9 +264,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -317,8 +316,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -328,8 +327,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -337,7 +336,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -347,7 +346,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -472,7 +471,7 @@ blockquote small {
 
 blockquote cite::before,
 blockquote small::before {
-  content: "— ";
+  content: "\2014\00a0";
 }
 
 blockquote em,
@@ -689,15 +688,15 @@ input {
 button,
 button[disabled]:hover,
 button[disabled]:focus,
-input[type=button],
-input[type=button][disabled]:hover,
-input[type=button][disabled]:focus,
-input[type=reset],
-input[type=reset][disabled]:hover,
-input[type=reset][disabled]:focus,
-input[type=submit],
-input[type=submit][disabled]:hover,
-input[type=submit][disabled]:focus {
+input[type="button"],
+input[type="button"][disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="reset"],
+input[type="reset"][disabled]:hover,
+input[type="reset"][disabled]:focus,
+input[type="submit"],
+input[type="submit"][disabled]:hover,
+input[type="submit"][disabled]:focus {
   background: var(--main-text-color);
   border: 0;
   border-radius: 2px;
@@ -712,35 +711,35 @@ input[type=submit][disabled]:focus {
 
 button:hover,
 button:focus,
-input[type=button]:hover,
-input[type=button]:focus,
-input[type=reset]:hover,
-input[type=reset]:focus,
-input[type=submit]:hover,
-input[type=submit]:focus {
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   background: var(--link-color);
 }
 
 button:focus,
-input[type=button]:focus,
-input[type=reset]:focus,
-input[type=submit]:focus {
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
   outline: thin dotted;
   outline-offset: -4px;
 }
 
-input[type=date],
-input[type=time],
-input[type=datetime-local],
-input[type=week],
-input[type=month],
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=password],
-input[type=search],
-input[type=tel],
-input[type=number],
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="month"],
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
 textarea {
   background: var(--form-color);
   background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
@@ -751,18 +750,18 @@ textarea {
   width: 100%;
 }
 
-input[type=date]:focus,
-input[type=time]:focus,
-input[type=datetime-local]:focus,
-input[type=week]:focus,
-input[type=month]:focus,
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=url]:focus,
-input[type=password]:focus,
-input[type=search]:focus,
-input[type=tel]:focus,
-input[type=number]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="datetime-local"]:focus,
+input[type="week"]:focus,
+input[type="month"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
 textarea:focus {
   background-color: var(--page-background-color);
   border-color: var(--link-color);
@@ -786,7 +785,7 @@ textarea:focus {
   text-transform: uppercase;
 }
 
-.post-password-form input[type=password] {
+.post-password-form input[type="password"] {
   margin-top: 0.4375em;
 }
 
@@ -798,7 +797,7 @@ textarea:focus {
   position: relative;
 }
 
-input[type=search].search-field {
+input[type="search"].search-field {
   border-radius: 2px 0 0 2px;
   width: -webkit-calc(100% - 42px);
   width: calc(100% - 42px);
@@ -1062,7 +1061,7 @@ a:active {
   display: none;
 }
 
-.post-navigation {
+.post-navigation, .date-navigation {
   border-top: 4px solid var(--main-text-color);
   border-bottom: 4px solid var(--main-text-color);
   clear: both;
@@ -1070,21 +1069,21 @@ a:active {
   margin: 0 7.6923% 3.5em;
 }
 
-.post-navigation a {
+.post-navigation a, .date-navigation a {
   color: var(--main-text-color);
   display: block;
   padding: 1.75em 0;
 }
 
-.post-navigation .svg-icon {
+.post-navigation .svg-icon, .date-navigation .svg-icon {
   display: inline-block;
 }
 
-.post-navigation span {
+.post-navigation span, .date-navigation span {
   display: block;
 }
 
-.post-navigation .meta-nav {
+.post-navigation .meta-nav, .date-navigation .meta-nav {
   color: var(--secondary-text-color);
   font-size: 13px;
   font-size: 0.8125rem;
@@ -1109,7 +1108,7 @@ a:active {
   color: var(--link-color);
 }
 
-.post-navigation div + div {
+.post-navigation div + div, .date-navigation div + div {
   border-top: 4px solid var(--main-text-color);
 }
 
@@ -1267,7 +1266,7 @@ a:active {
 
 .image-navigation .nav-previous:not(:empty) + .nav-next:not(:empty)::before,
 .comment-navigation .nav-previous:not(:empty) + .nav-next:not(:empty)::before {
-  content: "/";
+  content: "\002f";
   display: inline-block;
   opacity: 0.7;
   padding: 0 0.538461538em;
@@ -2270,7 +2269,7 @@ body.search-no-results .page-header {
 }
 
 .bypostauthor > article .fn::after {
-  content: "";
+  content: "\f304";
   left: 3px;
   position: relative;
   top: 5px;
@@ -2308,7 +2307,7 @@ body.search-no-results .page-header {
 
 .comment-metadata .edit-link::before,
 .pingback .edit-link::before {
-  content: "/";
+  content: "\002f";
   display: inline-block;
   opacity: 0.7;
   padding: 0 0.538461538em;
@@ -2419,7 +2418,7 @@ body.search-no-results .page-header {
 }
 
 .comment-reply-title small a::before {
-  content: "";
+  content: "\f405";
   font-size: 32px;
   position: relative;
   top: -5px;
@@ -2463,21 +2462,21 @@ body.search-no-results .page-header {
 }
 
 .site-footer .site-title::after {
-  content: "/";
+  content: "\002f";
   display: inline-block;
   font-family: var(--font-family-title);
   opacity: 0.7;
   padding: 0 0.307692308em 0 0.538461538em;
 }
 
-.site-footer span[role=separator] {
+.site-footer span[role="separator"] {
   font-family: Montserrat, sans-serif;
   opacity: 0.7;
   padding: 0 0.307692308em 0 0.538461538em;
 }
 
-.site-footer span[role=separator]::before {
-  content: "/";
+.site-footer span[role="separator"]::before {
+  content: "\002f";
 }
 
 /*--------------------------------------------------------------
@@ -2570,7 +2569,7 @@ p > video {
   max-width: 100%;
 }
 
-.wp-caption img[class*=wp-image-] {
+.wp-caption img[class*="wp-image-"] {
   display: block;
   margin: 0;
 }
@@ -2657,7 +2656,7 @@ p > video {
 /*--------------------------------------------------------------
 # Photo Grid
 --------------------------------------------------------------*/
-@media (max-aspect-ratio: 1/1) {
+@media (max-aspect-ratio: 1 / 1) {
   .photogrid li {
     height: 30vh;
   }
@@ -2768,7 +2767,7 @@ p > video {
 }
 
 .widecolumn #submit,
-.widecolumn .mu_register input[type=submit] {
+.widecolumn .mu_register input[type="submit"] {
   font-size: 16px;
   font-size: 1rem;
   margin: 0;
@@ -2837,7 +2836,7 @@ p > video {
 --------------------------------------------------------------*/
 @media screen and (min-width: 44.375em) {
   body:not(.custom-background-image)::before,
-body:not(.custom-background-image)::after {
+  body:not(.custom-background-image)::after {
     background: inherit;
     content: "";
     display: block;
@@ -2938,16 +2937,16 @@ body:not(.custom-background-image)::after {
   }
 
   .entry-header,
-.post-thumbnail,
-.content,
-.entry-summary,
-.entry-footer,
-.comments-area,
-.image-navigation,
-.post-navigation,
-.page-header,
-.page-content,
-.content-bottom-widgets {
+  .post-thumbnail,
+  .content,
+  .entry-summary,
+  .entry-footer,
+  .comments-area,
+  .image-navigation,
+  .post-navigation,
+  .page-header,
+  .page-content,
+  .content-bottom-widgets {
     margin-right: 23.0769%;
   }
 
@@ -2959,7 +2958,7 @@ body:not(.custom-background-image)::after {
   }
 
   .content blockquote.alignleft,
-.content blockquote.alignright {
+  .content blockquote.alignright {
     border-width: 4px 0 0 0;
     padding: 0.9473684211em 0 0;
     width: -webkit-calc(50% - 0.736842105em);
@@ -2967,41 +2966,41 @@ body:not(.custom-background-image)::after {
   }
 
   .content blockquote:not(.alignleft):not(.alignright),
-.entry-summary blockquote,
-.comment-content blockquote {
+  .entry-summary blockquote,
+  .comment-content blockquote {
     margin-left: -1.473684211em;
   }
 
   .content blockquote blockquote:not(.alignleft):not(.alignright),
-.entry-summary blockquote blockquote,
-.comment-content blockquote blockquote {
+  .entry-summary blockquote blockquote,
+  .comment-content blockquote blockquote {
     margin-left: 0;
   }
 
   .content ul,
-.entry-summary ul,
-.comment-content ul,
-.content ol,
-.entry-summary ol,
-.comment-content ol {
+  .entry-summary ul,
+  .comment-content ul,
+  .content ol,
+  .entry-summary ol,
+  .comment-content ol {
     margin-left: 0;
   }
 
   .content li > ul,
-.entry-summary li > ul,
-.comment-content li > ul,
-.content blockquote > ul,
-.entry-summary blockquote > ul,
-.comment-content blockquote > ul {
+  .entry-summary li > ul,
+  .comment-content li > ul,
+  .content blockquote > ul,
+  .entry-summary blockquote > ul,
+  .comment-content blockquote > ul {
     margin-left: 1.25em;
   }
 
   .content li > ol,
-.entry-summary li > ol,
-.comment-content li > ol,
-.content blockquote > ol,
-.entry-summary blockquote > ol,
-.comment-content blockquote > ol {
+  .entry-summary li > ol,
+  .comment-content li > ol,
+  .content blockquote > ol,
+  .entry-summary blockquote > ol,
+  .comment-content blockquote > ol {
     margin-left: 1.5em;
   }
 
@@ -3021,35 +3020,35 @@ body:not(.custom-background-image)::after {
   }
 
   .comment-list + .comment-respond,
-.comment-navigation + .comment-respond {
+  .comment-navigation + .comment-respond {
     padding-top: 3.5em;
   }
 
   .comments-area,
-.widget,
-.content-bottom-widgets .widget-area {
+  .widget,
+  .content-bottom-widgets .widget-area {
     margin-bottom: 5.25em;
   }
 
   .sidebar,
-.widecolumn {
+  .widecolumn {
     margin-bottom: 5.25em;
     padding-right: 23.0769%;
   }
 
   body:not(.search-results) .entry-summary li > ul,
-body:not(.search-results) .entry-summary blockquote > ul {
+  body:not(.search-results) .entry-summary blockquote > ul {
     margin-left: 1.157894737em;
   }
 
   body:not(.search-results) .entry-summary li > ol,
-body:not(.search-results) .entry-summary blockquote > ol {
+  body:not(.search-results) .entry-summary blockquote > ol {
     margin-left: 1.473684211em;
   }
 
   /* Main Navigation */
   .js .menu-toggle,
-.js .dropdown-toggle {
+  .js .dropdown-toggle {
     display: none;
   }
 
@@ -3058,8 +3057,8 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .js .main-navigation ul,
-.js .main-navigation ul ul,
-.js .main-navigation > div > ul {
+  .js .main-navigation ul ul,
+  .js .main-navigation > div > ul {
     display: block;
   }
 
@@ -3098,9 +3097,9 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul li.menu-item-has-children:before,
-.main-navigation ul li.menu-item-has-children:after,
-.main-navigation ul li.page_item_has_children:before,
-.main-navigation ul li.page_item_has_children:after {
+  .main-navigation ul li.menu-item-has-children:after,
+  .main-navigation ul li.page_item_has_children:before,
+  .main-navigation ul li.page_item_has_children:after {
     border-style: solid;
     border-width: 0 6px 6px;
     content: "";
@@ -3114,29 +3113,29 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul li.menu-item-has-children.focus:before,
-.main-navigation ul li.menu-item-has-children:hover:before,
-.main-navigation ul li.menu-item-has-children.focus:after,
-.main-navigation ul li.menu-item-has-children:hover:after,
-.main-navigation ul li.page_item_has_children.focus:before,
-.main-navigation ul li.page_item_has_children:hover:before,
-.main-navigation ul li.page_item_has_children.focus:after,
-.main-navigation ul li.page_item_has_children:hover:after {
+  .main-navigation ul li.menu-item-has-children:hover:before,
+  .main-navigation ul li.menu-item-has-children.focus:after,
+  .main-navigation ul li.menu-item-has-children:hover:after,
+  .main-navigation ul li.page_item_has_children.focus:before,
+  .main-navigation ul li.page_item_has_children:hover:before,
+  .main-navigation ul li.page_item_has_children.focus:after,
+  .main-navigation ul li.page_item_has_children:hover:after {
     display: none;
   }
 
   .main-navigation ul li.menu-item-has-children:before,
-.main-navigation ul li.page_item_has_children:before {
+  .main-navigation ul li.page_item_has_children:before {
     border-color: transparent transparent #bbb;
     bottom: 0;
   }
 
   .main-navigation ul li.menu-item-has-children:after,
-.main-navigation ul li.page_item_has_children:after {
+  .main-navigation ul li.page_item_has_children:after {
     border-color: transparent transparent #fff;
   }
 
   .main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+  .main-navigation ul ul li.focus > ul {
     left: 100%;
     right: auto;
   }
@@ -3152,7 +3151,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation li li:hover,
-.main-navigation li li.focus {
+  .main-navigation li li.focus {
     background: #767676;
   }
 
@@ -3162,25 +3161,25 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation li li.focus > a,
-.main-navigation li li:focus > a,
-.main-navigation li li:hover > a,
-.main-navigation li li a:hover,
-.main-navigation li li a:focus,
-.main-navigation li li.current_page_item a:hover,
-.main-navigation li li.current-menu-item a:hover,
-.main-navigation li li.current_page_item a:focus,
-.main-navigation li li.current-menu-item a:focus {
+  .main-navigation li li:focus > a,
+  .main-navigation li li:hover > a,
+  .main-navigation li li a:hover,
+  .main-navigation li li a:focus,
+  .main-navigation li li.current_page_item a:hover,
+  .main-navigation li li.current-menu-item a:hover,
+  .main-navigation li li.current_page_item a:focus,
+  .main-navigation li li.current-menu-item a:focus {
     color: #fff;
   }
 
   .main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+  .main-navigation ul li.focus > ul {
     left: 0.5em;
     right: auto;
   }
 
   .main-navigation .menu-item-has-children > a > .icon,
-.main-navigation .page_item_has_children > a > .icon {
+  .main-navigation .page_item_has_children > a > .icon {
     display: inline;
     left: 5px;
     position: relative;
@@ -3188,7 +3187,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul ul .menu-item-has-children > a > .icon,
-.main-navigation ul ul .page_item_has_children > a > .icon {
+  .main-navigation ul ul .page_item_has_children > a > .icon {
     margin-top: -9px;
     left: auto;
     position: absolute;
@@ -3208,13 +3207,13 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul ul li.menu-item-has-children.focus:before,
-.main-navigation ul ul li.menu-item-has-children:hover:before,
-.main-navigation ul ul li.menu-item-has-children.focus:after,
-.main-navigation ul ul li.menu-item-has-children:hover:after,
-.main-navigation ul ul li.page_item_has_children.focus:before,
-.main-navigation ul ul li.page_item_has_children:hover:before,
-.main-navigation ul ul li.page_item_has_children.focus:after,
-.main-navigation ul ul li.page_item_has_children:hover:after {
+  .main-navigation ul ul li.menu-item-has-children:hover:before,
+  .main-navigation ul ul li.menu-item-has-children.focus:after,
+  .main-navigation ul ul li.menu-item-has-children:hover:after,
+  .main-navigation ul ul li.page_item_has_children.focus:before,
+  .main-navigation ul ul li.page_item_has_children:hover:before,
+  .main-navigation ul ul li.page_item_has_children.focus:after,
+  .main-navigation ul ul li.page_item_has_children:hover:after {
     display: none;
   }
 
@@ -3263,7 +3262,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation .primary-menu,
-.main-navigation .primary-menu > li {
+  .main-navigation .primary-menu > li {
     border: 0;
   }
 
@@ -3278,7 +3277,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation li:hover > a,
-.main-navigation li.focus > a {
+  .main-navigation li.focus > a {
     color: var(--link-color);
   }
 
@@ -3296,7 +3295,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul ul ul::before,
-.main-navigation ul ul ul::after {
+  .main-navigation ul ul ul::after {
     border: 0;
   }
 
@@ -3312,7 +3311,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation ul ul::before,
-.main-navigation ul ul::after {
+  .main-navigation ul ul::after {
     border-style: solid;
     content: "";
     position: absolute;
@@ -3333,13 +3332,13 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .main-navigation li:hover > ul,
-.main-navigation li.focus > ul {
+  .main-navigation li.focus > ul {
     left: auto;
     right: 0;
   }
 
   .main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+  .main-navigation ul ul li.focus > ul {
     left: auto;
     right: 100%;
   }
@@ -3369,9 +3368,9 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .dropdown-toggle,
-.main-navigation ul .dropdown-toggle.toggled-on,
-.menu-toggle,
-.site-footer .main-navigation {
+  .main-navigation ul .dropdown-toggle.toggled-on,
+  .menu-toggle,
+  .site-footer .main-navigation {
     display: none;
   }
 
@@ -3386,17 +3385,17 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .entry-header,
-.post-thumbnail,
-.content,
-.entry-summary,
-.entry-footer,
-.comments-area,
-.image-navigation,
-.post-navigation,
-.pagination,
-.page-header,
-.page-content,
-.content-bottom-widgets {
+  .post-thumbnail,
+  .content,
+  .entry-summary,
+  .entry-footer,
+  .comments-area,
+  .image-navigation,
+  .post-navigation,
+  .pagination,
+  .page-header,
+  .page-content,
+  .content-bottom-widgets {
     margin-right: 0;
     margin-left: 0;
   }
@@ -3421,18 +3420,18 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .widget p,
-.widget address,
-.widget hr,
-.widget ul,
-.widget ol,
-.widget dl,
-.widget dd,
-.widget table {
+  .widget address,
+  .widget hr,
+  .widget ul,
+  .widget ol,
+  .widget dl,
+  .widget dd,
+  .widget table {
     margin-bottom: 1.6153846154em;
   }
 
   .widget li > ul,
-.widget li > ol {
+  .widget li > ol {
     margin-bottom: 0;
   }
 
@@ -3445,14 +3444,14 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .widget blockquote cite,
-.widget blockquote small {
+  .widget blockquote small {
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
   }
 
   .widget th,
-.widget td {
+  .widget td {
     padding: 0.5384615385em;
   }
 
@@ -3470,35 +3469,35 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .widget button,
-.widget input,
-.widget select,
-.widget textarea {
+  .widget input,
+  .widget select,
+  .widget textarea {
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
   }
 
   .widget button,
-.widget input[type=button],
-.widget input[type=reset],
-.widget input[type=submit] {
+  .widget input[type="button"],
+  .widget input[type="reset"],
+  .widget input[type="submit"] {
     line-height: 1;
     padding: 0.846153846em;
   }
 
-  .widget input[type=date],
-.widget input[type=time],
-.widget input[type=datetime-local],
-.widget input[type=week],
-.widget input[type=month],
-.widget input[type=text],
-.widget input[type=email],
-.widget input[type=url],
-.widget input[type=password],
-.widget input[type=search],
-.widget input[type=tel],
-.widget input[type=number],
-.widget textarea {
+  .widget input[type="date"],
+  .widget input[type="time"],
+  .widget input[type="datetime-local"],
+  .widget input[type="week"],
+  .widget input[type="month"],
+  .widget input[type="text"],
+  .widget input[type="email"],
+  .widget input[type="url"],
+  .widget input[type="password"],
+  .widget input[type="search"],
+  .widget input[type="tel"],
+  .widget input[type="number"],
+  .widget textarea {
     padding: 0.4615384615em 0.5384615385em;
   }
 
@@ -3524,8 +3523,8 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .widget h4,
-.widget h5,
-.widget h6 {
+  .widget h5,
+  .widget h6 {
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
@@ -3545,7 +3544,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .widget_calendar td,
-.widget_calendar th {
+  .widget_calendar th {
     line-height: 2.6923076923;
     padding: 0;
   }
@@ -3554,7 +3553,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
     margin-bottom: 1.615384615em;
   }
 
-  .widget input[type=search].search-field {
+  .widget input[type="search"].search-field {
     width: -webkit-calc(100% - 35px);
     width: calc(100% - 35px);
   }
@@ -3593,13 +3592,13 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .textwidget h4,
-.textwidget h5,
-.textwidget h6 {
+  .textwidget h5,
+  .textwidget h6 {
     margin-top: 3.2307692308em;
   }
 
   .content-bottom-widgets .widget-area:nth-child(1):nth-last-child(2),
-.content-bottom-widgets .widget-area:nth-child(2):nth-last-child(1) {
+  .content-bottom-widgets .widget-area:nth-child(2):nth-last-child(1) {
     float: left;
     margin-right: 7.1428571%;
     width: 46.42857145%;
@@ -3653,8 +3652,8 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .site-branding,
-.site-header-menu,
-.header-image {
+  .site-header-menu,
+  .header-image {
     margin-top: 1.75em;
     margin-bottom: 1.75em;
   }
@@ -3691,14 +3690,14 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .format-aside .entry-title,
-.format-image .entry-title,
-.format-video .entry-title,
-.format-quote .entry-title,
-.format-gallery .entry-title,
-.format-status .entry-title,
-.format-link .entry-title,
-.format-audio .entry-title,
-.format-chat .entry-title {
+  .format-image .entry-title,
+  .format-video .entry-title,
+  .format-quote .entry-title,
+  .format-gallery .entry-title,
+  .format-status .entry-title,
+  .format-link .entry-title,
+  .format-audio .entry-title,
+  .format-chat .entry-title {
     font-size: 23px;
     font-size: 1.4375em;
     line-height: 1.304347826;
@@ -3710,8 +3709,8 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .content h1,
-.entry-summary h1,
-.comment-content h1 {
+  .entry-summary h1,
+  .comment-content h1 {
     font-size: 33px;
     font-size: 2.0625rem;
     line-height: 1.2727272727;
@@ -3720,8 +3719,8 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .content h2,
-.entry-summary h2,
-.comment-content h2 {
+  .entry-summary h2,
+  .comment-content h2 {
     font-size: 28px;
     font-size: 1.75rem;
     line-height: 1.25;
@@ -3730,8 +3729,8 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .content h3,
-.entry-summary h3,
-.comment-content h3 {
+  .entry-summary h3,
+  .comment-content h3 {
     font-size: 23px;
     font-size: 1.4375rem;
     line-height: 1.2173913043;
@@ -3740,21 +3739,21 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .content h4,
-.entry-summary h4,
-.entry-intro h4,
-.comment-content h4 {
+  .entry-summary h4,
+  .entry-intro h4,
+  .comment-content h4 {
     letter-spacing: 0.131578947em;
   }
 
   .content h4,
-.content h5,
-.content h6,
-.entry-summary h4,
-.entry-summary h5,
-.entry-summary h6,
-.comment-content h4,
-.comment-content h5,
-.comment-content h6 {
+  .content h5,
+  .content h6,
+  .entry-summary h4,
+  .entry-summary h5,
+  .entry-summary h6,
+  .comment-content h4,
+  .comment-content h5,
+  .comment-content h6 {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.1052631579;
@@ -3768,14 +3767,14 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   .comment-list + .comment-respond,
-.comment-navigation + .comment-respond {
+  .comment-navigation + .comment-respond {
     padding-top: 5.25em;
   }
 
   .comments-area,
-.sidebar,
-.content-bottom-widgets .widget-area,
-.widecolumn {
+  .sidebar,
+  .content-bottom-widgets .widget-area,
+  .widecolumn {
     margin-bottom: 7em;
   }
 
@@ -3799,7 +3798,7 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   body:not(.search-results) article:not(.type-page) img.below-entry-meta,
-body:not(.search-results) article:not(.type-page) figure.below-entry-meta {
+  body:not(.search-results) article:not(.type-page) figure.below-entry-meta {
     clear: both;
     display: block;
     float: none;
@@ -3809,8 +3808,8 @@ body:not(.search-results) article:not(.type-page) figure.below-entry-meta {
   }
 
   body:not(.search-results) article:not(.type-page) figure.below-entry-meta img.below-entry-meta,
-body:not(.search-results) article:not(.type-page) table figure.below-entry-meta,
-body:not(.search-results) article:not(.type-page) table img.below-entry-meta {
+  body:not(.search-results) article:not(.type-page) table figure.below-entry-meta,
+  body:not(.search-results) article:not(.type-page) table img.below-entry-meta {
     margin: 0;
     max-width: 100%;
   }
@@ -3826,15 +3825,15 @@ body:not(.search-results) article:not(.type-page) table img.below-entry-meta {
   }
 
   .single .byline,
-.full-size-link,
-body:not(.search-results).group-blog .byline,
-body:not(.search-results) .entry-kind,
-body:not(.search-results) .cat-links,
-body:not(.search-results) .series-links,
-body:not(.search-results) .tags-links,
-body:not(.search-results) article:not(.sticky) .posted-on,
-body:not(.search-results) article:not(.type-page) .comments-link,
-body:not(.search-results) article:not(.type-page) .entry-footer .edit-link {
+  .full-size-link,
+  body:not(.search-results).group-blog .byline,
+  body:not(.search-results) .entry-kind,
+  body:not(.search-results) .cat-links,
+  body:not(.search-results) .series-links,
+  body:not(.search-results) .tags-links,
+  body:not(.search-results) article:not(.sticky) .posted-on,
+  body:not(.search-results) article:not(.type-page) .comments-link,
+  body:not(.search-results) article:not(.type-page) .entry-footer .edit-link {
     display: block;
     margin-bottom: 0.5384615385em;
   }
@@ -3879,23 +3878,23 @@ body:not(.search-results) article:not(.type-page) .entry-footer .edit-link {
   }
 
   body:not(.search-results) .entry-summary p,
-body:not(.search-results) .entry-summary address,
-body:not(.search-results) .entry-summary hr,
-body:not(.search-results) .entry-summary ul,
-body:not(.search-results) .entry-summary ol,
-body:not(.search-results) .entry-summary dl,
-body:not(.search-results) .entry-summary dd,
-body:not(.search-results) .entry-summary table {
+  body:not(.search-results) .entry-summary address,
+  body:not(.search-results) .entry-summary hr,
+  body:not(.search-results) .entry-summary ul,
+  body:not(.search-results) .entry-summary ol,
+  body:not(.search-results) .entry-summary dl,
+  body:not(.search-results) .entry-summary dd,
+  body:not(.search-results) .entry-summary table {
     margin-bottom: 1.5217391304em;
   }
 
   body:not(.search-results) .entry-summary li > ul,
-body:not(.search-results) .entry-summary blockquote > ul {
+  body:not(.search-results) .entry-summary blockquote > ul {
     margin-left: 0.956521739em;
   }
 
   body:not(.search-results) .entry-summary li > ol,
-body:not(.search-results) .entry-summary blockquote > ol {
+  body:not(.search-results) .entry-summary blockquote > ol {
     margin-left: 1.52173913em;
   }
 
@@ -3916,14 +3915,14 @@ body:not(.search-results) .entry-summary blockquote > ol {
   }
 
   body:not(.search-results) .entry-summary blockquote cite,
-body:not(.search-results) .entry-summary blockquote small {
+  body:not(.search-results) .entry-summary blockquote small {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.8421052632;
   }
 
   body:not(.search-results) .entry-summary th,
-body:not(.search-results) .entry-summary td {
+  body:not(.search-results) .entry-summary td {
     padding: 0.3043478261em;
   }
 
@@ -3956,18 +3955,18 @@ body:not(.search-results) .entry-summary td {
   }
 
   body:not(.search-results) .entry-summary h4,
-body:not(.search-results) .entry-summary h5,
-body:not(.search-results) .entry-summary h6 {
+  body:not(.search-results) .entry-summary h5,
+  body:not(.search-results) .entry-summary h6 {
     margin-top: 3.684210526em;
     margin-bottom: 1.842105263em;
   }
 
   body:not(.search-results) .entry-summary h1:first-child,
-body:not(.search-results) .entry-summary h2:first-child,
-body:not(.search-results) .entry-summary h3:first-child,
-body:not(.search-results) .entry-summary h4:first-child,
-body:not(.search-results) .entry-summary h5:first-child,
-body:not(.search-results) .entry-summary h6:first-child {
+  body:not(.search-results) .entry-summary h2:first-child,
+  body:not(.search-results) .entry-summary h3:first-child,
+  body:not(.search-results) .entry-summary h4:first-child,
+  body:not(.search-results) .entry-summary h5:first-child,
+  body:not(.search-results) .entry-summary h6:first-child {
     margin-top: 0;
   }
 
@@ -3988,39 +3987,39 @@ body:not(.search-results) .entry-summary h6:first-child {
 --------------------------------------------------------------*/
 @media print {
   form,
-button,
-input,
-select,
-textarea,
-.navigation,
-.main-navigation,
-.sidebar,
-.content-bottom-widgets,
-.header-image,
-.page-links,
-.edit-link,
-.comment-respond,
-.comment-edit-link,
-.comment-reply-link,
-.comment-metadata .edit-link,
-.pingback .edit-link {
+  button,
+  input,
+  select,
+  textarea,
+  .navigation,
+  .main-navigation,
+  .sidebar,
+  .content-bottom-widgets,
+  .header-image,
+  .page-links,
+  .edit-link,
+  .comment-respond,
+  .comment-edit-link,
+  .comment-reply-link,
+  .comment-metadata .edit-link,
+  .pingback .edit-link {
     display: none;
   }
 
   body,
-blockquote cite,
-blockquote small,
-pre,
-.content h4,
-.content h5,
-.content h6,
-.entry-summary h4,
-.entry-summary h5,
-.entry-summary h6,
-.comment-content h4,
-.comment-content h5,
-.comment-content h6,
-.content .author-title {
+  blockquote cite,
+  blockquote small,
+  pre,
+  .content h4,
+  .content h5,
+  .content h6,
+  .entry-summary h4,
+  .entry-summary h5,
+  .entry-summary h6,
+  .comment-content h4,
+  .comment-content h5,
+  .comment-content h6,
+  .content .author-title {
     font-size: 12pt;
   }
 
@@ -4029,12 +4028,12 @@ pre,
   }
 
   .site-title,
-.page-title,
-.comments-title,
-.content h2,
-.entry-summary h2,
-.comment-content h2,
-.widecolumn h2 {
+  .page-title,
+  .comments-title,
+  .content h2,
+  .entry-summary h2,
+  .comment-content h2,
+  .widecolumn h2 {
     font-size: 17.25pt;
   }
 
@@ -4049,109 +4048,109 @@ pre,
   }
 
   .format-aside .entry-title,
-.format-image .entry-title,
-.format-video .entry-title,
-.format-quote .entry-title,
-.format-gallery .entry-title,
-.format-status .entry-title,
-.format-link .entry-title,
-.format-audio .entry-title,
-.format-chat .entry-title {
+  .format-image .entry-title,
+  .format-video .entry-title,
+  .format-quote .entry-title,
+  .format-gallery .entry-title,
+  .format-status .entry-title,
+  .format-link .entry-title,
+  .format-audio .entry-title,
+  .format-chat .entry-title {
     font-size: 17.25pt;
     line-height: 1.304347826;
     margin-bottom: 1.826086957em;
   }
 
   .content h1,
-.entry-summary h1,
-.comment-content h1 {
+  .entry-summary h1,
+  .comment-content h1 {
     font-size: 21pt;
   }
 
   .content h3,
-.entry-summary h3,
-.comment-content h3,
-body:not(.search-results) .entry-summary {
+  .entry-summary h3,
+  .comment-content h3,
+  body:not(.search-results) .entry-summary {
     font-size: 14.25pt;
   }
 
   .site-description,
-.author-bio,
-.entry-footer,
-.sticky-post,
-.taxonomy-description,
-.entry-caption,
-.comment-metadata,
-.comment-notes,
-.comment-awaiting-moderation,
-.site-info,
-.wp-caption .wp-caption-text,
-.gallery-caption {
+  .author-bio,
+  .entry-footer,
+  .sticky-post,
+  .taxonomy-description,
+  .entry-caption,
+  .comment-metadata,
+  .comment-notes,
+  .comment-awaiting-moderation,
+  .site-info,
+  .wp-caption .wp-caption-text,
+  .gallery-caption {
     font-size: 9.75pt;
   }
 
   body,
-.site {
+  .site {
     background: none !important;
     /* Brute force since user agents all print differently. */
   }
 
   body,
-blockquote cite,
-blockquote small,
-.site-branding .site-title a,
-.entry-title a,
-.comment-author {
+  blockquote cite,
+  blockquote small,
+  .site-branding .site-title a,
+  .entry-title a,
+  .comment-author {
     color: #1a1a1a !important;
     /* Make sure color schemes don't affect to print */
   }
 
   blockquote,
-.page-header,
-.comments-title {
+  .page-header,
+  .comments-title {
     border-color: #1a1a1a !important;
     /* Make sure color schemes don't affect to print */
   }
 
   blockquote,
-.site-description,
-body:not(.search-results) .entry-summary,
-body:not(.search-results) .entry-summary blockquote,
-.author-bio,
-.entry-footer,
-.entry-footer a,
-.sticky-post,
-.taxonomy-description,
-.entry-caption,
-.comment-author,
-.comment-metadata a,
-.comment-notes,
-.comment-awaiting-moderation,
-.site-info,
-.site-info a,
-.wp-caption .wp-caption-text,
-.gallery-caption {
+  .site-description,
+  body:not(.search-results) .entry-summary,
+  body:not(.search-results) .entry-summary blockquote,
+  .author-bio,
+  .entry-footer,
+  .entry-footer a,
+  .sticky-post,
+  .taxonomy-description,
+  .entry-caption,
+  .comment-author,
+  .comment-metadata a,
+  .comment-notes,
+  .comment-awaiting-moderation,
+  .site-info,
+  .site-info a,
+  .wp-caption .wp-caption-text,
+  .gallery-caption {
     color: #686868 !important;
     /* Make sure color schemes don't affect to print */
   }
 
   code,
-hr {
+  hr {
     background-color: #d1d1d1 !important;
     /* Make sure color schemes don't affect to print */
   }
 
   pre,
-abbr,
-acronym,
-table,
-th,
-td,
-.author-info,
-.comment-list article,
-.comment-list .pingback,
-.comment-list .trackback,
-.no-comments {
+  abbr,
+  acronym,
+  table,
+  th,
+  td,
+  .author-info,
+  .comment-list article,
+  .comment-list .pingback,
+  .comment-list .trackback,
+  .no-comments {
     border-color: #d1d1d1 !important;
     /* Make sure color schemes don't affect to print */
   }
@@ -4162,10 +4161,10 @@ td,
   }
 
   .content a,
-.entry-summary a,
-.taxonomy-description a,
-.comment-content a,
-.pingback .comment-body > a {
+  .entry-summary a,
+  .taxonomy-description a,
+  .comment-content a,
+  .pingback .comment-body > a {
     box-shadow: none;
     border-bottom: 1px solid #686868 !important;
     /* Make sure color schemes don't affect to print */
@@ -4193,24 +4192,24 @@ td,
   }
 
   .entry-header,
-.entry-footer,
-.page-header,
-.page-content,
-.content,
-.entry-summary,
-.post-thumbnail,
-.comments-area {
+  .entry-footer,
+  .page-header,
+  .page-content,
+  .content,
+  .entry-summary,
+  .post-thumbnail,
+  .comments-area {
     margin-right: 0;
     margin-left: 0;
   }
 
   .post-thumbnail,
-.site-main > article {
+  .site-main > article {
     margin-bottom: 3.5em;
   }
 
   .content blockquote.alignleft,
-.content blockquote.alignright {
+  .content blockquote.alignright {
     border-width: 4px 0 0 0;
     padding: 0.9473684211em 0 0;
     width: -webkit-calc(50% - 0.736842105em);
@@ -4222,7 +4221,7 @@ td,
   }
 
   .site-footer,
-.widecolumn {
+  .widecolumn {
     padding: 0;
   }
 }
