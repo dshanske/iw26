@@ -32,6 +32,15 @@ get_header(); ?>
 						}
 						?>
 					</div><!-- .page-content -->
+			<?php } else if ( iw26_is_404_date() ) { ?>
+					<header class="page-header">
+						<h1 class="page-title"><?php _e( 'Oops! There were no posts made during this period', 'iw26' ); ?></h1>
+					</header><!-- .page-header -->
+					<div class="page-content">
+						<p><?php _e( 'It looks there were no posts made during this period', 'iw26' ); ?></p>
+	
+						<br />
+					</div><!-- .page-content -->
 			<?php } else { ?>
 					<header class="page-header">
 						<h1 class="page-title"><?php _e( 'Oops! That archive can&rsquo;t be found.', 'iw26' ); ?></h1>

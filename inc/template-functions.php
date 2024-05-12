@@ -220,6 +220,16 @@ function iw26_is_404_singular() {
 	return false;
 }
 
+function iw26_is_404_date() {
+	// If any of these are present it is an attempt to get a date.
+	foreach ( array( 'year', 'day', 'monthnum' ) as $var ) {
+		if ( get_query_var( $var ) ) {
+			return true;
+		}
+	}
+	return false;
+}
+
 if ( ! function_exists( 'has_content' ) ) {
 	function has_content( $post = 0 ) {
 		$post = get_post( $post );
