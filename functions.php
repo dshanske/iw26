@@ -98,21 +98,24 @@ if ( ! function_exists( 'iw26_setup' ) ) :
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
+		 * to output valid HTML5. If running classicpress, then do not call this as it is the default.
 		 */
-		add_theme_support(
-			'html5',
-			array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-				'navigation-widgets',
-			)
-		);
+		if ( ! function_exists( 'classicpress_version' ) ) {
+
+			add_theme_support(
+				'html5',
+				array(
+					'search-form',
+					'comment-form',
+					'comment-list',
+					'gallery',
+					'caption',
+					'style',
+					'script',
+					'navigation-widgets',
+				)
+			);
+		}
 
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
