@@ -134,6 +134,11 @@ add_filter( 'get_avatar_data', 'iw26_get_avatar_data', 11, 2 );
 
 /**
  * Wraps the_content in e-content
+ *
+ * Runs at priority 1, before plugins add to the content, so their additions
+ * (Post Kinds' response context, maps, syndication links) stay outside
+ * e-content. The blank lines let wpautop, which runs later, give the first
+ * paragraph its opening <p>.
  */
 function iw26_the_content( $content ) {
 	if ( is_feed() ) {
@@ -143,9 +148,9 @@ function iw26_the_content( $content ) {
 	if ( empty( $content ) ) {
 		return $content;
 	}
-	return $wrap . $content . '</div>';
+	return $wrap . "\n\n" . $content . "\n\n</div>";
 }
-add_filter( 'the_content', 'iw26_the_content', 11 );
+add_filter( 'the_content', 'iw26_the_content', 1 );
 
 /**
  * Wraps the_excerpt in p-summary
