@@ -145,7 +145,7 @@ function iw26_the_content( $content ) {
 	}
 	return $wrap . $content . '</div>';
 }
-add_filter( 'the_content', 'iw26_the_content', 1 );
+add_filter( 'the_content', 'iw26_the_content', 10 );
 
 /**
  * Wraps the_excerpt in p-summary
